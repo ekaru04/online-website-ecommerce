@@ -1,9 +1,9 @@
 Rebellion
 
 
-Shinta Mauliantika
-Achmad Wildhan Eka P.
-Rubiatul Al Adawiyah
-Franciska Wulandari
-Muhammad Viqih Zamzami
-Rendra Adji Prayudi
+Shinta Mauliantika<br>
+Achmad Wildhan Eka P.<br>
+Rubiatul Al Adawiyah<br>
+Franciska Wulandari<br>
+Muhammad Viqih Zamzami<br>
+Rendra Adji Prayudi<br>

@@ -76,7 +76,7 @@
   				  			<div class="card">
   				    			<div class="card-body">
   				      				<h5 class="card-title">Laundry Jember</h5>
-  				      				<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+  				      				<p class="card-text">Saya ganteng</p>
   				      				<a href="#" class="btn btn-primary">Baca lebih lanjut</a>
   				    			</div>
   				  			</div>

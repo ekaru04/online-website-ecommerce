@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Clean in Click</title>
+	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
+    
+
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Modernize Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta Tags -->
+
+    <!-- Style-sheets -->
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap Css -->
+    <!-- Common Css -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Common Css -->
+    <!-- Nav Css -->
+    <link rel="stylesheet" href="css/style4.css">
+    <!--// Nav Css -->
+    <!-- Fontawesome Css -->
+    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <!--// Fontawesome Css -->
+    <!--// Style-sheets -->
+
+    <!--web-fonts-->
+    <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <!--//web-fonts-->
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <?php include "sidebar.php";?>
+
+        <!-- Page Content Holder -->
+        <div id="content" style="padding:0">
+            <!-- top-bar -->
+            <?php include "nav.php"?>
+            <!--// top-bar -->
+            <!-- main-heading -->
+            <div class="alert alert-primary" role="alert" style="margin-top:-48px">
+            <h4 class="tittle-w3-agileits mb-0 mt-0">Data User</h4>
+              
+            </div>
+            <!--// main-heading -->
+            <?php //untuk membuat pesan bahwa data berhasil di inputkan
+	if(isset($_GET['pesan'])){
+		$pesan = $_GET['pesan']; 
+		if($pesan == "input"){
+			echo "Data berhasil di input.";
+		}else if($pesan == "update"){
+			echo "Data berhasil di update.";
+		}else if($pesan == "hapus"){
+			echo "Data berhasil di hapus.";
+		}
+	}
+	?>
+
+	<!--elemen tabel-->
+    <div class="container">
+	<table border="2" class="table"> 
+		<tr>
+			<th>Username</th>
+			<th>Nama Lapak</th>
+			<th>Alamat</th>
+			<th>Kategori</th>		
+			<th>No tlp</th>
+			<th>Email</th>
+			<th>Foto</th>
+            <!-- <th>Deskripsi</th> -->
+            <th>Password</th>
+            <th>Aksi</th>
+		</tr>
+		<?php 
+		//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
+		include "koneksi.php";
+		//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
+		$query_mysql = mysqli_query($host,"SELECT * FROM registrasi_laundry")or die(mysql_error());
+		$nomor = 1;
+
+		//menggunakan while php
+		while($data = mysqli_fetch_array($query_mysql)){// $data perintah untuk menampilkan data
+
+			//berfungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
+		?> 
+		<tr>
+			<td>B0<?php echo $data['username']; ?></td>
+			<td><?php echo $data['Nama_lapak']; ?></td>
+			<td><?php echo $data['Alamat']; ?></td>
+			<td><?php echo $data['Kategori']; ?></td>
+            <td><?php echo $data['No_Tlp']; ?></td>
+            <td><?php echo $data['Email']; ?></td>s
+            <td><?php echo $data['foto']; ?></td>
+            <!-- <td><?php echo $data['deskripsi']; ?></td> -->
+            <td><?php echo $data['password']; ?></td>
+            
+			<td>
+			<!--variabel data sudah menjadi array -->
+
+				<a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> |
+				<a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:15%"></a>					
+			</td>
+		</tr>
+		<?php } ?>
+	</table>
+    <a class="tombol" href="input.php">+ Tambah Data Baru</a>
+        </div>
+    </div>
+
+
+    <!-- Required common Js -->
+    <script src='js/jquery-2.2.3.min.js'></script>
+    <!-- //Required common Js -->
+
+    <!-- Sidebar-nav Js -->
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    <!--// Sidebar-nav Js -->
+
+    <!-- dropdown nav -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //dropdown nav -->
+
+    <!-- Js for bootstrap working-->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- //Js for bootstrap working -->
+
+</body>
+
+</html>

@@ -21,7 +21,7 @@ $file_tmp = $_FILES['file']['tmp_name'];
 if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
     if($ukuran < 1044070){			
         move_uploaded_file($file_tmp, 'file/'.$nama_file);
-        $query = mysqli_query($host, "UPDATE registrasi_laundry  SET username ='$username', Nama_lapak='$Nama_lapak', Alamat='$Alamat', Kategori='$Kategori', No_Tlp='$No_Tlp', email='$email', foto='$nama_file',deskripsi='$deskripsi', password='$password' WHERE username='$username'");
+        $query = mysqli_query($host, "UPDATE registrasi_laundry  SET  Nama_lapak='$Nama_lapak', Alamat='$Alamat', Kategori='$Kategori', No_Tlp='$No_Tlp', email='$email',deskripsi='$deskripsi', password='$password' WHERE username='$username'");
         if($query){
             echo 'FILE BERHASIL DI UPLOAD';
         }else{

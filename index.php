@@ -54,7 +54,7 @@
             <!--// top-bar -->
             <!-- main-heading -->
             <div class="alert alert-primary" role="alert" style="margin-top:-48px">
-            <h4 class="tittle-w3-agileits mb-0 mt-0">Daftar Katalog</h4>
+            <h4 class="tittle-w3-agileits mb-0 mt-0">Daftar Katalog </h4>
               
             </div>
             <!--// main-heading -->

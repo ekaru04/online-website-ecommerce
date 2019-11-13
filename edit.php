@@ -97,8 +97,9 @@
 				?>
 				<form action="update.php" method="post"enctype="multipart/form-data">	
                   <div class="form-group">
+                  <input id="username" type="hidden"  class="form-control" name="username" value="<?php echo $data['username'] ?>">
                    <!-- <label for="username">Username</label>
-                    <input id="username" type="hidden"  class="form-control" name="username" value="<?php echo $data['username'] ?>">
+                    
 								<!-- <input type="text" name="nama" value="<?php echo $data['lapak'] ?> "> -->
                   </div>
                   <div class="form-group">
@@ -119,7 +120,7 @@
                   </div>
                   <div class="form-group">
                     <label for="No_Tlp">Nomor Telepon</label>
-                    <input id="No_Tlp" type="text" class="form-control"  value="<?php echo $data['No_Tlp'] ?>">
+                    <input id="No_Tlp" type="text" name="No_Tlp" class="form-control" value="<?php echo $data['No_Tlp'] ?>">
                   </div> 
 				   <div class="form-group">
                     <label for="file">File input</label><br>
@@ -127,18 +128,19 @@
                   </div>
 				  <div class="form-group">
                     <label for="Email">Email</label>
-                    <input type="text" id="Email"  name="Email" type="text" class="form-control"value="<?php echo $data['Email'] ?>">	
+                    <input type="text" id="Email"  name="Email" class="form-control"value="<?php echo $data['Email'] ?>">	
                   </div>
                   <div class="form-group">
                     <label for="Password">Password</label>
-                    <input id="Password" type="Password" class="form-control  name="password" value="<?php echo $data['password'] ?>">
+                    <input id="Password" type="Password" class="form-control"  name="password" value="<?php echo $data['password'] ?>">
                   </div>
                   <div class="form-group">
                     <label for="Deskripsi">Deskripsi</label>
 					<textarea  type="text" class="form-control" id="Deskripsi" rows="3" name="deskripsi" value="<?php echo $data['deskripsi'] ?>"></textarea>
 					</div>
                   <div class="text-center">
-                  <input type="submit" value="Simpan">			
+                  <input type="submit" class="btn btn-secondary btn-lg" value="Simpan">	
+                  <input type="submit" class="btn btn-secondary btn-lg" value="Simpan">	
                   </div>
                 </form>
               </div>
@@ -146,8 +148,9 @@
 	<div class="col-lg-6">
               <div class="box">
                 <h1>LIHAT SEMUA DATA</h1>
-                <a href="index.php">Lihat Semua Data</a>
-
+                <a href="index.php">
+                <!-- Lihat Semua Data</a> -->
+                <button type="button" class="btn btn-outline-secondary">Lihat Semua Data</button>
             </div>
           </div>
           <?php } ?> 
@@ -163,3 +166,7 @@
     <script src="js/front.js"></script>
 </body>
 </html>
+<a href="http://instagram.com/franciska.wdr">
+                <img src="gambar/instagram.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <td><b>: Franciska.wdr</b></td>
+                </a>

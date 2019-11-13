@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>Clean In Click</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+
 </head>
 <body>
 	<div class="judul">		

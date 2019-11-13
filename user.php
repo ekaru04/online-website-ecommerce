@@ -36,7 +36,18 @@
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <!--// Fontawesome Css -->
     <!--// Style-sheets -->
+    <link rel="stylesheet" href="css/widgets.css">
 
+
+    <style>
+    .thead {
+    background: #4fbfa8;
+    }
+
+    .thead th{
+        color: white;
+    }
+        </style>
     <!--web-fonts-->
     <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
@@ -74,8 +85,8 @@
 
 	<!--elemen tabel-->
     <div class="container">
-	<table border="2" class="table"> 
-		<tr>
+	<table class="table table-responsive"> 
+		<tr class="thead">
 			<th>Username</th>
 			<th>Nama Lapak</th>
 			<th>Alamat</th>
@@ -92,20 +103,22 @@
 		include "koneksi.php";
 		//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
 		$query_mysql = mysqli_query($host,"SELECT * FROM registrasi_laundry")or die(mysql_error());
-		$nomor = 1;
+        $nomor = 1;
+        
+        
 
 		//menggunakan while php
 		while($data = mysqli_fetch_array($query_mysql)){// $data perintah untuk menampilkan data
-
+            $warnaAlternate = $nomor % 2 == 0 ? "#d4d3cf" : "#ffffff";
 			//berfungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
 		?> 
-		<tr>
+		<tr style="background : <?php echo $warnaAlternate; ?>;">
 			<td>B0<?php echo $data['username']; ?></td>
 			<td><?php echo $data['Nama_lapak']; ?></td>
 			<td><?php echo $data['Alamat']; ?></td>
 			<td><?php echo $data['Kategori']; ?></td>
             <td><?php echo $data['No_Tlp']; ?></td>
-            <td><?php echo $data['Email']; ?></td>s
+            <td><?php echo $data['Email']; ?></td>
             <td><?php echo $data['foto']; ?></td>
             <!-- <td><?php echo $data['deskripsi']; ?></td> -->
             <td><?php echo $data['password']; ?></td>
@@ -113,11 +126,11 @@
 			<td>
 			<!--variabel data sudah menjadi array -->
 
-				<a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> |
-				<a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:15%"></a>					
+				<!-- <a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> | -->
+				<a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					
 			</td>
 		</tr>
-		<?php } ?>
+		<?php $nomor++;} ?>
 	</table>
     <a class="tombol" href="input.php">+ Tambah Data Baru</a>
         </div>

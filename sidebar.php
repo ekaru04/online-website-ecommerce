@@ -3,7 +3,7 @@
                 <h1>
                     <!-- <a href="index.html">  -->
                   <h4>
-                  <img src="images/10.png" class="img-fluid" style="width:45%">Admin</h4>
+                  <img src="images/logo.png" class="img-fluid" style="width:45%">Admin</h4>
                    
                 </h1>
               <hr/>

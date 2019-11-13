@@ -23,6 +23,7 @@ if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
         // echo "INSERT INTO registrasi_laundry(username, Nama_lapak, Alamat, Kategori, No_Tlp, Email, foto, deskripsi, `password`)  VALUES('$username','$Nama_lapak','$Alamat','$Kategori','$No_Tlp','$email','$nama_file', '$deskripsi','$password','$nama_file')";
         if($query){
             echo 'FILE BERHASIL DI UPLOAD';
+            header("lOcAtioN:../Rebellion/user.php");
         }else{
             echo 'GAGAL MENGUPLOAD GAMBAR';
         }

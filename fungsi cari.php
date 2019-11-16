@@ -26,9 +26,9 @@ if(isset($_GET['cari'])){
 	<?php 
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];
-		$data = mysqli_query("SELECT * FROM registrasi_laundry where= 'username' %".$cari."%");				
+		$data = mysqli_query($host, "SELECT * FROM registrasi_laundry where= 'username' %".$cari."%");				
 	}else{
-		$data = mysqli_query ("SELECT * FROM registrasi_laundry");		
+		$data = mysqli_query ($host, "SELECT * FROM registrasi_laundry");		
 	}
 	$no = 1;
 	while($id = mysqli_fetch_array($data)){

@@ -125,9 +125,20 @@
             
 			<td>
 			<!--variabel data sudah menjadi array -->
+            <!-- <div class="col-md-12 text-center">
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".simpan-modal-sm"><i class="fa fa-save"></i>Simpan Gan</button>
+                      <div class="modal fade simpan-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                          <div class="modal-content">
+                            Berhasil Disimpan
+                          </div>
+                        </div>
+                      </div>
+                    </div> -->
 
 				<!-- <a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> | -->
-				<a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					
+                <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['username']; ?>">Hapus</a>
+                <!-- <a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					 -->
 			</td>
 		</tr>
 		<?php $nomor++;} ?>

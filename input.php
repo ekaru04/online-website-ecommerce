@@ -43,7 +43,7 @@
     <script src="js/front.js"></script>
 </head>
 <body style="background-color:rgb(175, 249, 252)">
-    <header class="header mb-5">
+    <header class="header">
       <div id="content">
         <div class="container">
           <div class="row">
@@ -79,48 +79,55 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-12">
-				
-<body>
-	<a href="index.php">Lihat Semua Data</a>
- 
-	<br/>
-	<h3>Input data baru</h3>
+			<nav aria-label="breadcrumb">
+              </nav>
+            </div>
+            <div class="col-lg-6">
+              <div class="box">
+			  <h1>Input data baru</h1>
+	
 	<form action="input-aksi.php" method="post" enctype="multipart/form-data">
 			
 		<table>
 		<tr>
-				<td>Username</td>
-				<td><input type="text" name="username"></td>				 	
-			</tr>	
-			<tr>
-				<td>Nama_lapak</td>
-				<td><input type="text" name="Nama_lapak"></td>				 	
-			</tr>	
-			<tr>
-				<td>Alamat</td>
-				<td><input type="text" name="Alamat"></td>					
-			</tr>	
-			<tr>
-				<td>Kategori</td>
-				<td><select name="Kategori" class="form-control form-control-sm">
-				<option>Antar Jemput</option>
-				<option>Tidak Antar Jemput</option>
-				</select></td>					
-			</tr>	<tr>
-				<td>No Tlp</td>
-				<td><input type="text" name="No_Tlp"></td>		<tr>
-							
-			</tr>	
-				<td>Email</td>
-				<td><input type="text" name="Email"></td>	
-			<tr>
-				<td>Deskripsi</td>
-				<td><input type="text" name="deskripsi"></td>				 	
-			</tr>	
-			<tr>
-				<td>Password</td>
-				<td><input type="text" name="password"></td>				 	
-			</tr>	
+		<div class="form-group">
+				<label>Username</label>
+				<input type="text" class="form-control" name="username">		 	
+		</div>	
+		<div class="form-group">
+				<label>Nama lapak</label>
+				<input type="text" class="form-control" name="Nama_lapak">			 	
+		</div>	
+		<div class="form-group">	
+				<label>Alamat</label>
+				<input type="text" class="form-control" name="Alamat">				
+		</div>
+		<div class="form-group">
+                  <label for="Kategori">Kategori</label>
+                  <select name="Kategori" id="Kategori" class="form-control">
+                  <option value="">- Pilih Kategori -</option>
+                    <option value="antar jemput"> Antar Jemput </option>
+                    <option value="tidak antar jemput"> Tidak Antar Jemput </option>
+                  </select>
+                  </div>
+
+		<div class="form-group">	
+				<label>Telepon</label>
+				<input type="text" class="form-control" name="No_Tlp">
+		</div>
+		<div class="form-group">	
+				<label>Email</label>
+				<input type="text" class="form-control" name="Email">					
+			</div>
+			<div class="form-group">	
+				<label>Deskripsi</label>
+				<textarea type="text" class="form-control" name="deskripsi">	</textarea>				
+			</div>
+		<div class="form-group">	
+				<label>Password</label>
+				<input type="password" class="form-control" name="passwo">					
+		</div>	
+
 				<td></td>		
 				</tr>	<tr><td></td>
 				<td><input type="file" name="foto"></td></tr>	<tr></tr>	<tr><td></td>
@@ -128,5 +135,22 @@
 			</tr>				
 		</table>
 	</form>
+	
+                  
+                
+              </div>
+            </div>
+	<div class="col-lg-6">
+              <div class="box">
+                <h1>LIHAT SEMUA DATA</h1>
+                <a href="index.php">
+                <!-- Lihat Semua Data</a> -->
+                <button type="button" class="btn btn-outline-secondary">Lihat Semua Data</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+  </div>
 </body>
 </html>

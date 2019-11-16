@@ -44,7 +44,7 @@
 	
 	</head>
 		<body style="background-color:rgb(175, 249, 252)">
-    <header class="header mb-5">
+    <header class="header">
       <div id="content">
         <div class="container">
           <div class="row">

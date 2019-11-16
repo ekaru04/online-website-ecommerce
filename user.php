@@ -132,7 +132,7 @@
 		</tr>
 		<?php $nomor++;} ?>
 	</table>
-    <a class="tombol" href="input.php">+ Tambah Data Baru</a>
+    <!-- <a class="tombol" href="input.php">+ Tambah Data Baru</a> -->
         </div>
     </div>
 

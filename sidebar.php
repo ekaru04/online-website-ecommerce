@@ -11,7 +11,8 @@
             </div>
             <ul class="list-unstyled components" style="margin-top:-30px">
                 <li>
-                    <a href="index.php" id= "katalog">
+                    <a href="index.php"
+                     id= "katalog">
                         <i class="fas fa-th-large"></i>
                         KATALOG
                     </a>
@@ -24,11 +25,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="user.php" id= "data">
+                    <a href="user.php" id= "data" >
                         <i class="fas fa-th"></i>
                        DATA KONSUMEN
                     </a>
                 </li>
+                <li>
+                <!-- <a class="tombol" href="input.php">+ Tambah Data Baru</a> -->
+                    <a href="input.php" id= "data">
+                        <i class="fas fa-th"></i>
+                      TAMBAH DATA KONSUMEN
+                    </a>
+                </li>
+            
                 <li>
                     <a href="user.php" id= "data">
                         <i class="fas fa-th"></i>

@@ -22,6 +22,7 @@ if(isset($_GET['cari'])){
 		<th>No</th>
 		<th>Nama</th>
 	</tr> -->
+    
 	<?php 
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];

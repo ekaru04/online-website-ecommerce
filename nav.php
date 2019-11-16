@@ -26,6 +26,7 @@ if(isset($_GET['cari'])){
 	echo "<b>Hasil pencarian : ".$cari."</b>";
 }
 ?>
+
 	<?php 
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];

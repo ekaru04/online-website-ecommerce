@@ -70,18 +70,26 @@
               
             </div>
             <!--// main-heading -->
-            <?php //untuk membuat pesan bahwa data berhasil di inputkan
-	if(isset($_GET['pesan'])){
-		$pesan = $_GET['pesan']; 
-		if($pesan == "input"){
-			echo "Data berhasil di input.";
-		}else if($pesan == "update"){
-			echo "Data berhasil di update.";
-		}else if($pesan == "hapus"){
-			echo "Data berhasil di hapus.";
-		}
-	}
-	?>
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".simpan-modal-sm"><i class="fa fa-save"></i>Simpan Gan</button> -->
+                      <div class="modal fade simpan-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                          <div class="modal-content">
+                          <?php //untuk membuat pesan bahwa data berhasil di inputkan
+                            if(isset($_GET['pesan'])){
+                                $pesan = $_GET['pesan']; 
+                                if($pesan == "input"){
+                                    echo "Data berhasil di input.";
+                                }else if($pesan == "update"){
+                                    echo "Data berhasil di update.";
+                                }else if($pesan == "hapus"){
+                                    echo "Data berhasil di hapus.";
+                                }
+                                
+                            }
+                            ?>
+                          </div>
+                        </div>
+                      </div>
 
 	<!--elemen tabel-->
     <div class="container">
@@ -95,7 +103,7 @@
 			<th>Email</th>
 			<th>Foto</th>
             <!-- <th>Deskripsi</th> -->
-            <th>Password</th>
+            <!-- <th>Password</th> -->
             <th>Aksi</th>
 		</tr>
 		<?php 
@@ -119,9 +127,12 @@
 			<td><?php echo $data['Kategori']; ?></td>
             <td><?php echo $data['No_Tlp']; ?></td>
             <td><?php echo $data['Email']; ?></td>
-            <td><?php echo $data['foto']; ?></td>
+
+            <td><img src= "file/<?php echo $data['foto']; ?>" alt="" style="max-width: 25%;"></td?>
+
+
             <!-- <td><?php echo $data['deskripsi']; ?></td> -->
-            <td><?php echo $data['password']; ?></td>
+            <!-- <td><?php echo $data['password']; ?></td> -->
             
 			<td>
 			<!--variabel data sudah menjadi array -->
@@ -182,7 +193,17 @@
     <!-- Js for bootstrap working-->
     <script src="js/bootstrap.min.js"></script>
     <!-- //Js for bootstrap working -->
+    <script>
+$(window).load(function(){      
+    <?php 
+    if(isset($_GET['pesan'])){  
+        ?>
+        $('.modal').modal('show');
+        
+   <?php } ?>
+    }); 
 
+</script>
 </body>
 
 </html>

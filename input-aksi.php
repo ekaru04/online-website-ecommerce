@@ -35,5 +35,6 @@ if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 }
  //query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
 
+ 
 //  header("location:index.php?pesan=input"); //untuk mengalihkan halaman
 ?>

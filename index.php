@@ -66,9 +66,14 @@
                 <!-- <script type="text/javascript">  -->
 				<?php 
 					//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
-					include "koneksi.php";
+                    include "koneksi.php";
+                    if(isset($_GET['cari'])){
+                        $cari = $_GET['cari'];
+                        $query_mysql = mysqli_query($host,"SELECT * FROM registrasi_laundry where Nama_lapak like '%$cari%'")or die(mysql_error());			
+                    }else{
+                        $query_mysql = mysqli_query($host,"SELECT * FROM registrasi_laundry")or die(mysql_error());
+                    }
 					//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
-					$query_mysql = mysqli_query($host,"SELECT * FROM registrasi_laundry")or die(mysql_error());
 					$nomor = 1;
 
 					//menggunakan while php

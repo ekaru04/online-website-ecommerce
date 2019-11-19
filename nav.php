@@ -9,40 +9,16 @@
                     <!-- Search-from -->
                     
                     <nav class="navbar navbar-light bg-light" style="width:72%">
-                    <form class="form-inline" style="
-    width: 100%;
-">
-                        <input class="form-control mr-sm-6" type="search" placeholder="Search" aria-label="Search" style="
+                    <form class="form-inline" style="width: 100%;" method="get" action="index.php">
+                        <input class="form-control mr-sm-6" name="cari" type="text" placeholder="Search" aria-label="Search" style="
     width: 86%!important;margin-right:20px
 ">
 <div class="input-group-append">
-                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                <button type="SUBMIT" class="btn btn-primary"><i class="fa fa-search"></i></button>
               </div>
                        
                     </form>
- <?php 
-if(isset($_GET['cari'])){
-	$cari = $_GET['cari'];
-	echo "<b>Hasil pencarian : ".$cari."</b>";
-}
-?>
 
-	<?php 
-	if(isset($_GET['cari'])){
-		$cari = $_GET['cari'];
-		$data = mysql_query("select * from mhs where nama like '%".$cari."%'");				
-	}else{
-		$data = mysql_query("select * from mhs");		
-	}
-	$no = 1;
-	while($d = mysql_fetch_array($data)){
-	?>
-	<tr>
-		<td><?php echo $no++; ?></td>
-		<td><?php echo $d['nama']; ?></td>
-	</tr>
-	<?php } ?>
-</table>
                     </nav>  
                     <!--// Search-from -->
 

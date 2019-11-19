@@ -24,6 +24,13 @@
                        TRANSAKSI
                     </a>
                 </li>
+                
+                <li>
+                    <a href="user.php" id= "data">
+                        <i class="fas fa-th"></i>
+                       LAPORAN TRANSAKSI
+                    </a>
+                </li>
                 <li>
                     <a href="user.php" id= "data" >
                         <i class="fas fa-th"></i>
@@ -35,13 +42,6 @@
                     <a href="input.php" id= "data">
                         <i class="fas fa-th"></i>
                       TAMBAH DATA KONSUMEN
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="user.php" id= "data">
-                        <i class="fas fa-th"></i>
-                       LAPORAN
                     </a>
                 </li>
                 <li>

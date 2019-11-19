@@ -197,6 +197,7 @@
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
     
+<<<<<<< HEAD
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -206,3 +207,21 @@
     <script src="js/front.js"></script>
   </body>
 </html>
+=======
+	<?php 
+	if(isset($_GET['cari'])){
+		$cari = $_GET['cari'];
+		$data = mysqli_query($host, "SELECT * FROM registrasi_laundry where= 'username' %".$cari."%");				
+	}else{
+		$data = mysqli_query ($host, "SELECT * FROM registrasi_laundry");		
+	}
+	$no = 1;
+	while($id = mysqli_fetch_array($data)){
+	?>
+	<tr>
+		<td><?php echo $no++; ?></td>
+		<td><?php echo $d[username]; ?></td>
+	</tr>
+	<?php } ?>
+</table>
+>>>>>>> a5e7c7f8ef91bc87b2e667dcc213eff78e9df1d5

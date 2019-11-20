@@ -277,8 +277,8 @@
               <div class="card sidebar-menu mb-4">
               <?php
                 include "koneksi.php";
-                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY username desc")or die(mysql_error());
-		$nomor = 1;
+                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry tl JOIN tb_kategori tk ON tl.id_kategori=tk.id_kategori ORDER BY id Desc")or die(mysql_error());
+		// $nomor = 1;
 		$data = mysqli_fetch_array($query_mysql)
 		?>
                 <div class="card-header">
@@ -382,23 +382,25 @@
               <div id="productMain" class="row">
                 <div class="col-md-6">
                   <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
-                    <div class="item"> <img src="img/detailbig1.jpg" alt="" class="img-fluid"></div>
-                    <div class="item"> <img src="img/detailbig2.jpg" alt="" class="img-fluid"></div>
-                    <div class="item"> <img src="img/detailbig3.jpg" alt="" class="img-fluid"></div>
+                  <?php 
+                  $dt = mysqli_query($host, "SELECT * FROM  tb_foto_laundry order by id_foto_laundry desc");
+                  while($d = mysqli_fetch_array($dt)){
+                    // echo "<pre>";
+                    // print_r($d['foto']);
+                  ?>
+                    <div class="item"> <img src="uploaded/<?= $d['foto'] ?>" alt="" class="img-fluid"></div>
+                    <?php } ?>
                   </div>
-                  <div class="ribbon sale">
-                    <div class="theribbon">SALE</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
+                 
                 </div>
                 <div class="col-md-6">
                   <div class="box">
+                  <?php
+                include "koneksi.php";
+                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id Desc")or die(mysql_error());
+		$nomor = 1;
+		$data = mysqli_fetch_array($query_mysql)
+		?>
                     <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1>
                     <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>
                     <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
@@ -407,13 +409,7 @@
                     <p class="text-center buttons"><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Hubungi GG Loundry</a>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">
-                  <?php 
-			$data = mysqli_query("select * from uploaded");
-			while($d = mysqli_fetch_array($data)){
-			?>
-                    <button class="owl-thumb-item"><img src="<?php echo "foto".$d['nama_file']; ?>" alt="" class="img-fluid"></button>
-                    <button class="owl-thumb-item"><img src="img/detailsquare2.jpg" alt="" class="img-fluid"></button>
-                    <button class="owl-thumb-item"><img src="img/detailsquare3.jpg" alt="" class="img-fluid"></button>
+                  
                   </div>
                 </div>
               </div>

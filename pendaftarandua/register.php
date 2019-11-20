@@ -280,7 +280,25 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 <p>Dengan membuat akun lapak, kamu bisa mempromosikan lapak loundry kamu disini. Selamat mendaftar ^^</p>
                 <p class="text-muted">Jika kamu memiliki pertanyaan, silahkan hubungi kami di <a href="contact.html">contact us</a>, Kami akan senang menjawab pertanyaan dari kamu.</p>
                 <hr>
-                <form action="register-aksi.php" method="post">
+                <?php
+                if(isset($_POST['Daftar'])){
+                  $username = $_POST['username'];
+                  $nama_laundry = $_POST['nama_laundry'];
+                  $alamat = $_POST['alamat'];
+                  $password = $_POST['password'];
+                  $email = $_POST['email'];
+                  $deskripsi_laundry = $_POST['deskripsi_laundry'];
+                  $kategori = $_POST['kategori'];                
+                  
+                  if(empty($username) || empty($nama_laundry) || empty($alamat) || empty($password) || empty($email) || empty($deskripsi_laundry) || empty($kategori)) {
+                    echo "<strong> Data Harus Diisi!</strong>";
+                  }else{
+                    //proses
+                  }
+                }
+                ?>
+                <form action="register-aksi.php" method="post" enctype="multipart/form-data">
+                
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input name="username" type="teks" class="form-control">
@@ -294,7 +312,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                     <input name="alamat" type="text" class="form-control">
                   </div>
                   <div class="form-group">
-                    <label for="poassword">Password</label>
+                    <label for="password">Password</label>
                     <input name="password" type="Password" class="form-control">
                   </div>
                   <div class="form-group">
@@ -321,7 +339,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   <input type="file" multiple name="foto[]" id="file">Upload     
                   <div class="gallery"></div>
                   <div class="text-center">
-                  <a href="lapak.php"><input  type="submit" value="Daftar" class="btn btn-primary"></a>
+                  <a href="lapak.php"><input  type="submit" name="daftar" value="Daftar" class="btn btn-primary"></a>
                     <!-- <button type="submit" class="btn btn-primary"><i href="costumer-account.php" class="fa fa-user-md"></i> Register</button> -->
                   </div>
                 </form>

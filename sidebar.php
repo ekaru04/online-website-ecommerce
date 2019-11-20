@@ -13,7 +13,7 @@
                 <li>
                     <a href="index.php"
                      id= "katalog">
-                        <i class="fas fa-th-large"></i>
+                     <i class="fas fa-book"></i>
                         KATALOG
                     </a>
                 </li>

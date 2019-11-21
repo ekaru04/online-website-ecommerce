@@ -106,6 +106,7 @@
               </div>
             </div>
           </div>
+         
           <div class="container">
             <div class="product-slider owl-carousel owl-theme">
             <?php 

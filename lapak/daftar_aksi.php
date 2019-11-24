@@ -1,5 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/cic/connect.php';
+
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 
 $getInt = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(id_foto_laundry) FROM tb_foto_laundry"))[0];
 
@@ -21,7 +22,7 @@ $indexFoto = 0;
 
 foreach($_FILES['foto']['name'] as $p){
 	$sql1 = "INSERT INTO tb_foto_laundry VALUES('$getInt','$p')";
-	move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/cic/foto/".$p);
+	move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/foto/".$p);
 	mysqli_query($conn, $sql1);
 	$indexFoto++;
 }

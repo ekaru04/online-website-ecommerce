@@ -1,3 +1,34 @@
+<?php
+
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+date_default_timezone_set('Asia/Jakarta');
+session_start();
+$username = $_SESSION['username'];
+
+$sql = "SELECT expired FROM tb_laundry WHERE username = '$username'";
+$result = mysqli_query($conn, $sql);
+
+$info = mysqli_fetch_assoc($result);
+$dueExpire = round((strtotime($info['expired']) - time()) / 86400);
+// time() = waktu sekarang
+// 86400 = 60 detik * 60 menit * 24 jam
+// round = pembulatan
+
+
+    if(strtotime(date("Y-m-d")) < strtotime($info['expired'])){
+        if($dueExpire <= 7 ){
+          echo "<h1>Kurang $dueExpire hari bro</h1>";  
+        }
+    }
+    else{
+        echo "<h1>Failure</h1>";
+    }
+echo "<h6>".date("d-m-y")."</h6>";
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +59,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Antar jemput</a>
-                      <a class="dropdown-item" href="#">Tidak Antar Jemput</a>
+                    <a class="dropdown-item" href="#">Tidak Antar Jemput</a>
                   <div class="dropdown-divider">
               </div>
         </div>
@@ -49,14 +80,14 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="lapak/test.php">Akun</a>
-          <a class="dropdown-item" href="#">Lapak</a>
+          <a class="dropdown-item" href="lapak/detail.php">Akun</a>
+          <a class="dropdown-item" href="keluar_aksi.php">keluar</a>
           <div class="dropdown-divider"></div>
         </div>
         </a>
       </li>
       <!-- <button type="button" class="btn btn-info">Keluar</button> -->
-      <a href="../cic/lapak/pembayaran2.php">Bayar</a>
+      <a href="../Rebellion/lapak/pembayaran2.php">Bayar</a>
     </ul>
   </div>
 </nav>

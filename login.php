@@ -31,7 +31,7 @@
 			<br/>
 			<br/>
 			<center>
-				<a class="link" href="https://www.malasngoding.com">kembali</a>
+				<a class="link" href="index.php">kembali</a>
 			</center>
 		</form>
 		

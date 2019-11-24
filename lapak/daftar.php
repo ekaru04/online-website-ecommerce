@@ -17,7 +17,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
  
 	<h2>CRUD DATA MAHASISWA - WWW.MALASNGODING.COM</h2>
 	<br/>
-	<a href="index.php">KEMBALI</a>
+	<a href="../index.php">KEMBALI</a>
 	<br/>
 	<br/>
 	<h3>Registrasi</h3>

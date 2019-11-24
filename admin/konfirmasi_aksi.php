@@ -26,5 +26,6 @@ $fDay =  date("Ymd", $day);
 $u = mysqli_query($conn, "UPDATE tb_laundry SET expired=$fDay WHERE username='$username'");
 $ra = mysqli_query($conn, "UPDATE tb_trx SET status=2 WHERE username='$username' AND id_trx='$id_trx'");
 
+header("location:../admin/admin.php");
 
 ?>

@@ -1,3 +1,26 @@
+<?php
+
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+
+
+$sql = "SELECT expired FROM tb_laundry WHERE username";
+$result = mysqli_query($conn, $sql);
+
+while($info = mysqli_fetch_assoc($result)){
+    if(strtotime(date("Y-m-d")) > strtotime($result)){
+        
+        echo "<h1>Success</h1>";
+        exit;
+    }
+    elseif(strtotime(date("Y-m-d")) < strtotime($result)){
+        
+        echo "<h1>Failure</h1>";
+        return true;
+    }
+} 
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +100,7 @@
   				    			<div class="card-body">
   				      				<h5 class="card-title">Laundry Jember</h5>
   				      				<p class="card-text">Saya ganteng</p>
-  				      				<a href="#" class="btn btn-primary">Baca lebih lanjut</a>
+  				      				<a href="lapak/detail.php" class="btn btn-primary">Baca lebih lanjut</a>
   				    			</div>
   				  			</div>
   						</div> <!-- penutup col-sm -->

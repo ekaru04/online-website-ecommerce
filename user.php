@@ -110,7 +110,7 @@
 		//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
 		include "koneksi.php";
 		//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
-		$query_mysql = mysqli_query($host,"SELECT * FROM registrasi_laundry")or die(mysql_error());
+		$query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry")or die(mysql_error());
         $nomor = 1;
         
         
@@ -122,16 +122,16 @@
 		?> 
 		<tr style="background : <?php echo $warnaAlternate; ?>;">
 			<td>B0<?php echo $data['username']; ?></td>
-			<td><?php echo $data['Nama_lapak']; ?></td>
-			<td><?php echo $data['Alamat']; ?></td>
-			<td><?php echo $data['Kategori']; ?></td>
-            <td><?php echo $data['No_Tlp']; ?></td>
-            <td><?php echo $data['Email']; ?></td>
+			<td><?php echo $data['nama_laundry']; ?></td>
+			<td><?php echo $data['alamat']; ?></td>
+			<td><?php echo $data['deskripsi_laundry']; ?></td>
+            <td><?php echo $data['no_tlp']; ?></td>
+            <td><?php echo $data['email']; ?></td>
 
             <td><img src= "file/<?php echo $data['foto']; ?>" alt="" style="max-width: 25%;"></td?>
 
 
-            <!-- <td><?php echo $data['deskripsi']; ?></td> -->
+            <!-- <td><?php echo $data['deskripsi_laundry']; ?></td> -->
             <!-- <td><?php echo $data['password']; ?></td> -->
             
 			<td>

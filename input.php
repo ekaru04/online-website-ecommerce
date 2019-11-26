@@ -127,15 +127,15 @@
 		</div>	
 		<div class="form-group">
 				<label>Nama lapak</label>
-				<input type="text" class="form-control" name="Nama_lapak">			 	
+				<input type="text" class="form-control" name="nama_laundry">			 	
 		</div>	
 		<div class="form-group">	
 				<label>Alamat</label>
-				<input type="text" class="form-control" name="Alamat">				
+				<input type="text" class="form-control" name="alamat">				
 		</div>
 		<div class="form-group">
                   <label for="Kategori">Kategori</label>
-                  <select name="Kategori" id="Kategori" class="form-control">
+                  <select name=id_kategori" id="Kategori" class="form-control">
                   <option value="">- Pilih Kategori -</option>
                     <option value="antar jemput"> Antar Jemput </option>
                     <option value="tidak antar jemput"> Tidak Antar Jemput </option>
@@ -144,22 +144,22 @@
 
 		<div class="form-group">	
 				<label>Telepon</label>
-				<input type="text" class="form-control" name="No_Tlp">
+				<input type="text" class="form-control" name="no_tlp">
 		</div>
 		<div class="form-group">	
 				<label>Email</label>
-				<input type="text" class="form-control" name="Email">					
+				<input type="text" class="form-control" name="email">					
 			</div>
 
       <div class="form-group">	
 				<label>Pilih File</label>	
         <br>
-       <input type="file" name="foto">
+       <input type="file" name="id_foto_laundry">
 			</div>
 
 			<div class="form-group">	
 				<label>Deskripsi</label>
-				<textarea type="text" class="form-control" name="deskripsi">	</textarea>				
+				<textarea type="text" class="form-control" name="deskripsi_laundry">	</textarea>				
 			</div>
 		<div class="form-group">	
 				<label>Password</label>

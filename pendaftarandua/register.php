@@ -273,12 +273,17 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-6">
-              <div class="box">
-                <h1>Akun Baru</h1>
-                <p class="lead">Belum Punya Akun Lapak?</p>
-                <p>Dengan membuat akun lapak, kamu bisa mempromosikan lapak loundry kamu disini. Selamat mendaftar ^^</p>
-                <p class="text-muted">Jika kamu memiliki pertanyaan, silahkan hubungi kami di <a href="contact.html">contact us</a>, Kami akan senang menjawab pertanyaan dari kamu.</p>
+            <form action="register-aksi.php" method="post" enctype="multipart/form-data">
+            <div class="box">
+            <div class="row">
+            <div class="col-md-12">
+            <h1 class="text-center">Akun Baru</h1>
+                <p class="lead text-center">Belum Punya Akun Lapak?</p>
+                <p class="text-center">Dengan membuat akun lapak, kamu bisa mempromosikan lapak loundry kamu disini. Selamat mendaftar ^^</p>
+                <p class="text-muted text-center">Jika kamu memiliki pertanyaan, silahkan hubungi kami di <a href="contact.html">contact us</a>, Kami akan senang menjawab pertanyaan dari kamu.</p>
+            </div>
+            <div class="col-md-6">
+                
                 <hr>
                 <?php
                 if(isset($_POST['Daftar'])){
@@ -297,31 +302,29 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   }
                 }
                 ?>
-                <form action="register-aksi.php" method="post" enctype="multipart/form-data">
-                
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input name="username" type="teks" class="form-control">
+                    <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="8" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="nama_laundry">Nama Loundry</label>
-                    <input name="nama_laundry" type="text" class="form-control">
+                    <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="150" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="alamat">Alamat Lapak</label>
-                    <input name="alamat" type="text" class="form-control">
+                    <input name="alamat" type="text" class="form-control" maxlength="100" placeholder="Isi Alamat Lapak Anda" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input name="password" type="Password" class="form-control">
+                    <input name="password" type="Password" class="form-control" placeholder="Isi Password Akun Anda" maxlength="10" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input name="email" type="text" class="form-control">
+                    <input name="email" type="text" class="form-control" maxlength="100" placeholder="Isi Email Anda" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi_laundry">Deskripsi</label>
-                    <textarea class="ckeditor" name="deskripsi_laundry" id="ckeditor"></textarea>
+                    <textarea class="ckeditor" name="deskripsi_laundry" id="ckeditor" required autofocus=""></textarea>
                   </div>
                   <div class="form-group">
                   <label for="kategori">Kategori</label>
@@ -334,17 +337,20 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   ?>
                   </select>
                   </div>
-                  <div class="form-group">
+                  
+              </div>
+            
+            <div class="col-md-6" >
+                  <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.</p>
                   <label for="foto">Upload Foto</label>
-                  <input type="file" multiple name="foto[]" id="file">Upload     
+                  <input type="file" multiple name="foto[]" id="file">   
                   <div class="gallery"></div>
                   <div class="text-center">
-                  <a href="lapak.php"><input  type="submit" name="daftar" value="Daftar" class="btn btn-primary"></a>
-                    <!-- <button type="submit" class="btn btn-primary"><i href="costumer-account.php" class="fa fa-user-md"></i> Register</button> -->
+                    <input  type="submit" name="daftar" value="Daftar" class="btn btn-primary">
                   </div>
-                </form>
-              </div>
             </div>
+            </div>
+          </form>
           </div>
         </div>
       </div>

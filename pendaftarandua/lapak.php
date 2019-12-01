@@ -376,7 +376,7 @@
                 </div> -->
               <!-- </div> -->
               <!-- *** MENUS AND FILTERS END ***-->
-              <div class="banner"><a href="#"><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"></a></div>
+              <div id="details" class="box"><b>IKLAN LAPAK BERAKHIR PADA</b></br><?php echo $data["expired"]?></div>
             </div>
             <div class="col-lg-9 order-1 order-lg-2">
               <div id="productMain" class="row">

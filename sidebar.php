@@ -33,7 +33,7 @@
                 </li>
                 <li>
                     <a href="user.php" id= "data" >
-                        <i class="fas fa-th"></i>
+                    <i class="fas fa-folder-plus"></i>
                        DATA KONSUMEN
                     </a>
                 </li>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="css/style4.css">
     <!--// Nav Css -->
     <!-- Fontawesome Css -->
-    <link href="css/fontawesome-all.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
     <!--// Fontawesome Css -->
     <!--// Style-sheets -->
 

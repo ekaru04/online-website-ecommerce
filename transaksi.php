@@ -98,11 +98,11 @@
 			<th>Username</th>
 			<th>Nama Lapak</th>
 			<th>Alamat</th>
-			<th>Deskripsi</th>
-            <th>Kategori</th>		
+			<th>Kategori</th>		
 			<th>No tlp</th>
 			<th>Email</th>
 			<th>Foto</th>
+            <!-- <th>Deskripsi</th> -->
             <!-- <th>Password</th> -->
             <th>Aksi</th>
 		</tr>
@@ -125,7 +125,6 @@
 			<td><?php echo $data['nama_laundry']; ?></td>
 			<td><?php echo $data['alamat']; ?></td>
 			<td><?php echo $data['deskripsi_laundry']; ?></td>
-            <!-- <td><?php echo $data['']; ?></td> -->
             <td><?php echo $data['no_tlp']; ?></td>
             <td><?php echo $data['email']; ?></td>
 
@@ -194,5 +193,4 @@ $(window).load(function(){
 
 </script>
 </body>
-
-</html>
+</html>  

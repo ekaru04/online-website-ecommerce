@@ -4,6 +4,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 
 $getInt = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(id_foto_laundry) FROM tb_foto_laundry"))[0];
 
+$b = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(id_laundry) FROM tb_laundry"))[0];
+$b++;
+
 $date = date("Ymd");
 $day30 = strtotime($date."+ 1 months");
 $fDay =  date("Ymd", $day30);
@@ -14,9 +17,12 @@ $alamat = $_POST['alamat'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 $deskrip = $_POST['deskripsi'];
-$kategori = $_POST['kategori'];
+
 
 $indexFoto = 0;
+
+
+$kategori = $_POST['kategori'];
 
 
 
@@ -27,9 +33,17 @@ foreach($_FILES['foto']['name'] as $p){
 	$indexFoto++;
 }
 
-$a = "INSERT INTO tb_laundry VALUES ('$username', '$nama_laundry', '$alamat', '$password', '$email', '$deskrip', '$kategori', '$getInt', '$fDay')";
+
+$a = "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$deskrip', '$b', '$getInt', '$fDay', 'Aktif')";
 $z = mysqli_query($conn, $a);
 
-header("location:../login.php");
+
+foreach($kategori as $key){
+	$m = "INSERT INTO tb_detail_kategori VALUES ('$b','$key')";
+	mysqli_query($conn, $m);	
+}
+
+
+//header("location:../login.php");
 	
 ?>

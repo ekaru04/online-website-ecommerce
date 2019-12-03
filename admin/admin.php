@@ -39,7 +39,7 @@
 			<th>Status</th>
 		</tr>
 		<?php 
-		include $_SERVER['DOCUMENT_ROOT'].'/cic/connect.php';
+		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 		$no = 1;
 		$data = mysqli_query($conn,"select *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan");
 		while($d = mysqli_fetch_array($data)){

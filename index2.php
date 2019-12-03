@@ -17,11 +17,11 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
 
     if(strtotime(date("Y-m-d")) < strtotime($info['expired'])){
         if($dueExpire <= 7 ){
-          echo "<h1>Kurang $dueExpire hari bro</h1>";  
+          echo "<h6>Dalam $dueExpire hari lapak otomatis terhapus, silahkan lakukan perpanjangan</h6>";  
         }
     }
     else{
-        echo "<h1>Failure</h1>";
+        echo "<h1>Sudah Habis bos</h1>";
     }
 echo "<h6>".date("d-m-y")."</h6>";
 

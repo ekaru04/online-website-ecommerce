@@ -50,7 +50,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 			<tr>
 				<td>Kategori</td>
 				<td>
-					<select name="kategori">
+					<select name="kategori[]" multiple>
 						<?php
 						while($r = mysqli_fetch_assoc($o)){
 							echo "<option value=".$r['id_kategori'].">".$r['jenis_kategori']."</option>";

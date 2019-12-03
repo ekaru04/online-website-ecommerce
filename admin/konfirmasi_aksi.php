@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/cic/connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 
 $strBulan = null;
 $username = $_GET['id'];

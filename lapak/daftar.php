@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/cic/connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 
 $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 

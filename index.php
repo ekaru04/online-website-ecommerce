@@ -144,18 +144,8 @@
         *** HOT PRODUCT SLIDESHOW ***
         _________________________________________________________
         -->
-        <div id="hot">
-          <div class="box py-4">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h2 class="mb-0">Hot this week</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="product-slider owl-carousel owl-theme">
+        <div class="container">
+            <div class="row">
             <?php 
 		include "koneksi.php";
 		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry")or die(mysql_error());
@@ -163,16 +153,17 @@
 		while($data = mysqli_fetch_array($query_mysql)){
 		?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
-              <div class="item">
+    <a href="lapak.php?id=<?php echo $data['username']?>">
+              <div class="item col-md-4">
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.php" class="invisible"><img src="laundry.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">
-                    <h3><a href="detail.php"><?= $data['nama_laundry'] ?></a></h3>
+                    <h3><a href="lapak.php?id=<?php echo $data['username']?>"><?= $data['nama_laundry'] ?></a></h3>
                     <p class="price"> 
                       <del></del> <?php echo $data['alamat']?>
                     </p>
@@ -200,6 +191,7 @@
               <!-- /.product-slider-->
             </div>
             <!-- /.container-->
+            <!-- /.container-->
           </div>
           <!-- /#hot-->
           <!-- *** HOT END ***-->
@@ -209,7 +201,17 @@
         _________________________________________________________
         -->
         <div class="container">
-          
+          <div class="col-md-12">
+            <div class="box slideshow">
+              <h3>Get Inspired</h3>
+              <p class="lead">Get the inspiration from our world class designers</p>
+              <div id="get-inspired" class="owl-carousel owl-theme">
+                <div class="item"><a href="#"><img src="img/getinspired1.jpg" alt="Get inspired" class="img-fluid"></a></div>
+                <div class="item"><a href="#"><img src="img/getinspired2.jpg" alt="Get inspired" class="img-fluid"></a></div>
+                <div class="item"><a href="#"><img src="img/getinspired3.jpg" alt="Get inspired" class="img-fluid"></a></div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- *** GET INSPIRED END ***-->
         <!--

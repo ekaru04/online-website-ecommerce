@@ -107,7 +107,7 @@
             </div>
           </div>
           <div class="container">
-            <div class="product-slider owl-carousel owl-theme">
+            <div class="row">
             <?php 
 		include "koneksi.php";
 		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry where id_kategori=2")or die(mysql_error());
@@ -115,18 +115,18 @@
 		while($data = mysqli_fetch_array($query_mysql)){
 		?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
-              <div class="item">
+    <a href="lapak.php?id=<?php echo $data['username']?>">
+             <div class="item col-md-4">
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.php" class="invisible"><img src="laundry.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">
-                    <h3><a href="detail.php"><?= $data['nama_laundry'] ?></a></h3>
                     <p class="price"> 
-                      <del></del> <?php echo $data['alamat']?>
+                      <del></del> <?php echo $data['nama_laundry']?>
                     </p>
                   </div>
                   <!-- /.text-->
@@ -148,6 +148,7 @@
                 </div>
                 <!-- /.product-->
               </div>
+              </a>
     <?php } ?>
               <!-- /.product-slider-->
             </div>

@@ -104,10 +104,14 @@
                 </div>
                 <div class="card-body">
                   <!-- <ul class="nav nav-pills flex-column"> -->
-                  <a href="customer-orders.html" class="nav-link active"><i class="fa fa-list">
-                  </i> My orders</a><a href="customer-wishlist.html" class="nav-link"><i class="fa fa-heart"></i> My wishlist</a>
-                  <a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i> My account</a><a href="index.html" class="nav-link">
-                  <i class="fa fa-sign-out"></i> Logout</a></ul>
+                  <a href="index.php" class="nav-link active"><i class="fa fa-list">
+                  </i> KATALOG</a>
+                  <!-- <a href="customer-wishlist.html" class="nav-link"
+                  ><i class="fa fa-heart"></i> TR</a> -->
+                  <a href="user.php" class="nav-link">
+                  <i class="fa fa-user"></i> DATA KONSUMEN </a>
+                  <!-- <a href="index.html" class="nav-link">
+                  <i class="fa fa-sign-out"></i> Logout</a></ul> -->
                 </div>
               </div>
               <!-- /.col-lg-3-->

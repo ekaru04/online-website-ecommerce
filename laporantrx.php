@@ -66,7 +66,7 @@
             <!--// top-bar -->
             <!-- main-heading -->
             <div class="alert alert-primary" role="alert" style="margin-top:-48px">
-            <h4 class="tittle-w3-agileits mb-0 mt-0">Data User</h4>
+            <h4 class="tittle-w3-agileits mb-0 mt-0">LAPORAN TRANSAKSI</h4>
               
             </div>
             <!--// main-heading -->
@@ -110,10 +110,12 @@
 		<tr class="thead">
 		<th>NO</th>
 			<th>Username</th>
+            <th>Nama laundry</th>
 			<th>Paket</th>
-			<th>Foto Bukti</th>
-			<th>Status</th>
+			<!-- <th>Foto Bukti</th> -->
             <th>Tanggal Transaksi</th>
+            <th>Expired</th>
+            <th>Status</th>
 		</tr>
 		<?php 
 		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
@@ -124,8 +126,9 @@
 			<tr>
 				<td><?php echo $no++; ?></td>
 				<td><?php echo $d['username']; ?></td> 
+                <td><?php echo $d['nama_laundry']; ?> </td>
 				<td><?php echo $d['id_iklan']; ?></td>
-				<td><img src="file/<?php echo $d['foto_bukti']; ?>" style="width:80px" alt=""></td>
+				<!-- <td><img src="file/<?php echo $d['foto_bukti']; ?>" style="width:80px" alt=""></td>
 				<td>
 					<?php if($d['status'] == "Belum_Terkonfirmasi"){?>
 					<a href="konfirmasi_aksi.php?id=
@@ -133,8 +136,10 @@
 					&durasi=<?php echo $d['durasi']; ?> 
 					&id_trx=<?php echo $d['id_trx']; ?>">KONFIRMASI</a>
 					<?php }else{ echo "Telah Terkonfirmasi"; } ?>
-				</td>
-                <td><?php echo $d['tgl']; ?> </td>
+				</td> -->
+                <td><?php echo $d['tgl_transaksi']; ?> </td>
+                <td><?php echo $d['expired']; ?> </td>
+                <td><?php echo $d['status']; ?> </td>
 			</tr>
 			<?php } ?>
 	</table>

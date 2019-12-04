@@ -66,7 +66,7 @@
             <!--// top-bar -->
             <!-- main-heading -->
             <div class="alert alert-primary" role="alert" style="margin-top:-48px">
-            <h4 class="tittle-w3-agileits mb-0 mt-0">Data User</h4>
+            <h4 class="tittle-w3-agileits mb-0 mt-0">TRANSAKSI</h4>
               
             </div>
             <!--// main-heading -->
@@ -127,7 +127,7 @@
 				<td><img src="file/<?php echo $d['foto_bukti']; ?>" style="width:80px" alt=""></td>
 				<td>
 					<?php if($d['status'] == "Belum_Terkonfirmasi"){?>
-					<a href="konfirmasi_aksi.php?id=
+					<a class= "btn btn-danger btn-sm" href="konfirmasi_aksi.php?id=
 					<?php echo $d['username']; ?>
 					&durasi=<?php echo $d['durasi']; ?>
 					&id_trx=<?php echo $d['id_trx']; ?>">KONFIRMASI</a>

@@ -113,11 +113,12 @@
 			<th>Paket</th>
 			<th>Foto Bukti</th>
 			<th>Status</th>
+            <th>Tanggal Transaksi</th>
 		</tr>
 		<?php 
 		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
 		$no = 1;
-		$data = mysqli_query($host,"SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan WHERE tb_laundry.username = ".$fahmi07." ORDER BY tb_trx.id_trx DESC");
+		$data = mysqli_query($host,"SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan WHERE tb_laundry.username = tb_trx.username ORDER BY tb_trx.id_trx DESC");
 		while($d = mysqli_fetch_array($data)){
 			?>
 			<tr>
@@ -133,6 +134,7 @@
 					&id_trx=<?php echo $d['id_trx']; ?>">KONFIRMASI</a>
 					<?php }else{ echo "Telah Terkonfirmasi"; } ?>
 				</td>
+                <td><?php echo $d['tgl']; ?> </td>
 			</tr>
 			<?php } ?>
 	</table>

@@ -38,7 +38,7 @@
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="index.php" >Logout</a></li>
+                <li class="list-inline-item"><a href="index.php" >Kembali</a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                 <li class="list-inline-item"><a href="#">Recently viewed</a></li>
@@ -120,8 +120,8 @@
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="detail.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="detail.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="lapak.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="lapak.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
                     </div>
                   </div><a href="detail.php" class="invisible"><img src="laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">

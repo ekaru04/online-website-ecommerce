@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
 
 $strBulan = null;
 $username = $_GET['id'];
@@ -17,15 +17,15 @@ switch($durasi){
 }
 
 
-$p = mysqli_query($conn, "SELECT tb_laundry.expired FROM tb_laundry WHERE username='$username'");
+$p = mysqli_query($host, "SELECT tb_laundry.expired FROM tb_laundry WHERE username='$username'");
 $tgl = mysqli_fetch_array($p);
 $date = date("Ymd");
 $day = strtotime($tgl['expired'].$strBulan);
 $fDay =  date("Ymd", $day);
 
-$u = mysqli_query($conn, "UPDATE tb_laundry SET expired=$fDay WHERE username='$username'");
-$ra = mysqli_query($conn, "UPDATE tb_trx SET status=2 WHERE username='$username' AND id_trx='$id_trx'");
+$u = mysqli_query($host, "UPDATE tb_laundry SET expired=$fDay WHERE username='$username'");
+$ra = mysqli_query($host, "UPDATE tb_trx SET status=2 WHERE username='$username' AND id_trx='$id_trx'");
 
-header("location:../admin/admin.php");
+header("location:pembayaran.php");
 
 ?>

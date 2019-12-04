@@ -70,11 +70,24 @@
               
             </div>
             <!--// main-heading -->
+            <section class="container">
+
+                <div class="card-deck text-center row"> 
     <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".simpan-modal-sm"><i class="fa fa-save"></i>Simpan Gan</button> -->
                       <div class="modal fade simpan-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-sm">
                           <div class="modal-content">
                           <?php //untuk membuat pesan bahwa data berhasil di inputkan
+                            include "koneksi.php";
+                            // if(isset($_GET['cari'])){
+                            //     $cari = $_GET['cari'];
+                            //     $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry where nama_laundry like '%$cari%'")or die(mysql_error());			
+                            // }else{
+                            //     $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry")or die(mysql_error());
+                            // }
+                            // $nomor =1;
+                            // while($data = mysqli_fetch_array($query_mysql)){
+                                
                             if(isset($_GET['pesan'])){
                                 $pesan = $_GET['pesan']; 
                                 if($pesan == "input"){
@@ -95,52 +108,33 @@
     <div class="container">
 	<table class="table table-responsive"> 
 		<tr class="thead">
+		<th>NO</th>
 			<th>Username</th>
-			<th>Nama Lapak</th>
-			<th>Alamat</th>
-			<th>Kategori</th>		
-			<th>No tlp</th>
-			<th>Email</th>
-			<th>Foto</th>
-            <!-- <th>Deskripsi</th> -->
-            <!-- <th>Password</th> -->
-            <th>Aksi</th>
+			<th>Paket</th>
+			<th>Foto Bukti</th>
+			<th>Status</th>
 		</tr>
 		<?php 
-		//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
-		include "koneksi.php";
-		//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
-		$query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry")or die(mysql_error());
-        $nomor = 1;
-        
-        
-
-		//menggunakan while php
-		while($data = mysqli_fetch_array($query_mysql)){// $data perintah untuk menampilkan data
-            $warnaAlternate = $nomor % 2 == 0 ? "#d4d3cf" : "#ffffff";
-			//berfungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
-		?> 
-		<tr style="background : <?php echo $warnaAlternate; ?>;">
-			<td>B0<?php echo $data['username']; ?></td>
-			<td><?php echo $data['nama_laundry']; ?></td>
-			<td><?php echo $data['alamat']; ?></td>
-			<td><?php echo $data['deskripsi_laundry']; ?></td>
-            <td><?php echo $data['no_tlp']; ?></td>
-            <td><?php echo $data['email']; ?></td>
-
-            <td><img src= "file/<?php echo $data['foto']; ?>" alt="" style="max-width: 25%;"></td?>
-
-
-            <!-- <td><?php echo $data['deskripsi_laundry']; ?></td> -->
-            <!-- <td><?php echo $data['password']; ?></td> -->
-            
-			<td>
-				<!-- <a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> | -->
-                <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['username']; ?>">Hapus</a>
-                <!-- <a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					 -->
-			</td>
-		</tr>
-		<?php $nomor++;} ?>
+		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
+		$no = 1;
+		$data = mysqli_query($host,"select *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan");
+		while($d = mysqli_fetch_array($data)){
+			?>
+			<tr>
+				<td><?php echo $no++; ?></td>
+				<td><?php echo $d['username']; ?></td> 
+				<td><?php echo $d['id_iklan']; ?></td>
+				<td><img src="file/<?php echo $d['foto_bukti']; ?>" style="width:80px" alt=""></td>
+				<td>
+					<?php if($d['status'] == "Belum_Terkonfirmasi"){?>
+					<a href="konfirmasi_aksi.php?id=
+					<?php echo $d['username']; ?>
+					&durasi=<?php echo $d['durasi']; ?>
+					&id_trx=<?php echo $d['id_trx']; ?>">KONFIRMASI</a>
+					<?php }else{ echo "Telah Terkonfirmasi"; } ?>
+				</td>
+			</tr>
+			<?php } ?>
 	</table>
     <!-- <a class="tombol" href="input.php">+ Tambah Data Baru</a> -->
         </div>
@@ -193,4 +187,4 @@ $(window).load(function(){
 
 </script>
 </body>
-</html>  
+</html>

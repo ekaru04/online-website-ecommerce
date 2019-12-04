@@ -19,7 +19,7 @@
                 </li>
             
                 <li>
-                    <a href="charts.html" id= "transaksi">
+                    <a href="pembayaran.php" id= "transaksi">
                         <i class="fas fa-chart-pie"></i>
                        TRANSAKSI
                     </a>

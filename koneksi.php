@@ -1,6 +1,6 @@
 <?php 
 
-$koneksi = mysqli_connect("localhost","root","","gg1");
+$koneksi = mysqli_connect("localhost","root","","londre");
 if($koneksi){
     //echo "koneksi berhasil";
 }else{

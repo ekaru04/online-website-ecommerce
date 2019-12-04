@@ -231,7 +231,7 @@
                 <hr>
                 <?php 
                   include "koneksi.php";
-                  $query_mysql = mysqli_query($koneksi,"SELECT * FROM lapak")or die(mysql_error());
+                  $query_mysql = mysqli_query($koneksi,"SELECT * FROM tb_laundry")or die(mysql_error());
                   $nomor = 1;
                   while($data = mysqli_fetch_array($query_mysql)){
                   ?>
@@ -239,7 +239,7 @@
                   <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Nama Lapak </label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="nama" value="<?php echo $data['nama'] ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="nama" value="<?php echo $data['nama_laundry'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -251,7 +251,7 @@
                   <div class="form-group row">
                     <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="kategori" value="<?php echo $data['kategori']; ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="kategori" value="<?php echo $data['id_detail_kategori']; ?>">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -269,10 +269,16 @@
                   <div class="form-group row">
                     <label for="tgl" class="col-sm-2 col-form-label">Perpanjangan Iklan</label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="tgl" value="<?php echo $data['tgl']?>">
+                      <input type="text" readonly class="form-control-plaintext" id="tgl" value="<?php echo $data['expired']?>">
                     </div>
                   </div>
-                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id'] ?>" class="btn btn-warning btn-m">Edit</a></td>
+                  <div class="form-group row">
+                    <label for="status" class="col-sm-2 col-form-label">Status</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="status" value="<?php echo $data['status'] ?>">
+                    </div>
+                  </div>
+                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="btn btn-warning btn-m">Edit</a></td>
                 </form>
                 <?php } ?>
                 <!--<div class="table-responsive">

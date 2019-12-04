@@ -227,7 +227,7 @@
                 <?php 
                     include "koneksi.php";
                     $id = $_GET['id'];
-                    $query_mysql = mysqli_query($koneksi,"SELECT * FROM lapak WHERE id='$id'")or die(mysql_error());
+                    $query_mysql = mysqli_query($koneksi,"SELECT * FROM tb_laundry WHERE id_laundry='$id'")or die(mysql_error());
                     $nomor = 1;
                     while($data = mysqli_fetch_array($query_mysql)){
                     ?>
@@ -236,8 +236,8 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="nama">Nama Lapak</label>
-                        <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
-                        <input name="nama" type="text" class="form-control" value="<?php echo $data['nama'] ?>">
+                        <input type="hidden" name="id" value="<?php echo $data['id_laundry'] ?>">
+                        <input name="nama" type="text" class="form-control" value="<?php echo $data['nama_laundry'] ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -271,13 +271,15 @@
                           <option selected>Pilih Kategori</option>
                           <option value="antar">Antar Jemput</option>
                           <option value="tidak">Tidak Antar Jemput</option>
+                          <option value="tidak">Setrika</option>
+                          <option value="tidak">Tidak Setrika</option>
                         </select>
                       </div>
                     </div>
                     <div class="col-md-6 ">
                       <div class="form-group">
                         <label for="tgl">Tanggal</label>
-                        <input name="tgl" type="date" class="form-control" value="<?php echo $data['tgl']?>">
+                        <input name="tgl" type="date" class="form-control" value="<?php echo $data['expired']?>">
                         </select>
                       </div>
                     </div>

@@ -236,14 +236,14 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="nama">Nama Lapak</label>
-                        <input type="hidden" name="id" value="<?php echo $data['id_laundry'] ?>">
-                        <input name="nama" type="text" class="form-control" value="<?php echo $data['nama_laundry'] ?>">
+                        <input type="hidden" name="id" value="<?php echo $data['id_laundry']; ?>">
+                        <input name="nama" type="text" class="form-control" value="<?php echo $data['nama_laundry']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="alamat">Alamat Lapak</label>
-                        <input name="alamat" type="text" class="form-control" value="<?php echo $data['alamat'] ?>">
+                        <input name="alamat" type="text" class="form-control" value="<?php echo $data['alamat']; ?>">
                       </div>
                     </div>
                   </div>
@@ -252,13 +252,13 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="telp">No Telepon</label>
-                        <input name="telp" type="text" class="form-control" value="<?php echo $data['telp'] ?>">
+                        <input name="telp" type="text" class="form-control" value="<?php echo $data['telp']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="email">Email</label>
-                        <input name="email" type="text" class="form-control" value="<?php echo $data['email'] ?>">
+                        <input name="email" type="text" class="form-control" value="<?php echo $data['email']; ?>">
                       </div>
                     </div>
                   </div>
@@ -267,7 +267,7 @@
                     <div class="col-md-6 ">
                       <div class="form-group">
                         <label for="kategori">Kategori</label>
-                        <select name="kategori" class="form-control">
+                        <select name="kategori" class="form-control" multiple>
                           <option selected>Pilih Kategori</option>
                           <option value="antar">Antar Jemput</option>
                           <option value="tidak">Tidak Antar Jemput</option>
@@ -279,7 +279,7 @@
                     <div class="col-md-6 ">
                       <div class="form-group">
                         <label for="tgl">Tanggal</label>
-                        <input name="tgl" type="date" class="form-control" value="<?php echo $data['expired']?>">
+                        <input name="tgl" type="date" class="form-control" value="<?php echo $data['expired']; ?>">
                         </select>
                       </div>
                     </div>

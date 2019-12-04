@@ -74,7 +74,7 @@
                         $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry")or die(mysql_error());
                     }
 					//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
-					$nomor = 1;
+					$nomor = 1;  
 
 					//menggunakan while php
 					while($data = mysqli_fetch_array($query_mysql)){// $data perintah untuk menampilkan data

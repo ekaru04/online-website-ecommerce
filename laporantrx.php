@@ -117,7 +117,7 @@
 		<?php 
 		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
 		$no = 1;
-		$data = mysqli_query($host,"select *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan");
+		$data = mysqli_query($host,"SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan WHERE tb_laundry.username = ".$fahmi07." ORDER BY tb_trx.id_trx DESC");
 		while($d = mysqli_fetch_array($data)){
 			?>
 			<tr>
@@ -129,7 +129,7 @@
 					<?php if($d['status'] == "Belum_Terkonfirmasi"){?>
 					<a href="konfirmasi_aksi.php?id=
 					<?php echo $d['username']; ?>
-					&durasi=<?php echo $d['durasi']; ?>
+					&durasi=<?php echo $d['durasi']; ?> 
 					&id_trx=<?php echo $d['id_trx']; ?>">KONFIRMASI</a>
 					<?php }else{ echo "Telah Terkonfirmasi"; } ?>
 				</td>

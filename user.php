@@ -123,7 +123,7 @@
 		//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
 		include "koneksi.php";
 		//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
-		$query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry")or die(mysql_error());
+		$query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori")or die(mysql_error());
         $nomor = 1;
         
         
@@ -138,8 +138,8 @@
 			<td><?php echo $data['nama_laundry']; ?></td>
 			<td><?php echo $data['alamat']; ?></td>
 			<td><?php echo $data['deskripsi_laundry']; ?></td>
-            <!-- <td><?php echo $data['']; ?></td> -->
-            <td><?php echo $data['no_tlp']; ?></td>
+            <td><?php echo $data['jenis_kategori']; ?></td>
+            <!-- <td><?php echo $data['no_tlp']; ?></td> -->
             <td><?php echo $data['email']; ?></td>
 
             <td><img src= "file/<?php echo $data['foto']; ?>" alt="" style="max-width: 25%;"></td?>

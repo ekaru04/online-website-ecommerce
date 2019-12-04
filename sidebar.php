@@ -26,7 +26,7 @@
                 </li>
                 
                 <li>
-                    <a href="user.php" id= "data">
+                    <a href="laporantrx.php" id= "data">
                         <i class="fas fa-th"></i>
                        LAPORAN TRANSAKSI
                     </a>

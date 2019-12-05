@@ -5,9 +5,11 @@ session_start();
 
 @$sess = $_SESSION['username'];
 
-$tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_laundry.id_kategori WHERE username='$sess'");
+$tu2 = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
 
-while ($p=mysqli_fetch_array($tu)){
+$tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$sess'");
+
+
 
 ?>
 
@@ -421,10 +423,16 @@ while ($p=mysqli_fetch_array($tu)){
                 </div>
                 <div class="col-md-6">
                   <div class="box">
-                    <h1 class="text-center"><?php echo $p['nama_laundry']; ?></h1>
-                    <p class="goToDescription"><a href="#details" class="scroll-to"><?php echo $p['deskripsi_laundry'];?></a></p>
+                    <?php
+                    while($p = mysqli_fetch_array($tu2)){ ?>
+
+
+                    <h1 class="text-center"><?php echo $p['nama_laundry'];  ?></h1>
+                    <p class="goToDescription"><a href="#details" class="scroll-to"><?php echo $p['deskripsi_laundry']; ?></a></p>
                     <p class="price">Kategori Laundry</p>
-                    <p class="price"><?php echo $p['jenis_kategori'];}?></p>
+                    <?php
+                    while($p2 = mysqli_fetch_array($tu)){?>
+                    <p class="price"><?php echo $p2['jenis_kategori']; ?></p> <?php }} ?>
                     <p class="text-center buttons"><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a><a href="basket.html" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Add to wishlist</a></p>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">

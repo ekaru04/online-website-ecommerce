@@ -44,6 +44,10 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 				<td><input type="text" name="email"></td>
 			</tr>
 			<tr>
+				<td>Telpon</td>
+				<td><input type="text" name="telp"></td>
+			</tr>
+			<tr>
 				<td>Deskripsi</td>
 				<td><input type="text" name="deskripsi"></td>
 			</tr>

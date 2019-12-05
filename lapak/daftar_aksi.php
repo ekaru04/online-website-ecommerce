@@ -17,6 +17,7 @@ $alamat = $_POST['alamat'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 $deskrip = $_POST['deskripsi'];
+$telp = $_POST['telp'];
 
 
 $indexFoto = 0;
@@ -34,7 +35,7 @@ foreach($_FILES['foto']['name'] as $p){
 }
 
 
-$a = "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$deskrip', '$b', '$getInt', '$fDay', 'Aktif')";
+$a = "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email','$telp', '$deskrip', '$b', '$getInt', '$fDay', 'Aktif')";
 $z = mysqli_query($conn, $a);
 
 

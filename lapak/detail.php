@@ -6,8 +6,10 @@ session_start();
 @$sess = $_SESSION['username'];
 
 $tu2 = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
+// untuk menampilkan semua data yg ada pada tb_laundry berdasarkan session
 
 $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$sess'");
+// untuk menampilkan data lapak kategori lebih dari satu berdasarkan session
 
 
 
@@ -427,12 +429,13 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                     while($p = mysqli_fetch_array($tu2)){ ?>
 
 
-                    <h1 class="text-center"><?php echo $p['nama_laundry'];  ?></h1>
+                    <h1 class="text-center"><?php echo $p['nama_laundry']; ?></h1>
                     <p class="goToDescription"><a href="#details" class="scroll-to"><?php echo $p['deskripsi_laundry']; ?></a></p>
                     <p class="price">Kategori Laundry</p>
+
                     <?php
-                    while($p2 = mysqli_fetch_array($tu)){?>
-                    <p class="price"><?php echo $p2['jenis_kategori']; ?></p> <?php }} ?>
+                    while($p2 = mysqli_fetch_array($tu)){ ?>
+                    <p class="price"><?php echo $p2['jenis_kategori']; ?></p> <?php } } ?>
                     <p class="text-center buttons"><a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a><a href="basket.html" class="btn btn-outline-primary"><i class="fa fa-heart"></i> Add to wishlist</a></p>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">

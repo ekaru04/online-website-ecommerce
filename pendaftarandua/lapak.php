@@ -383,7 +383,10 @@
                 <div class="col-md-6">
                   <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
                   <?php 
-                  $dt = mysqli_query($host, "SELECT * FROM  tb_foto_laundry order by id_foto_laundry desc");
+                  include "koneksi.php";
+                  $q = mysqli_query($host, "SELECT * FROM tb_laundry order by id_laundry desc");
+                  $d = mysqli_fetch_array($q);
+                  $dt = mysqli_query($host, "SELECT * FROM  tb_foto_laundry WHERE id_laundry='$d[id_laundry]' order by id_foto_laundry desc");
                   while($d = mysqli_fetch_array($dt)){
                     // echo "<pre>";
                     // print_r($d['foto']);

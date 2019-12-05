@@ -1,5 +1,5 @@
 <?php 
-include 'koneksi.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/pendaftarandua/koneksi.php';
 
 $getInt = mysqli_fetch_array(mysqli_query($host, "SELECT COUNT(id_foto_laundry) FROM tb_foto_laundry"))[0]+1;
 
@@ -35,7 +35,7 @@ foreach($_FILES['foto']['name'] as $p){
 
 mysqli_query($host, "INSERT INTO tb_laundry(username, nama_laundry, alamat, password, email, deskripsi_laundry, id_kategori, id_foto_laundry, expired) VALUES('$username', '$nama_laundry', '$alamat', '$password', '$email', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
 echo "jumlahnya "+$indexFoto;
-if($indexFoto < 5){
+if($indexFoto <= 5){
     header("location:lapak.php?pesan=input");
 }
 ?>

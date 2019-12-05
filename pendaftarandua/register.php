@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/pendaftarandua/koneksi.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/pendaftarandua/koneksi.php';
 $o= mysqli_query($host, "SELECT * FROM tb_kategori");
 ?>
 <!DOCTYPE html>
@@ -304,11 +304,11 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 ?>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="8" required autofocus="">
+                    <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="nama_laundry">Nama Loundry</label>
-                    <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="150" required autofocus="">
+                    <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="15" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="alamat">Alamat Lapak</label>
@@ -317,10 +317,11 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   <div class="form-group">
                     <label for="password">Password</label>
                     <input name="password" type="Password" class="form-control" placeholder="Isi Password Akun Anda" maxlength="10" required autofocus="">
+                    <p>isi password anda 10 digit </p>
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input name="email" type="text" class="form-control" maxlength="100" placeholder="Isi Email Anda" required autofocus="">
+                    <input name="email" type="text" class="form-control" maxlength="50" placeholder="Isi Email Anda" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi_laundry">Deskripsi</label>
@@ -341,7 +342,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
               </div>
             
             <div class="col-md-6" >
-                  <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.</p>
+                  <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.<br>4. <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p>
                   <label for="foto">Upload Foto</label>
                   <input type="file" multiple name="foto[]" id="file">   
                   <div class="gallery"></div>
@@ -463,9 +464,13 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
             var reader = new FileReader();
 
             reader.onload = function(event) {
-                $($.parseHTML('<img style=width:190px>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                $($.parseHTML('<img style=width:190px class="delete">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                // $("<span class='pip'><br/><span class=\"remove\">Remove image</span>")
+                $(".delete").click(function(){
+                  $(this).remove();
+                });
             }
-
+            
             reader.readAsDataURL(input.files[i]);
         }
     }

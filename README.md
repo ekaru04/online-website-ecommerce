@@ -9,4 +9,3 @@ Muhammad Viqih Zamzami<br>
 Rendra Adji Prayudi<br>
 
 
-<h1>You got hacked</h1>

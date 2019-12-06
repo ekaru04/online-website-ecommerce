@@ -82,17 +82,17 @@
 						//berfungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
 					?>
                    
-                    <div class="box-shadow col-md-4">
+                    <div class="col-md-4 box-shadow ">
                         <div class="card-header">
                             <h4 class="py-md-4 py-xl-3 py-2 text-white"><?php echo $data['nama_laundry']; ?></h4>
                         </div>
                         <div class="card-body">
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col col-md-6 d-block">
 									<img src="file/<?=$data['id_foto_laundty']?>" class="img-fluid" style="width:100%;" alt="">
 								</div>
-								<div class="col-md-6">
-                                <p><?= substr($data['deskripsi_laundry']."...", 0, 30)?></p>
+								<div class="col col-md-6">
+                                <p class="d-inline-block"><?= substr($data['deskripsi_laundry']."...", 0, 30)?></p>
                                 <small class="text-muted"><?= $data['alamat'] ?></small>
 								</div>
 							</div>

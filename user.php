@@ -113,7 +113,7 @@
 			<th>Alamat</th>
 			<th>Deskripsi</th>
             <th>Kategori</th>		
-			<th>No tlp</th>
+			<!-- <th>No tlp</th> -->
 			<th>Email</th>
 			<th>Foto</th>
             <!-- <th>Password</th> -->
@@ -123,7 +123,8 @@
 		//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
 		include "koneksi.php";
 		//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
-		$query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori")or die(mysql_error());
+		$query_mysql = mysqli_query($host,"SELECT username, nama_laundry, alamat, deskripsi_laundry, email FROM tb_laundry")or die(mysql_error());
+        
         $nomor = 1;
         
         
@@ -134,11 +135,20 @@
 			//berfungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
 		?> 
 		<tr style="background : <?php echo $warnaAlternate; ?>;">
-			<td>B0<?php echo $data['username']; ?></td>
+			<td>B0<?php echo $user = $data['username']; ?></td>
+            <?php
+                $queryKategori = mysqli_query($host, "SELECT tb_kategori.jenis_kategori FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE tb_laundry.username = '$user'");
+            ?>
 			<td><?php echo $data['nama_laundry']; ?></td>
 			<td><?php echo $data['alamat']; ?></td>
 			<td><?php echo $data['deskripsi_laundry']; ?></td>
-            <td><?php echo $data['jenis_kategori']; ?></td>
+            <td>
+                <?php
+                while($reData = mysqli_fetch_array($queryKategori)){
+                    echo $reData['jenis_kategori']."<br><br>";
+                }
+                ?>
+            </td>
             <!-- <td><?php echo $data['no_tlp']; ?></td> -->
             <td><?php echo $data['email']; ?></td>
 

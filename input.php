@@ -186,7 +186,7 @@
                 <h1>LIHAT SEMUA DATA</h1>
                 <a href="index.php">
                 <!-- Lihat Semua Data</a> -->
-                <button type="button" class="btn btn-outline-secondary">Lihat Semua Data</button>
+                <!-- <button type="button" class="btn btn-outline-secondary">Lihat Semua Data</button> -->
             </div>
           </div> -->
           

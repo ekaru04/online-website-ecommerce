@@ -120,11 +120,11 @@
             <th>Aksi</th>
 		</tr>
 		<?php 
-		//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
+
 		include "koneksi.php";
-		//query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
+        //include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
 		$query_mysql = mysqli_query($host,"SELECT username, nama_laundry, alamat, deskripsi_laundry, email FROM tb_laundry")or die(mysql_error());
-        
+        //query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
         $nomor = 1;
         
         
@@ -137,6 +137,7 @@
 		<tr style="background : <?php echo $warnaAlternate; ?>;">
 			<td>B0<?php echo $user = $data['username']; ?></td>
             <?php
+            
                 $queryKategori = mysqli_query($host, "SELECT tb_kategori.jenis_kategori FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE tb_laundry.username = '$user'");
             ?>
 			<td><?php echo $data['nama_laundry']; ?></td>

@@ -61,7 +61,7 @@
 
             <!-- Pricing tables1 -->
             <section class="container">
-           
+            <div class="container">  
                 <div class="card-deck text-center row">
                 <!-- <script type="text/javascript">  -->
 				<?php 
@@ -82,6 +82,7 @@
 						//berfungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
 					?>
                    
+                  
                     <div class="col-md-4 box-shadow ">
                         <div class="card-header">
                             <h4 class="py-md-4 py-xl-3 py-2 text-white"><?php echo $data['nama_laundry']; ?></h4>
@@ -89,7 +90,7 @@
                         <div class="card-body">
 							<div class="row">
 								<div class="col col-md-6 d-block">
-									<img src="file/<?=$data['id_foto_laundty']?>" class="img-fluid" style="width:100%;" alt="">
+									<img src="file/<?=$data['_foto_laundry']?>" class="img-fluid" style="width:100%;" alt="">
 								</div>
 								<div class="col col-md-6">
                                 <p class="d-inline-block"><?= substr($data['deskripsi_laundry']."...", 0, 30)?></p>
@@ -97,10 +98,12 @@
 								</div>
 							</div>
                         </div>
+
 					</div>
 					<?php } ?>
                     </script> 
                     
+                </div>
                 </div>
             </section>
             <!-- Modal 

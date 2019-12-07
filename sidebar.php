@@ -33,14 +33,14 @@
                 </li>
                 <li>
                     <a href="user.php" id= "data" >
-                    <i class="fas fa-folder-plus"></i>
+                    <i class="fas fa-folder-open"></i>
                        DATA KONSUMEN
                     </a>
                 </li>
                 <li>
                 <!-- <a class="tombol" href="input.php">+ Tambah Data Baru</a> -->
                     <a href="input.php" id= "data">
-                        <i class="fas fa-th"></i>
+                    <i class="fas fa-folder-plus"></i>
                       TAMBAH DATA KONSUMEN
                     </a>
                 </li>

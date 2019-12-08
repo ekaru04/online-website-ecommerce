@@ -117,6 +117,23 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
                   <li aria-current="page" class="breadcrumb-item active">Pembayaran</li>
                 </ol>
+
+                <?php 
+                  if(isset($_GET['pesan'])){
+                    $pesan = $_GET['pesan'];
+                  if($pesan == "berhasil"){
+                ?>
+
+                <div class="alert alert-success">Bukti telah terkirim, silahkan tunggu konfirmasi</div>  
+
+                <?php 
+                  }else{
+                ?>
+
+                <div class="alert alert-danger">Gagal</div>
+
+                <?php }  } ?>
+                
               </nav>
             </div>
             <div id="basket" class="col-lg">

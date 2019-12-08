@@ -25,7 +25,7 @@ while($info = mysqli_fetch_assoc($result)){
 <html>
 <head>
 	<title>Clean in Click</title>
-	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="custom.css">
   <link rel="stylesheet" type="text/css" href="animate.css">
   <script src="jquery.min.js"></script>

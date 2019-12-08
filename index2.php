@@ -33,13 +33,13 @@ echo "<h6>".date("d-m-y")."</h6>";
 <html>
 <head>
 	<title>Clean in Click</title>
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="custom.css">
-  <link rel="stylesheet" type="text/css" href="animate.css">
-  <script src="jquery.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <script src="js/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
   </script>
-  <script src="bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 <!-- Navbar Section -->

@@ -67,7 +67,7 @@
                 </form>
                 <?php 
           if(isset($_POST['login'])){
-            $host = mysqli_connect("localhost", "root", "", "clean_inklik");
+            $host = mysqli_connect("localhost", "root", "", "laundry");
             $username = $_POST['username'];
             $password = $_POST['password'];
             $q = mysqli_query($host, "SELECT * FROM tb_laundry where username='$username' and password='$password'");

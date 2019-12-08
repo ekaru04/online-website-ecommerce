@@ -254,8 +254,8 @@
               <?php
                 include "koneksi.php";
                 $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry tl JOIN tb_kategori tk ON tl.id_kategori=tk.id_kategori where tl.username='$_GET[id]'");
-		$data = mysqli_fetch_array($query_mysql)
-		?>
+		            $data = mysqli_fetch_array($query_mysql)
+		            ?>
                 <div class="card-header">
                 
                   <h3 class="h4 card-title">Kategori</h3>

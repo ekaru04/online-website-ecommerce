@@ -109,8 +109,9 @@
           <div class="container">
             <div class="row">
             <?php 
-		include "koneksi.php";
-		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry")or die(mysql_error());
+    include "koneksi.php";
+    $aa = 1;
+		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry WHERE id_kategori ='$aa'")or die(mysql_error());
 		$nomor = 1;
 		while($data = mysqli_fetch_array($query_mysql)){
 		?>

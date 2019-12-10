@@ -252,7 +252,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="telp">No Telepon</label>
-                        <input name="telp" type="text" class="form-control" value="<?php echo $data['telp']; ?>">
+                        <input name="no_telp" type="text" class="form-control" value="<?php echo $data['no_telp']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">

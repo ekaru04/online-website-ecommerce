@@ -2,7 +2,7 @@
 
 session_start();
 
-include $_SERVER['DOCUMENT_ROOT'].'/distri/koneksi.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
 

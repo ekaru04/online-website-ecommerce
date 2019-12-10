@@ -82,7 +82,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="lapak/detail.php">Akun</a>
+          <a class="dropdown-item" href="customer-account.php">Edit Akun</a>
           <a class="dropdown-item" href="keluar_aksi.php">keluar</a>
           <div class="dropdown-divider"></div>
         </div>

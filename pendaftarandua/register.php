@@ -328,12 +328,12 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                     <textarea class="ckeditor" name="deskripsi_laundry" id="ckeditor" required autofocus=""></textarea>
                   </div>
                   <div class="form-group">
-                  <label for="kategori">Kategori</label>
-                  <select name="kategori" id="kategori" class="form-control">
-                  <option value="">- Pilih Kategori -</option>
+                  <label for="kategori">Kategori (Pilih Kategori yang Sesuai Dengan Lapak Anda)</label><br>
+                  <!-- <select name="kategori" id="kategori" class="form-control">
+                  <option value="">- Pilih Kategori -</option> -->
                   <?php
                   while ($r = mysqli_fetch_assoc($o)){
-                    echo "<option value=".$r['id_kategori']." > ".$r ['jenis_kategori']." </option>";
+                    echo "<input type='checkbox' value=".$r['id_kategori']." > ".$r ['jenis_kategori']." <br/>";
                   }
                   ?>
                   </select>
@@ -470,7 +470,6 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   $(this).remove();
                 });
             }
-            
             reader.readAsDataURL(input.files[i]);
         }
     }

@@ -277,9 +277,13 @@
               <div class="card sidebar-menu mb-4">
               <?php
                 include "koneksi.php";
-                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry tl JOIN tb_kategori tk ON tl.id_kategori=tk.id_kategori ORDER BY id Desc")or die(mysql_error());
+                $query_mysql = mysqli_query($host,"SELECT * FROM tb_kategori");
 		// $nomor = 1;
-		$data = mysqli_fetch_array($query_mysql)
+    $g = mysqli_fetch_array($query_mysql);
+    
+    $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
+    $nomor = 1;
+    $data = mysqli_fetch_array($t);
 		?>
                 <div class="card-header">
                 
@@ -289,7 +293,8 @@
                   <ul class="nav nav-pills flex-column category-menu">
                     <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a>
                       <ul class="list-unstyled">
-                        <li><a class="nav-link"><?php echo $data["jenis_kategori"]?></a></li>
+                        <!-- <li><a class="nav-link"><?php echo $g["jenis_kategori"]?></a></li> -->
+                        
                       </ul>
                     </li>
                     <!-- <li><a class="nav-link">Jenis Cucian<span class="badge badge-light"></span></a>
@@ -306,76 +311,6 @@
                   </ul>
                 </div>
               </div>
-              <!-- <div class="card sidebar-menu mb-4">
-                <div class="card-header">
-                  <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Armani  (10)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Versace  (12)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Carlo Bruni  (15)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Jack Honey  (14)
-                        </label>
-                      </div>
-                    </div>
-                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-                  </form>
-                </div>
-              </div>
-              <div class="card sidebar-menu mb-4">
-                <div class="card-header">
-                  <h3 class="h4 card-title">Colours <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
-                </div>
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour white"></span> White (14)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour blue"></span> Blue (10)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour green"></span>  Green (20)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour yellow"></span>  Yellow (13)
-                        </label>
-                      </div>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"><span class="colour red"></span>  Red (10)
-                        </label>
-                      </div>
-                    </div>
-                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-                  </form>
-                </div> -->
-              <!-- </div> -->
-              <!-- *** MENUS AND FILTERS END ***-->
               <div id="details" class="box"><b>IKLAN LAPAK BERAKHIR PADA</b></br><?php echo $data["expired"]?></div>
             </div>
             <div class="col-lg-9 order-1 order-lg-2">
@@ -385,11 +320,10 @@
                   <?php 
                   include "koneksi.php";
                   $q = mysqli_query($host, "SELECT * FROM tb_laundry order by id_laundry desc");
-                  $d = mysqli_fetch_array($q);
-                  $dt = mysqli_query($host, "SELECT * FROM  tb_foto_laundry WHERE id_laundry='$d[id_laundry]' order by id_foto_laundry desc");
+                  $ddata = mysqli_fetch_array($q);
+                  // echo "SELECT * FROM  tb_foto_laundry WHERE id_laundry='$ddata[id_laundry]' order by id_foto_laundry desc";
+                  $dt = mysqli_query($host, "SELECT * FROM  tb_foto_laundry WHERE id_laundry='$ddata[id_laundry]' order by id_foto_laundry desc");
                   while($d = mysqli_fetch_array($dt)){
-                    // echo "<pre>";
-                    // print_r($d['foto']);
                   ?>
                     <div class="item"> <img src="uploaded/<?= $d['foto'] ?>" alt="" class="img-fluid"></div>
                     <?php } ?>
@@ -399,11 +333,9 @@
                 <div class="col-md-6">
                   <div class="box">
                   <?php
-                include "koneksi.php";
-                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id Desc")or die(mysql_error());
-		$nomor = 1;
-		$data = mysqli_fetch_array($query_mysql)
-		?>
+                include 'koneksi.php';
+               
+                ?>
                     <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1>
                     <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>
                     <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
@@ -412,7 +344,6 @@
                     <p class="text-center buttons"><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Hubungi GG Loundry</a>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">
-                  
                   </div>
                 </div>
               </div>

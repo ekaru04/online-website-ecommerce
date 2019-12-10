@@ -110,8 +110,9 @@
             <div class="row">
             <?php 
 		include "koneksi.php";
-		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry where id_kategori=2")or die(mysql_error());
-        $nomor = 2;
+    $aa = 2;
+		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry WHERE id_kategori ='$aa'")or die(mysql_error());
+    $nomor = 2;
 		while($data = mysqli_fetch_array($query_mysql)){
 		?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->

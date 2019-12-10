@@ -21,11 +21,13 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
         }
     }
     else{
-        echo "<h1>Sudah Habis bos</h1>";
+      ?>
+        <div class="alert alert-danger">Expired</div>
+      <?php
     }
-echo "<h6>".date("d-m-y")."</h6>";
+          echo "<h6>".date("d-m-y")."</h6>";
 
-?>
+      ?>
 
 
 

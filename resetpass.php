@@ -30,20 +30,20 @@ if (isset($_POST['submit'])) {
                   $mail->IsSMTP(); // telling the class to use SMTP
             try {
                  //$mail->Host       = "mail.gmail.com"; // SMTP server
-                  $mail->SMTPDebug  = 2;                     // enables SMTP debug information (for testing)
+                  $mail->SMTPDebug  = 0;                     // enables SMTP debug information (for testing)
                   $mail->SMTPAuth   = true;                  // enable SMTP authentication
-                  $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
+                  $mail->SMTPSecure = "tls";                 // sets the prefix to the servier
                   $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
-                  $mail->Port       = 465;   // set the SMTP port for the GMAIL server
+                  $mail->Port       = 587;   // set the SMTP port for the GMAIL server
                   $mail->SMTPKeepAlive = true;
                   $mail->Mailer = "smtp";
                   $mail->Username   = "ichijouekaru04@gmail.com";       // GMAIL username
-                  $mail->Password   = "s4y4ngruk4";                     // GMAIL password
+                  $mail->Password   = "sayangruka04";                     // GMAIL password
                   $mail->AddAddress($email, $nama);
                   $mail->SetFrom('ichijouekaru04@gmail.com', 'Reset Password');
                   $mail->Subject = 'Password baru';
                   $mail->AltBody = 'Halo' .$email.'lakukan reset' .$message; // optional - MsgHTML will create an alternate automatically
-                  $mail->MsgHTML("<p>Hai</p>");
+                  $mail->MsgHTML($message);
                   $mail->Send();
                   echo "Email Sent OK</p>\n";
                   // header("location: ../test.html");
@@ -51,6 +51,8 @@ if (isset($_POST['submit'])) {
                   echo $e->errorMessage(); //Pretty error messages from PHPMailer
             } catch (Exception $e) {
                   echo $e->getMessage(); //Boring error messages from anything else!
+            } finally {
+            	header("location:forgotpass.php?pesan=sukses");
             }
 
       }else{

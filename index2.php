@@ -6,7 +6,7 @@ session_start();
 $username = $_SESSION['username'];
 
 $sql = "SELECT expired FROM tb_laundry WHERE username = '$username'";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($koneksi, $sql);
 
 $info = mysqli_fetch_assoc($result);
 $dueExpire = round((strtotime($info['expired']) - time()) / 86400);

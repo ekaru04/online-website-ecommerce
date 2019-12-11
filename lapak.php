@@ -1,3 +1,16 @@
+<?php
+
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+session_start();
+
+@$sess = $_SESSION['username'];
+
+$o = mysqli_query($conn, "SELECT * FROM tb_iklan");
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,15 +52,62 @@
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="index.php">Kembali</a></li>
-                <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <?php if(@$sess == null){ ?>
+
+                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
+                <li class="list-inline-item"><a href="register.php">Register</a></li>
+              <?php }else{ ?>
+                <li class="list-inline-item"><a href="#" data-toggle="modal" ><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
+                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
+              <?php } ?>
               </ul>
             </div>
           </div>
         </div>
-        
+        <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Customer login</h5>
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+              </div>
+              <div class="modal-body">
+                <form action="" method="post">
+                  <div class="form-group">
+                    <input id="email-modal" type="text" placeholder="email" name="username" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
+                  </div>
+                  <p class="text-center">
+                    <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
+                  </p>
+                </form>
+
+
+        <?php   
+
+          if(isset($_POST['login'])){
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $q = mysqli_query($conn, "SELECT * FROM tb_laundry where username='$username' and password='$password'");
+            $cek = mysqli_num_rows($q);
+            if($cek > 0){
+              $data = mysqli_fetch_assoc($q);
+              $_SESSION['username'] = $username;
+              header("location:index.php");
+            }else{
+              echo "gagal login";
+            }
+          } 
+
+          ?> 
+          <!-- mengambil data dari dtabase untuk login  -->
+              </div>
+            </div>
+          </div>r
+        </div>
         <!-- *** TOP BAR END ***-->
         
         
@@ -60,7 +120,7 @@
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+              <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
               <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Men<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
@@ -252,10 +312,11 @@
               -->
               <div class="card sidebar-menu mb-4">
               <?php
-                include "koneksi.php";
-                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry tl JOIN tb_kategori tk ON tl.id_kategori=tk.id_kategori where tl.username='$_GET[id]'");
-		$data = mysqli_fetch_array($query_mysql)
-		?>
+
+                $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry tl INNER JOIN tb_kategori tk ON tl.id_detail_kategori=tk.id_kategori where tl.username='$_GET[id]'");
+		            $data = mysqli_fetch_array($query_mysql);
+
+		          ?>
                 <div class="card-header">
                 
                   <h3 class="h4 card-title">Kategori</h3>
@@ -279,12 +340,12 @@
                 <div class="col-md-6">
                   <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
                   <?php 
-                  $dt = mysqli_query($host, "SELECT * FROM  tb_foto_laundry order by id_foto_laundry desc");
+                  $dt = mysqli_query($conn, "SELECT * FROM  tb_foto_laundry order by id_foto_laundry desc");
                   while($d = mysqli_fetch_array($dt)){
                     // echo "<pre>";
                     // print_r($d['foto']);
                   ?>
-                    <div class="item"> <img src="uploaded/<?= $d['foto'] ?>" alt="" class="img-fluid"></div>
+                    <div class="item"> <img src="uploaded/<?= $d['foto']; ?>" alt="" class="img-fluid"></div>
                     <?php } ?>
                   </div>
                  
@@ -292,10 +353,10 @@
                 <div class="col-md-6">
                   <div class="box">
                   <?php
-                include "koneksi.php";
-                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry WHERE username='$_GET[id]'");
-		$nomor = 1;
-		$data = mysqli_fetch_array($query_mysql)
+
+                $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE username='$_GET[id]'");
+		            $nomor = 1;
+		            $data = mysqli_fetch_array($query_mysql)
 		?>
                     <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1>
                     <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>

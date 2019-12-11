@@ -1,8 +1,8 @@
 <?php 
 // isi nama host, username mysql, dan password mysql anda
-$host = mysqli_connect("localhost","root","", "laundry");
+$conn = mysqli_connect("localhost","root","", "laundry");
  
-if($host){
+if($conn){
 	// echo "koneksi host berhasil.<br/>";
 }else{
 	// echo "koneksi gagal.<br/>";

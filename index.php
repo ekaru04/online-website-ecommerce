@@ -113,7 +113,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
         
         
       </div>
+      
       <?php include "navbar.php" ?>
+
     </header>
     <div id="all">
       <div id="content">
@@ -181,7 +183,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
 
           	?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
-    <a href="lapak.php?id=<?php echo $data['username']; ?>">
+              <a href="lapak.php?id=<?php echo $data['username']; ?>">
               <div class="item col-md-4">
                 <div class="product">
                   <div class="flip-container">

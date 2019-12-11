@@ -44,7 +44,7 @@
                       TAMBAH DATA KONSUMEN
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-users"></i>
                         User
@@ -56,12 +56,12 @@
                         </li>
                         <li>
                             <a href="register.html">Register</a>
-                        </li>
+                        </li> 
                         <li>
                             <a href="forgot.html">Forgot password</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
                
             </ul>
         </nav>

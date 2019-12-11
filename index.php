@@ -92,7 +92,7 @@
 								<div class="col col-md-6 d-block">
 									<img src="file/<?=$data['_foto_laundry']?>" class="img-fluid" style="width:100%;" alt="">
 								</div>
-								<div class="col col-md-6">
+								<div class="col-md-6" style="overflow:hidden">
                                 <p class="d-inline-block"><?= substr($data['deskripsi_laundry']."...", 0, 30)?></p>
                                 <small class="text-muted"><?= $data['alamat'] ?></small>
 								</div>

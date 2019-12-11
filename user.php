@@ -33,21 +33,10 @@
     <link rel="stylesheet" href="css/style4.css">
     <!--// Nav Css -->
     <!-- Fontawesome Css -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css." rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet">
     <!--// Fontawesome Css -->
     <!--// Style-sheets -->
-    <link rel="stylesheet" href="css/widgets.css">
 
-
-    <style>
-    .thead {
-    background: #4fbfa8;
-    }
-
-    .thead th{
-        color: white;
-    }
-        </style>
     <!--web-fonts-->
     <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">

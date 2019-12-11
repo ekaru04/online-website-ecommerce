@@ -316,7 +316,7 @@
                       <ul class="list-unstyled">
                         <!-- <li><a class="nav-link">
                         
-                        <?php echo $g["jenis_kategori"];?>
+                        <?php echo $g["jenis_kategori"]?>
                         </a></li> -->
                         
                       </ul>

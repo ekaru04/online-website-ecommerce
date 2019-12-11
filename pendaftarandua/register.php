@@ -303,6 +303,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 // }
                 ?> -->
                 <div class="form-group">
+                <!-- penggunaan required autofocus untuk memvalidasi jika terdapat kolom register yang belum terisi. -->
                     <label for="username">Username</label>
                     <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
                   </div>
@@ -336,6 +337,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   <!-- <select name="kategori" id="kategori" class="form-control">
                   <option value="">- Pilih Kategori -</option> -->
                   <?php
+                  // menampilkan field kategori yg terdapat dalam database
                   while ($r = mysqli_fetch_assoc($o)){
                     echo "<input type='checkbox' value=".$r['id_kategori']." > ".$r ['jenis_kategori']." <br/>";
                   }
@@ -479,6 +481,8 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     }
 
     };
+
+    // menampilkan foto pada saat upload foto di dalam halaman register menggunakan dropzone
 
     $('#file').on('change', function() {
     imagesPreview(this, 'div.gallery');

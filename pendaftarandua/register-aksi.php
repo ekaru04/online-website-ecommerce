@@ -12,6 +12,7 @@ $nama_laundry = $_POST['nama_laundry'];
 $alamat = $_POST['alamat'];
 $password = $_POST['password'];
 $email = $_POST['email'];
+$no_telp = $_POST['no_telp'];
 $deskripsi_laundry = $_POST['deskripsi_laundry'];
 $kategori = $_POST['kategori'];
 
@@ -25,7 +26,7 @@ foreach($_FILES['foto']['name'] as $p){
     
     // print_r($_FILES['foto']);
     // echo $_SERVER['DOCUMENT_ROOT']."/Rebellion/pendaftarandua/uploaded/".$p;    
-    if($indexFoto < 5){
+    if($indexFoto < 6){
         $id = $getInt['id_laundry'] + 1;
         echo $id;
         $sql1 = "INSERT INTO tb_foto_laundry VALUES ('$id', '', '$p')";
@@ -50,10 +51,10 @@ foreach($_FILES['foto']['name'] as $p){
     $indexFoto++;
 }
 
-mysqli_query($host, "INSERT INTO tb_laundry(id_laundry, username, nama_laundry, alamat, password, email, deskripsi_laundry, id_detail_kategori, id_foto_laundry, expired) VALUES('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
+mysqli_query($host, "INSERT INTO tb_laundry(id_laundry, username, nama_laundry, alamat, password, email, no_telp, deskripsi_laundry, id_detail_kategori, id_foto_laundry, expired) VALUES('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$no_telp', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
 // echo "jumlahnya "+$indexFoto;
 header("location:lapak.php?pesan=input");
-if($indexFoto < 5){
+if($indexFoto < 6){
 }
 
 ?>

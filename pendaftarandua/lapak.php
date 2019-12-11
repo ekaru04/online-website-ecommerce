@@ -284,7 +284,22 @@
     $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
     $no = 1;
     $data = mysqli_fetch_array($t);
+
+    // session_start();
+
+    //   @$sess = $_SESSION['id_laundry'];
+
+    //   $bismillah = mysqli_queri($host, "SELECT*FROM tb_laundry INNER JOIN tb_detail kategori ON tb _detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE id_laundry='$sess'");
 		?>
+
+    <!-- <?php
+      // include "koneksi.php";
+      // session_start();
+
+      // @$sess = $_SESSION['id_laundry'];
+
+      // $bismillah = mysqli_queri($host, "SELECT*FROM tb_laundry INNER JOIN tb_detail kategori ON tb _detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE id_laundry='$sess'");
+    ?> -->
                 <div class="card-header">
                 
                   <h3 class="h4 card-title">Kategori</h3>
@@ -294,7 +309,8 @@
                     <!-- <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a> -->
                       <ul class="list-unstyled">
                         <!-- <li><a class="nav-link">
-                        <?php echo $g["jenis_kategori"]?>
+                        
+                        <?php echo $g["jenis_kategori"];?>
                         </a></li> -->
                         
                       </ul>
@@ -341,6 +357,7 @@
                     <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1>
                     <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>
                     <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
+                    <h5 style="text-align:justify;"><?php echo $data["no_telp"]?></h5>
                     <!-- <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p> -->
                     <!-- <p class="price"></p> -->
                     <p class="text-center buttons"><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Hubungi GG Loundry</a>

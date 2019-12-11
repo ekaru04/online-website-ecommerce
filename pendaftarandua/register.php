@@ -285,30 +285,30 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
             <div class="col-md-6">
                 
                 <hr>
-                <?php
-                if(isset($_POST['Daftar'])){
-                  $username = $_POST['username'];
-                  $nama_laundry = $_POST['nama_laundry'];
-                  $alamat = $_POST['alamat'];
-                  $password = $_POST['password'];
-                  $email = $_POST['email'];
-                  $deskripsi_laundry = $_POST['deskripsi_laundry'];
-                  $kategori = $_POST['kategori'];                
+                <!-- <?php
+                // if(isset($_POST['Daftar'])){
+                //   $username = $_POST['username'];
+                //   $nama_laundry = $_POST['nama_laundry'];
+                //   $alamat = $_POST['alamat'];
+                //   $password = $_POST['password'];
+                //   $email = $_POST['email'];
+                //   $deskripsi_laundry = $_POST['deskripsi_laundry'];
+                //   $kategori = $_POST['kategori'];                
                   
-                  if(empty($username) || empty($nama_laundry) || empty($alamat) || empty($password) || empty($email) || empty($deskripsi_laundry) || empty($kategori)) {
-                    echo "<strong> Data Harus Diisi!</strong>";
-                  }else{
-                    //proses
-                  }
-                }
-                ?>
+                //   if(empty($username) || empty($nama_laundry) || empty($alamat) || empty($password) || empty($email) || empty($deskripsi_laundry) || empty($kategori)) {
+                //     echo "<strong> Data Harus Diisi!</strong>";
+                //   }else{
+                //     //proses
+                //   }
+                // }
+                ?> -->
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="nama_laundry">Nama Loundry</label>
-                    <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="15" required autofocus="">
+                    <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="50" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="alamat">Alamat Lapak</label>
@@ -322,6 +322,10 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input name="email" type="text" class="form-control" maxlength="50" placeholder="Isi Email Anda" required autofocus="">
+                  </div>
+                  <div class="form-group">
+                    <label for="no_telp">Nomor Telepon</label>
+                    <input name="no_telp" type="text" class="form-control" maxlength="12" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi_laundry">Deskripsi</label>

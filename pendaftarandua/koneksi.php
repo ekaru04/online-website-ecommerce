@@ -1,4 +1,5 @@
 <?php
+// membuat koneksi ke database
     $host = mysqli_connect("localhost","root","", "laundry");
     // echo $_SERVER['DOCUMENT_ROOT']."/pendaftarandua/uploaded/";
     // if($host){

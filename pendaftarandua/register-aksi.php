@@ -1,5 +1,6 @@
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/pendaftarandua/koneksi.php';
+// fungsi include untuk menyertakan file php lain ke dalam suatu program php
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/pendaftarandua/koneksi.php'; 
 
 $getInt = mysqli_fetch_array(mysqli_query($host, "SELECT id_laundry FROM tb_laundry order by id_laundry desc"));
 
@@ -7,6 +8,7 @@ $date = date("Ymd");
 $day30 = strtotime($date . " + 1 months");
 $fDay = date("Ymd", $day30);
 
+// membuat variabel sesuai di dalam database
 $username = $_POST['username'];
 $nama_laundry = $_POST['nama_laundry'];
 $alamat = $_POST['alamat'];
@@ -25,7 +27,9 @@ foreach($_FILES['foto']['name'] as $p){
 
     
     // print_r($_FILES['foto']);
-    // echo $_SERVER['DOCUMENT_ROOT']."/Rebellion/pendaftarandua/uploaded/".$p;    
+    // echo $_SERVER['DOCUMENT_ROOT']."/Rebellion/pendaftarandua/uploaded/".$p; 
+    
+    // membuat foto tidak lebih dari 5
     if($indexFoto < 6){
         $id = $getInt['id_laundry'] + 1;
         echo $id;

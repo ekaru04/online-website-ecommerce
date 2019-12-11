@@ -275,6 +275,7 @@
               _________________________________________________________
               -->
               <div class="card sidebar-menu mb-4">
+              <!-- membuat koneksi ke database agar kategori lapak dapat muncul -->
               <?php
                 include "koneksi.php";
                 $query_mysql = mysqli_query($host,"SELECT * FROM tb_kategori");
@@ -329,6 +330,7 @@
                   </ul>
                 </div>
               </div>
+              <!-- menampilkan waktu berakhir iklan pada lapak -->
               <div id="details" class="box"><b>IKLAN LAPAK BERAKHIR PADA</b></br><?php echo $data["expired"]?></div>
             </div>
             <div class="col-lg-9 order-1 order-lg-2">
@@ -354,9 +356,13 @@
                 include 'koneksi.php';
                
                 ?>
-                    <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1>
+                <!--menampilakan nama lapak laundry -->
+                    <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1> 
+                    <!-- menampilkan alamat lapak -->
                     <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>
+                    <!-- menampilkan email lapak -->
                     <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
+                    <!-- menampilkan nomor telepon lapak -->
                     <h5 style="text-align:justify;"><?php echo $data["no_telp"]?></h5>
                     <!-- <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p> -->
                     <!-- <p class="price"></p> -->
@@ -368,6 +374,7 @@
               </div>
               <div id="details" class="box">
                 <p></p>
+                <!-- menampilkan deskripsi lapak laundry -->
                 <h4>Deskripsi Lapak </h4>
                 <p style="text-indent:0.4in;"><?php echo $data["deskripsi_laundry"]?></p>
                 <blockquote>

@@ -39,7 +39,12 @@
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+              <?php
+                include 'koneksi.php';
+                $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
+                $data = mysqli_fetch_array($t);
+                ?>
+                <li class="list-inline-item">Selamat Datang <?php echo $data["username"]?> </a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                 <li class="list-inline-item"><a href="#">Recently viewed</a></li>
@@ -514,7 +519,7 @@
             <hr>
             <h4 class="mb-3">User section</h4>
             <ul class="list-unstyled">
-              <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
+              <!-- <li>Selamat Datang </a></li> -->
               <li><a href="register.html">Regiter</a></li>
             </ul>
           </div>

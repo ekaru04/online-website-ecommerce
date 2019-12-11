@@ -282,7 +282,7 @@
     $g = mysqli_fetch_array($query_mysql);
     
     $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
-    $nomor = 1;
+    $no = 1;
     $data = mysqli_fetch_array($t);
 		?>
                 <div class="card-header">
@@ -291,9 +291,11 @@
                 </div>
                 <div class="card-body">
                   <ul class="nav nav-pills flex-column category-menu">
-                    <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a>
+                    <!-- <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a> -->
                       <ul class="list-unstyled">
-                        <!-- <li><a class="nav-link"><?php echo $g["jenis_kategori"]?></a></li> -->
+                        <!-- <li><a class="nav-link">
+                        <?php echo $g["jenis_kategori"]?>
+                        </a></li> -->
                         
                       </ul>
                     </li>

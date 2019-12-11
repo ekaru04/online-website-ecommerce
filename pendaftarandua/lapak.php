@@ -44,7 +44,7 @@
                 $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
                 $data = mysqli_fetch_array($t);
                 ?>
-                <li class="list-inline-item">Selamat Datang <?php echo $data["username"]?> </a></li>
+                <li class="list-inline-item" style="color:white;">Selamat Datang <?php echo $data["username"]?> </a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                 <li class="list-inline-item"><a href="#">Recently viewed</a></li>

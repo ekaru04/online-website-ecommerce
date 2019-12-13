@@ -136,10 +136,12 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
             <?php 
         
                 $search=$_GET["search"];
-		            $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry where nama_laundry like '%$search%'")or die(mysql_error());
+		            $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE nama_laundry like '%$search%'")or die(mysql_error());
 		            $nomor = 1;
-		            while($data = mysqli_fetch_array($query_mysql)){
-		          ?>
+                if(mysqli_num_rows($query_mysql) > 0){
+
+		                while($data = mysqli_fetch_array($query_mysql)){
+		        ?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
               <div class="item">
                 <div class="product">
@@ -174,8 +176,13 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 </div>
                 <!-- /.product-->
               </div>
-    <?php } ?>
+              <?php } ?>
+
+            <?php }else{ ?>
+              <div class="text-center font-weight-bolder">Laundry tidak ditemukan</div>
+            <?php } ?>
               <!-- /.product-slider-->
+
             </div>
             <!-- /.container-->
           </div>

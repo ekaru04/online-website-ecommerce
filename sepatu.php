@@ -38,7 +38,7 @@
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="index.php" >Kembali</a></li>
+                <li class="list-inline-item"><a href="index.php" >Logout</a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                 <li class="list-inline-item"><a href="#">Recently viewed</a></li>
@@ -107,36 +107,27 @@
             </div>
           </div>
           <div class="container">
-            <div class="product-slider owl-carousel owl-theme">
+            <div class="row">
             <?php 
-        include_once "koneksi.php";
-        $search=$_POST["search"];
-         $query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry where nama_laundry = '$search'")or die(mysqli_error());
-          $nomor = 1;
-		      while($data = mysqli_fetch_array($query_mysql)){
-          if(data) {
-            echo "<script type='text/javascript'>alert('Kepo'); </script>";
-          }
-          else {
-             
-          }
-
-          
+    include "koneksi.php";
+    $aa = 6;
+		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry WHERE id_kategori ='$aa'")or die(mysql_error());
+		$nomor = 1;
+		while($data = mysqli_fetch_array($query_mysql)){
 		?>
-
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
-              <div class="item">
+    <a href="lapak.php?id=<?php echo $data['username']?>">
+             <div class="item col-md-4">
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="lapak.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="lapak.php"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="detail.php" class="invisible"><img src="laundry.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="lapak.php?id=<?php echo $data['username']?>"><img src="laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">
-                    <h3><a href="detail.php"><?= $data['nama_laundry'] ?></a></h3>
                     <p class="price"> 
-                      <del></del> <?php echo $data['alamat']?>
+                      <del></del> <?php echo $data['nama_laundry']?>
                     </p>
                   </div>
                   <!-- /.text-->
@@ -158,7 +149,8 @@
                 </div>
                 <!-- /.product-->
               </div>
-    <?php }} ?>
+              </a>
+    <?php } ?>
               <!-- /.product-slider-->
             </div>
             <!-- /.container-->

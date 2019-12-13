@@ -2,7 +2,7 @@
         <div class="container"><a href="index.html" class="navbar-brand home"><img src="mesin cuci.png" width="80px"hight="80px  class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
           <div class="navbar-buttons">
             <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
+            <button type="button" data-toggle="collapse" name ="search" data-target="search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
@@ -57,7 +57,21 @@
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="antar_jemput.php" class="nav-link">ANTAR JEMPUT </a></li>
                           <li class="nav-item"><a href="tidak_antarjemput.php" class="nav-link">TIDAK ANTAR JEMPUT</a></li>
+                            
+                        </ul>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                        <ul class="list-unstyled mb-3">
+                        <li class="nav-item"><a href="boneka.php" class="nav-link">BONEKA </a></li>
+                          <li class="nav-item"><a href="selimut.php" class="nav-link">SELIMUT </a></li>
+                          
+                        </ul>
+                      </div>
+                      <div class="col-md-6 col-lg-3">
+                        <ul class="list-unstyled mb-3">
                         
+                          <li class="nav-item"><a href="tas.php" class="nav-link">TAS </a></li>
+                          <li class="nav-item"><a href="sepatu.php" class="nav-link">SEPATU </a></li>
                         </ul>
                       </div>
                     </div>
@@ -68,16 +82,18 @@
             <div class="navbar-buttons d-flex justify-content-end">
               <!-- /.nav-collapse-->
               <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
-              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>3 items in cart</span></a></div>
+              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="sorting.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>3 items in cart</span></a></div>
+              <div id="sort" class="navbar-collapse collapse d-none d-lg-block"><a href="sorting.php" class="btn btn-primary navbar-btn"><span>SORT</span></a></div>
+            
             </div>
           </div>
         </div>
       </nav>
       <div id="search" class="collapse">
         <div class="container">
-          <form role="search" class="ml-auto" action="cari.php" method="get">
+          <form role="search" class="ml-auto" action="cari.php" method="POST">
             <div class="input-group">
-              <input type="text" placeholder="Search" name="search" class="form-control" >
+              <input type="text" placeholder="Search" name ="search" id="search" class="form-control" >
               <div class="input-group-append">
                 <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
               </div>

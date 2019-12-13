@@ -253,9 +253,15 @@
               <div class="card sidebar-menu mb-4">
               <?php
                 include "koneksi.php";
+<<<<<<< HEAD
                 $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry tl JOIN tb_kategori tk ON tl.id_kategori=tk.id_kategori where tl.username='$_GET[id]'");
 		$data = mysqli_fetch_array($query_mysql);
 		?>
+=======
+                $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry tl JOIN tb_kategori tk ON tl.id_detail_kategori=tk.id_kategori where tl.username='$_GET[id]'");
+		            $data = mysqli_fetch_array($query_mysql);
+		            ?>
+>>>>>>> a2dbd8db2c584de434f6ebf20cd6a5a392d9b9c7
                 <div class="card-header">
                 
                   <h3 class="h4 card-title">Kategori</h3>
@@ -264,7 +270,7 @@
                   <ul class="nav nav-pills flex-column category-menu">
                     <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a>
                       <ul class="list-unstyled">
-                        <li><a class="nav-link"><?php echo $data["jenis_kategori"]?></a></li>
+                        <li><a class="nav-link"><?php echo $data["jenis_kategori"]; ?></a></li>
                       </ul>
                     </li>
                     
@@ -295,11 +301,11 @@
                 include "koneksi.php";
                 $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry WHERE username='$_GET[id]'");
 		$nomor = 1;
-		$data = mysqli_fetch_array($query_mysql)
+		$data = mysqli_fetch_array($query_mysql);
 		?>
-                    <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1>
-                    <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>
-                    <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
+                    <h1 class="text-center"><?php echo $data["nama_laundry"]; ?></h1>
+                    <h5 style="text-align:justify;"><?php echo $data["alamat"]; ?></h5>
+                    <h5 style="text-align:justify;"><?php echo $data["email"]; ?></h5>
                     <!-- <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p> -->
                     <!-- <p class="price"></p> -->
                     <p class="text-center buttons"><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Hubungi GG Loundry</a>

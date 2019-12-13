@@ -132,7 +132,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
             </div>
           </div>
           <div class="container">
-            <div class="product-slider owl-carousel owl-theme">
+            <div class="row">
             <?php 
         
                 $search=$_GET["search"];
@@ -143,7 +143,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
 		                while($data = mysqli_fetch_array($query_mysql)){
 		        ?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
-              <div class="item">
+              <div class="item col-md-4">
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">

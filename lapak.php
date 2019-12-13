@@ -106,13 +106,13 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
           <!-- mengambil data dari dtabase untuk login  -->
               </div>
             </div>
-          </div>r
+          </div>
         </div>
         <!-- *** TOP BAR END ***-->
         
         
       </div>
-      <nav class="navbar navbar-expand-lg">
+      <!-- <nav class="navbar navbar-expand-lg">
         <div class="container"><a href="index.html" class="navbar-brand home"><img src="mesin cuci.png" width="80px"hight="80px  class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
           <div class="navbar-buttons">
             <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
@@ -120,8 +120,8 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Men<b class="caret"></b></a>
+              <li class="nav-item"><a href="index.php" class="nav-link active">Home</a></li> -->
+              <!-- <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Men<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
                     <div class="row">
@@ -171,8 +171,10 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                     </div>
                   </li>
                 </ul>
-              </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Ladies<b class="caret"></b></a>
+              </li> -->
+
+
+              <!-- <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Ladies<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
                     <div class="row">
@@ -218,8 +220,10 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                     </div>
                   </li>
                 </ul>
-              </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Template<b class="caret"></b></a>
+              </li> -->
+
+
+              <!-- <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Template<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
                     <div class="row">
@@ -268,19 +272,19 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                     </div>
                   </li>
                 </ul>
-              </li>
+              </li> --><!-- 
             </ul>
-            <div class="navbar-buttons d-flex justify-content-end">
+            <div class="navbar-buttons d-flex justify-content-end"> -->
               <!-- /.nav-collapse-->
-              <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
-              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>3 items in cart</span></a></div>
+              <!-- <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
+              <div id="search-not-mobile" class="navbar-collapse collapse d-none d-lg-block"><a data-toggle="collapse" href="#search" class="btn btn-primary navbar-btn"><i class="fa fa-search"></i><span>3 items in cart</span></a></div>
             </div>
           </div>
         </div>
-      </nav>
-      <div id="search" class="collapse">
+      </nav> -->
+      <!-- <div id="search" class="collapse">
         <div class="container">
-          <form role="search" class="ml-auto">
+          <form role="search" class="ml-auto" action="cari.php" method="get">
             <div class="input-group">
               <input type="text" placeholder="Search" class="form-control">
               <div class="input-group-append">
@@ -289,7 +293,8 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
             </div>
           </form>
         </div>
-      </div>
+      </div> -->
+      <?php include "navbar.php" ?>
     </header>
     <div id="all">
       <div id="content">

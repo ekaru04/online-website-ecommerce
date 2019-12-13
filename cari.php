@@ -154,7 +154,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                   <div class="text">
                     <h3><a href="lapak.php?id=<?php echo $data['username']?>"><?= $data['nama_laundry']; ?></a></h3>
                     <p class="price"> 
-                      <del></del> <?php echo $data['alamat']?>
+                      <del></del> <?php echo $data['alamat'];?>
                     </p>
                   </div>
                   <!-- /.text-->

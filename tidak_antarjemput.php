@@ -1,3 +1,18 @@
+<?php
+
+
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+session_start();
+
+@$sess = $_SESSION['username'];
+
+$o = mysqli_query($conn, "SELECT * FROM tb_iklan");
+$tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -38,10 +53,14 @@
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="index.php" >Logout</a></li>
-                <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+              <?php if($sess == null){ ?>
+                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
+                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
+              <?php }else{ ?>
+                <li class="list-inline-item"><a href="#" data-toggle="modal" ><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
+                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
+                <?php } ?>
               </ul>
             </div>
           </div>
@@ -67,13 +86,14 @@
                 </form>
                 <?php 
           if(isset($_POST['login'])){
-            $host = mysqli_connect("localhost", "root", "", "clean_inklik");
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $q = mysqli_query($host, "SELECT * FROM tb_laundry where username='$username' and password='$password'");
+            $q = mysqli_query($conn, "SELECT * FROM tb_laundry where username='$username' and password='$password'");
             $cek = mysqli_num_rows($q);
             if($cek > 0){
-              header("location:katalog_antarjemput.php");
+              $data = mysqli_fetch_array($q);
+              $_SESSION['username'] = $username;
+              header("location:index.php");
             }else{
               echo "gagal login";
             }
@@ -109,11 +129,12 @@
           <div class="container">
             <div class="row">
             <?php 
-		include "koneksi.php";
-		$query_mysql = mysqli_query($host, "SELECT * FROM tb_laundry where id_kategori=2")or die(mysql_error());
-        $nomor = 2;
-		while($data = mysqli_fetch_array($query_mysql)){
-		?>
+                $p = 2;
+		            $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry where id_detail_kategori=2")or die(mysql_error());
+                $nomor = 2;
+		            while($data = mysqli_fetch_array($query_mysql)){
+
+		        ?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
     <a href="lapak.php?id=<?php echo $data['username']?>">
              <div class="item col-md-4">

@@ -6,8 +6,21 @@ session_start();
 
 @$sess = $_SESSION['username'];
 
-$o = mysqli_query($conn, "SELECT * FROM tb_iklan");
-$tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
+$sql = "SELECT expired FROM tb_laundry WHERE username = '$sess'";
+$result = mysqli_query($conn, $sql);
+
+$info = mysqli_fetch_assoc($result);
+$dueExpire = round((strtotime($info['expired']) - time()) / 86400); 
+
+ if(strtotime(date("Y-m-d")) < strtotime($info['expired'])){
+        if($dueExpire <= 7 ){
+          echo "<h6>Dalam $dueExpire hari lapak otomatis terhapus, silahkan lakukan perpanjangan</h6>";  
+        }
+    }else{
+      echo "<h1>Habis boss</h1>";
+    }
+          echo "<h6>".date("d-m-y")."</h6>";
+
 
 ?>
 

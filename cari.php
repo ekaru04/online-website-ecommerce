@@ -126,7 +126,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h2 class="mb-0">Hot this week</h2>
+                  <h2 class="mb-0">Katalog Laundry</h2>
                 </div>
               </div>
             </div>
@@ -193,6 +193,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
         *** GET INSPIRED ***
         _________________________________________________________
         -->
+        <div class="p-5"> 
         <div class="container">
           <div class="col-md-12">
             <div class="box slideshow">
@@ -206,6 +207,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
             </div>
           </div>
         </div>
+      </div>
         <!-- *** GET INSPIRED END ***-->
         <!--
         *** BLOG HOMEPAGE ***

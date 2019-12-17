@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/distri/connect.php';
 @session_start();
 
 $sess = $_SESSION['username'];
@@ -176,7 +176,16 @@ if($_SESSION['username'] == null){
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="telp">No Telepon</label>
-                        <input name="no_telp" type="tel" required class="form-control" value="<?php echo $data['no_telp']; ?>">
+                          <script>
+                            function angka(evt) {
+                              var charCode = (evt.which) ? evt.which : event.keyCode
+                              if (charCode > 31 && (charCode < 48 || charCode > 57))
+                        
+                                return false;
+                              return true;
+                            }
+                          </script>
+                        <input name="no_telp" type="tel" maxlength="13" onkeypress="return angka(event)" required class="form-control" value="<?php echo $data['no_telp']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">

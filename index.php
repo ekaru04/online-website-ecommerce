@@ -51,12 +51,14 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
@@ -69,21 +71,19 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
       <!--
       *** TOPBAR ***
       _________________________________________________________
-      -->
+
+      -->    
       <div id="top">
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d")?></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-              <?php if(@$sess == null){
-
-
-                ?>
+              <?php if(@$sess == null){ ?>
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               <?php }else{ ?>
-                <li class="list-inline-item"><a href="akun.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
                 <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               <?php } ?>
@@ -308,6 +308,12 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
    
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
+    <script>
+      var status = <?php echo $_GET['pesan'] == "expired" ? true : false; ?>;
+      if(status == true){
+        swal("Peringatan", "Akun Anda dinonaktifkan karena masa berlaku akun sudah habis, hubungi admin untuk mengaktifkan kembali akun anda");
+      }
+    </script>
    
 
     

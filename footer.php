@@ -4,14 +4,6 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Pages</h4>
-            <ul class="list-unstyled">
-              <li><a href="text.html">About us</a></li>
-              <li><a href="text.html">Terms and conditions</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-            </ul>
-            <hr>
             <h4 class="mb-3">User section</h4>
             <ul class="list-unstyled">
               <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
@@ -20,25 +12,20 @@
           </div>
           <!-- /.col-lg-3-->
           <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Top categories</h4>
-            <h5>Men</h5>
+            <h4 class="mb-3">Contact Admin</h4>
+            <h5><strong>Franciska W</strong></h5>
             <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Shirts</a></li>
-              <li><a href="category.html">Accessories</a></li>
+              <li>Email</li>
             </ul>
-            <h5>Ladies</h5>
+            <h5><strong>Achmad Wildhan Eka</strong></h5>
             <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Skirts</a></li>
-              <li><a href="category.html">Pants</a></li>
-              <li><a href="category.html">Accessories</a></li>
+              <li><a href="mailto: wildhan.simdig04@gmail.com">wildhan.simdig04@gmail.com</a></li>
             </ul>
           </div>
           <!-- /.col-lg-3-->
           <div class="col-lg-3 col-md-6">
             <h4 class="mb-3">Alamat Kantor</h4>
-            <p><strong>Perum Tidar Cluster</strong><br>Blok Sekian<br>Tidar<br>45Y 73J<br>Jember<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact page</a>
+            <p><strong>Perum Tidar Cluster</strong><br>Blok Sekian<br>Tidar<br>45Y 73J<br>Jember<br><strong>Great Britain</strong></p>
             <hr class="d-block d-md-none">
           </div>
           <!-- /.col-lg-3-->

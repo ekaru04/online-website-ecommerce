@@ -164,13 +164,19 @@ if($_SESSION['username'] == null){
                         <input name="alamat" type="text" class="form-control" value="<?php echo $data['alamat']; ?>">
                       </div>
                     </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="alamat">Deskripsi Lapak</label>
+                        <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
+                      </div>
+                    </div>
                   </div>
                   <!-- /.row-->
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="telp">No Telepon</label>
-                        <input name="no_telp" type="text" class="form-control" value="<?php echo $data['no_telp']; ?>">
+                        <input name="no_telp" type="tel" required class="form-control" value="<?php echo $data['no_telp']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">

@@ -64,7 +64,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               <?php }else{ ?>
-                <li class="list-inline-item"><a href="akun.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
                 <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               <?php } ?>

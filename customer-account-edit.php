@@ -1,6 +1,13 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+@session_start();
+
+$sess = $_SESSION['username'];
+
+if($_SESSION['username'] == null){
+  header("Location: index.php");
+}
 
 ?>
 
@@ -32,6 +39,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+    <script src="js/front.js"></script>
   </head>
   <body>
     <!-- navbar-->
@@ -46,10 +59,14 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
             <!-- <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div> -->
             <div class="col-lg-12 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <?php if($sess == null){ ?>
+                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
+                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
+              <?php }else{ ?>
+                <li class="list-inline-item"><a href="#"><?php echo $_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
+                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
+              <?php } ?>
               </ul>
             </div>
           </div>
@@ -83,116 +100,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
         
         
       </div>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container"><a href="index2.php" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
-          <div class="navbar-buttons">
-            <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
-          </div>
-          <div id="navigation" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Lapak Londre<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Clothing</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">T-shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Shoes</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Kategori<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Clothing</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">T-shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Shoes</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Lapakku<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Shop</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="index.html" class="nav-link">Homepage</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Category - sidebar left</a></li>
-                          <li class="nav-item"><a href="category-right.html" class="nav-link">Category - sidebar right</a></li>
-                          <li class="nav-item"><a href="category-full.html" class="nav-link">Category - full width</a></li>
-                          <li class="nav-item"><a href="detail.html" class="nav-link">Product detail</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>User</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="register.html" class="nav-link">Register / login</a></li>
-                          <li class="nav-item"><a href="customer-orders.html" class="nav-link">Orders history</a></li>
-                          <li class="nav-item"><a href="customer-order.html" class="nav-link">Order history detail</a></li>
-                          <li class="nav-item"><a href="customer-wishlist.html" class="nav-link">Wishlist</a></li>
-                          <li class="nav-item"><a href="customer-account.html" class="nav-link">Lapakku</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <div class="navbar-buttons d-flex justify-content-end">
-              <!-- /.nav-collapse-->
-              <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
-              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>3 Lapakku</span></a></div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div id="search" class="collapse">
-        <div class="container">
-          <form role="search" class="ml-auto">
-            <div class="input-group">
-              <input type="text" placeholder="Cari apa gan" class="form-control">
-              <div class="input-group-append">
-                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      <?php include "navbar.php" ?>
     </header>
     <div id="all">
       <div id="content">
@@ -214,10 +122,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
               -->
               <div class="card sidebar-menu">
                 <div class="card-header">
-                  <h3 class="h4 card-title">Customer section</h3>
+                  <h3 class="h4 card-title"><?php echo $_SESSION['username'];?></h3>
                 </div>
                 <div class="card-body">
-                  <ul class="nav nav-pills flex-column"><a href="customer-orders.html" class="nav-link active"><i class="fa fa-list"></i> My orders</a><a href="customer-wishlist.html" class="nav-link"><i class="fa fa-heart"></i> My wishlist</a><a href="customer-account.html" class="nav-link"><i class="fa fa-user"></i> My account</a><a href="index.html" class="nav-link"><i class="fa fa-sign-out"></i> Logout</a></ul>
+                  <ul class="nav nav-pills flex-column">
+                    <a href="customer-account.php" class="nav-link active"><i class="fa fa-list"></i>Edit Lapak</a>
+                    <a href="akun.php" class="nav-link"><i class="fa fa-user"></i>Tampilan Lapak</a>
+                    <a href="pembayaran2.php" class="nav-link"><i class="fa fa-money"></i>Pembayaran</a></ul>
                 </div>
               </div>
               <!-- /.col-lg-3-->
@@ -234,7 +145,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
                 <?php 
                     
                     $id = $_GET['id'];
-                    $query_mysql = mysqli_query($koneksi,"SELECT * FROM tb_laundry WHERE id_laundry='$id'")or die(mysql_error());
+                    $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE id_laundry='$id'")or die(mysql_error());
                     $nomor = 1;
                     while($data = mysqli_fetch_array($query_mysql)){
                     ?>
@@ -253,13 +164,19 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
                         <input name="alamat" type="text" class="form-control" value="<?php echo $data['alamat']; ?>">
                       </div>
                     </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="alamat">Deskripsi Lapak</label>
+                        <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
+                      </div>
+                    </div>
                   </div>
                   <!-- /.row-->
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="telp">No Telepon</label>
-                        <input name="no_telp" type="text" class="form-control" value="<?php echo $data['no_telp']; ?>">
+                        <input name="no_telp" type="tel" required class="form-control" value="<?php echo $data['no_telp']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -274,19 +191,27 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
                     <div class="col-md-6 ">
                       <div class="form-group">
                         <label for="kategori">Kategori</label>
-                        <select name="kategori" class="form-control" multiple>
-                          <option selected>Pilih Kategori</option>
-                          <option value="antar">Antar Jemput</option>
-                          <option value="tidak">Tidak Antar Jemput</option>
-                          <option value="tidak">Setrika</option>
-                          <option value="tidak">Tidak Setrika</option>
-                        </select>
+                        <div class="col-md-6">
+                          <?php
+                          $idLaundry = $_GET['id'];
+                          $query = "SELECT * FROM tb_kategori";
+                          $tQuery = mysqli_query($conn, $query);
+                          $oQuery = mysqli_query($conn, "SELECT * FROM tb_detail_kategori WHERE id_laundry = '$idLaundry'");
+                         
+                          while($rQuery = mysqli_fetch_array($tQuery)){
+                                
+                          ?>
+                          <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>">
+                          <label for="<?= $rQuery['id_kategori'] ?>"><?= $rQuery['jenis_kategori'] ?></label>
+                          <br>
+                        <?php  }?>
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-6 ">
                       <div class="form-group">
-                        <label for="tgl">Tanggal</label>
-                        <input name="tgl" type="date" class="form-control" value="<?php echo $data['expired']; ?>">
+                        <label for="tgl">Berlaku hingga</label>
+                        <input name="tgl" readonly type="date" class="form-control" value="<?php echo $data['expired']; ?>">
                         </select>
                       </div>
                     </div>
@@ -393,11 +318,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-    <script src="js/front.js"></script>
+
   </body>
 </html>

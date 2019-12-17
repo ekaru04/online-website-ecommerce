@@ -2,14 +2,32 @@
 
 
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+date_default_timezone_set('Asia/Jakarta');
 session_start();
+
 
 @$sess = $_SESSION['username'];
 
-$o = mysqli_query($conn, "SELECT * FROM tb_iklan");
-$tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
-
-?>
+$tgl = date("d-m-y");
+$sql = "SELECT expired FROM tb_laundry WHERE username = '$sess'";
+$result = mysqli_query($conn, $sql);
+$info = mysqli_fetch_assoc($result);
+$dueExpire = round((strtotime($info['expired']) - time()) / 86400);
+// time() = waktu sekarang
+// 86400 = 60 detik * 60 menit * 24 jam
+// round = pembulatan
+    if(strtotime(date("Y-m-d")) < strtotime($info['expired'])){
+        if($dueExpire <= 7 ){
+          echo "<h6>Dalam $dueExpire hari lapak otomatis terhapus, silahkan lakukan perpanjangan</h6>";  
+        }
+    }
+    else if($sess != null){
+      ?>
+        <div class="alert alert-danger">Expired</div>
+      <?php
+    }
+          // echo "<h6>".date("d-m-y")."</h6>";
+      ?>
 
 <!DOCTYPE html>
 <html>
@@ -38,6 +56,12 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+    <script src="js/front.js"></script>
   </head>
   <body>
     <!-- navbar-->
@@ -49,7 +73,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d")?></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
               <?php if(@$sess == null){
@@ -59,7 +83,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               <?php }else{ ?>
-                <li class="list-inline-item"><a href="#" data-toggle="modal" ><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="akun.php"><?php echo @$_SESSION['username']; ?></a></li>
                 <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               <?php } ?>
@@ -75,9 +99,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="" method="post">
+                <form action="cek_login.php" method="post">
                   <div class="form-group">
-                    <input id="email-modal" type="text" placeholder="email" name="username" class="form-control">
+                    <input id="email-modal" type="text" placeholder="username" name="username" class="form-control">
                   </div>
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
@@ -86,23 +110,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
-                <?php   
-
-                  if(isset($_POST['login'])){
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-                    $q = mysqli_query($conn, "SELECT * FROM tb_laundry where username='$username' and password='$password'");
-                    $cek = mysqli_num_rows($q);
-                    if($cek > 0){
-                      $data = mysqli_fetch_assoc($q);
-                      $_SESSION['username'] = $username;
-                      header("location:index.php");
-                    }else{
-                      echo "gagal login";
-                    }
-                  } 
-
-                ?>
+                
           <!-- mengambil data dari dtabase untuk login  -->
               </div>
             </div>
@@ -123,7 +131,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
             <div class="col-md-12">
               <div id="main-slider" class="owl-carousel owl-theme">
                 <div class="item"><img src="laundry.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider2.jpg" alt="" class="img-fluid"></div>
+                <div class="item"><img src="img/godai.png" alt="" class="img-fluid"></div>
                 <div class="item"><img src="img/main-slider3.jpg" alt="" class="img-fluid"></div>
                 <div class="item"><img src="img/main-slider4.jpg" alt="" class="img-fluid"></div>
               </div>
@@ -141,21 +149,21 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
               <div class="col-md-4">
                 <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
                   <div class="icon"><i class="fa fa-heart"></i></div>
-                  <h3><a href="#">We love our customers</a></h3>
+                  <h3><a href="#">EFISIEN</a></h3>
                   <p class="mb-0">We are known to provide best possible service ever</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
                   <div class="icon"><i class="fa fa-tags"></i></div>
-                  <h3><a href="#">Best prices</a></h3>
-                  <p class="mb-0">You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
+                  <h3><a href="#">TERPERCAYA</a></h3>
+                  <p class="mb-0">Hoax :vosss</p>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
                   <div class="icon"><i class="fa fa-thumbs-up"></i></div>
-                  <h3><a href="#">100% satisfaction guaranteed</a></h3>
+                  <h3><a href="#">TERJANGKAU</a></h3>
                   <p class="mb-0">Free returns on everything for 3 months.</p>
                 </div>
               </div>
@@ -288,68 +296,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     *** FOOTER ***
     _________________________________________________________
     -->
-    <div id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Pages</h4>
-            <ul class="list-unstyled">
-              <li><a href="text.html">About us</a></li>
-              <li><a href="text.html">Terms and conditions</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-            </ul>
-            <hr>
-            <h4 class="mb-3">User section</h4>
-            <ul class="list-unstyled">
-              <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-              <li><a href="register.html">Regiter</a></li>
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Top categories</h4>
-            <h5>Men</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Shirts</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-            <h5>Ladies</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Skirts</a></li>
-              <li><a href="category.html">Pants</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Where to find us</h4>
-            <p><strong>Obaju Ltd.</strong><br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact page</a>
-            <hr class="d-block d-md-none">
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Get the news</h4>
-            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-            <form>
-              <div class="input-group">
-                <input type="text" class="form-control"><span class="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary">Subscribe!</button></span>
-              </div>
-              <!-- /input-group-->
-            </form>
-            <hr>
-            <h4 class="mb-3">Stay in touch</h4>
-            <p class="social"><a href="#" class="facebook external"><i class="fa fa-facebook"></i></a><a href="#" class="twitter external"><i class="fa fa-twitter"></i></a><a href="#" class="instagram external"><i class="fa fa-instagram"></i></a><a href="#" class="gplus external"><i class="fa fa-google-plus"></i></a><a href="#" class="email external"><i class="fa fa-envelope"></i></a></p>
-          </div>
-          <!-- /.col-lg-3-->
-        </div>
-        <!-- /.row-->
-      </div>
-      <!-- /.container-->
-    </div>
+    <?php include "footer.php" ?>
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
     
@@ -358,27 +305,11 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     *** COPYRIGHT ***
     _________________________________________________________
     -->
-    <div id="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-2 mb-lg-0">
-            <p class="text-center text-lg-left">©2019 Your name goes here.</p>
-          </div>
-          <div class="col-lg-6">
-            <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">Bootstrapious</a>
-              <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-    <script src="js/front.js"></script>
+   
+
+    
   </body>
 </html>

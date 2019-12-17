@@ -37,6 +37,12 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+            <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+    <script src="js/front.js"></script>
   </head>
   <body>
     <!-- navbar-->
@@ -58,7 +64,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               <?php }else{ ?>
-                <li class="list-inline-item"><a href="#" data-toggle="modal" ><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="akun.php"><?php echo @$_SESSION['username']; ?></a></li>
                 <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               <?php } ?>
@@ -74,36 +80,20 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="" method="post">
+                <form action="cek_login.php" method="post">
                   <div class="form-group">
                     <input id="email-modal" type="text" placeholder="email" name="username" class="form-control">
                   </div>
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
+                  <div class="form-group">
+                  <p><a href="reset.php">lupa password?</a></p>                    
+                  </div>
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
-                <?php 
-
-                  if(isset($_POST['login'])){
-
-                    $username = $_POST['username'];
-                    $password = $_POST['password'];
-                    $q = mysqli_query($conn, "SELECT * FROM tb_laundry where username='$username' and password='$password'");
-                    $cek = mysqli_num_rows($q);
-                    if($cek > 0){
-                      $data = mysqli_fetch_assoc($q);
-                      $_SESSION['username'] = $username;
-                      header("location:index.php");
-                    }else{
-                      echo "gagal login";
-                    }
-
-                  }
-
-                ?>
               </div>
             </div>
           </div>
@@ -131,16 +121,45 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
               </div>
             </div>
           </div>
+          <div class="p-5">
           <div class="container">
             <div class="row">
             <?php 
-        
-                $search=$_GET["search"];
-		            $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE nama_laundry like '%$search%'")or die(mysql_error());
+                
+                  $queryKategori = "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori WHERE";
+                  
+                @$id_kategori = explode(",", $_GET['id']);
+
+                  for($t = 0; $t <= count($id_kategori) - 1; $t++){
+                    $queryKategori .= " tb_detail_kategori.id_kategori = ".$id_kategori[$t];
+                    if($t != count($id_kategori) - 1){
+                        $queryKategori .= " OR ";
+                    }
+                  }
+
+                  @$search = $_GET["search"];
+                  @$listing = $_GET["listing"];
+
+                  $query_mysql;
+
+                  if(isset($id_kategori) && $id_kategori[0] != ""){
+                    $query_mysql = mysqli_query($conn, $queryKategori)or die(mysqli_error($conn));
+                  }
+                  else if(isset($search)){
+                    $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE nama_laundry like '%$search%'")or die(mysqli_error($conn));
+                  }else if(isset($listing)){
+                    if($listing == "baru"){
+                      $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY id_laundry DESC")or die(mysqli_error($conn));
+                    }else if($listing == "lama"){
+                      $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY id_laundry ASC")or die(mysqli_error($conn));
+                    }
+                  }
+		            
 		            $nomor = 1;
                 if(mysqli_num_rows($query_mysql) > 0){
 
 		                while($data = mysqli_fetch_array($query_mysql)){
+
 		        ?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
               <div class="item col-md-4">
@@ -179,7 +198,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
               <?php } ?>
 
             <?php }else{ ?>
-              <div class="text-center font-weight-bolder">Laundry tidak ditemukan</div>
+              <div>
+                <h4 class="mr-auto font-weight-bolder">Laundry tidak ditemukan</h4>
+              </div>
             <?php } ?>
               <!-- /.product-slider-->
 
@@ -254,68 +275,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     *** FOOTER ***
     _________________________________________________________
     -->
-    <div id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Pages</h4>
-            <ul class="list-unstyled">
-              <li><a href="text.html">About us</a></li>
-              <li><a href="text.html">Terms and conditions</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-            </ul>
-            <hr>
-            <h4 class="mb-3">User section</h4>
-            <ul class="list-unstyled">
-              <li><a href="index.php" >Logout</a></li>
-              
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Top categories</h4>
-            <h5>Men</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Shirts</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-            <h5>Ladies</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Skirts</a></li>
-              <li><a href="category.html">Pants</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Where to find us</h4>
-            <p><strong>Obaju Ltd.</strong><br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact page</a>
-            <hr class="d-block d-md-none">
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Get the news</h4>
-            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-            <form>
-              <div class="input-group">
-                <input type="text" class="form-control"><span class="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary">Subscribe!</button></span>
-              </div>
-              <!-- /input-group-->
-            </form>
-            <hr>
-            <h4 class="mb-3">Stay in touch</h4>
-            <p class="social"><a href="#" class="facebook external"><i class="fa fa-facebook"></i></a><a href="#" class="twitter external"><i class="fa fa-twitter"></i></a><a href="#" class="instagram external"><i class="fa fa-instagram"></i></a><a href="#" class="gplus external"><i class="fa fa-google-plus"></i></a><a href="#" class="email external"><i class="fa fa-envelope"></i></a></p>
-          </div>
-          <!-- /.col-lg-3-->
-        </div>
-        <!-- /.row-->
-      </div>
-      <!-- /.container-->
-    </div>
+    <?php include "footer.php" ?>
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
     
@@ -337,11 +297,6 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-    <script src="js/front.js"></script>
+
   </body>
 </html>

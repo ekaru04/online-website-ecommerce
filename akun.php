@@ -4,7 +4,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 date_default_timezone_set('Asia/Jakarta');
 session_start();
 @$sess = $_SESSION['username'];
-$tu2 = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
+$tu3 = mysqli_query($conn, "SELECT * FROM tb_laundry  WHERE username='$sess'");
+$tu2 = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_foto_laundry ON tb_foto_laundry.id_foto_laundry = tb_laundry.id_foto_laundry WHERE username='$sess'");
 // untuk menampilkan semua data yg ada pada tb_laundry berdasarkan session
 $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$sess'");
 // untuk menampilkan data lapak kategori lebih dari satu berdasarkan session
@@ -114,18 +115,19 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                   <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                   <li aria-current="page" class="breadcrumb-item active"><?php echo @$sess; ?></li>
                 </ol>
-              </nav>
             </div>
+              </nav>
             
            <!--  DATA MASING-MASING KATALOG LAPAK  -->
             <div class="col-lg-12 order-1 order-lg-2">
               <div id="productMain" class="row">
                 <div class="col-md-6">
                   <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
-                    <div class="item"> <img src="img/utap.jpg" alt="" class="img-fluid"></div>
-                    <div class="item"> <img src="img/utap.jpg" alt="" class="img-fluid"></div>
-                    <div class="item"> <img src="img/utap.jpg" alt="" class="img-fluid"></div>
-                  </div>
+                    <?php while($dat = mysqli_fetch_array($tu2)){ ?>
+                    <div class="item"> 
+                      <img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid">
+                    </div><?php } ?>
+                  </div>                
                   <div class="ribbon sale">
                     <div class="theribbon">SALE</div>
                     <div class="ribbon-background"></div>
@@ -140,9 +142,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                 <div class="col-md-6">
                   <div class="box">
                     <?php
-                    while($data = mysqli_fetch_array($tu2)){ ?>
-
-
+                    while($data = mysqli_fetch_array($tu3)){ ?>                    
                     <h1 class="text-center"><?php echo $data['nama_laundry']; ?></h1>
                     <p class="goToDescription"><?php echo $data['alamat']; ?></p>
                     <p class="price">Kategori Laundry</p>

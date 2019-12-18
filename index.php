@@ -106,6 +106,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
+                  <a href="lupapass.php">Lupa password?</a>
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
@@ -130,7 +131,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
           <div class="row">
             <div class="col-md-12">
               <div id="main-slider" class="owl-carousel owl-theme">
-                <div class="item"><img src="laundry.jpg" alt="" class="img-fluid"></div>
+                <div class="item"><img src="img/laundry.jpg" alt="" class="img-fluid"></div>
                 <div class="item"><img src="img/godai.png" alt="" class="img-fluid"></div>
                 <div class="item"><img src="img/main-slider3.jpg" alt="" class="img-fluid"></div>
                 <div class="item"><img src="img/main-slider4.jpg" alt="" class="img-fluid"></div>
@@ -195,10 +196,10 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="lapak.php?id=<?php echo $data['username']; ?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="lapak.php?id=<?php echo $data['username']; ?>"><img src="laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="front"><a href="lapak.php?id=<?php echo $data['username']; ?>"><img src="img/laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <div class="back"><a href="lapak.php?id=<?php echo $data['username']; ?>"><img src="img/laundry.jpg" alt="" class="img-fluid"></a></div>
                     </div>
-                  </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="laundry.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">
                     <h3><a href="lapak.php?id=<?php echo $data['username']?>"><?= $data['nama_laundry'] ?></a></h3>
                     <p class="price"> 

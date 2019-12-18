@@ -170,9 +170,6 @@ if($_SESSION['username'] == null){
                         <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
                       </div>
                     </div>
-                  </div>
-                  <!-- /.row-->
-                  <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="telp">No Telepon</label>
@@ -188,10 +185,21 @@ if($_SESSION['username'] == null){
                         <input name="no_telp" type="tel" maxlength="13" onkeypress="return angka(event)" required class="form-control" value="<?php echo $data['no_telp']; ?>">
                       </div>
                     </div>
+                  </div>
+
+                  <!-- /.row-->
+                  <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="email">Email</label>
                         <input name="email" type="text" class="form-control" value="<?php echo $data['email']; ?>">
+                      </div>
+                    </div>
+                    <div class="col-md-6 ">
+                      <div class="form-group">
+                        <label for="tgl">Berlaku hingga</label>
+                        <input name="tgl" readonly type="date" class="form-control" value="<?php echo $data['expired']; ?>">
+                        </select>
                       </div>
                     </div>
                   </div>
@@ -215,13 +223,6 @@ if($_SESSION['username'] == null){
                           <br>
                         <?php  }?>
                         </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6 ">
-                      <div class="form-group">
-                        <label for="tgl">Berlaku hingga</label>
-                        <input name="tgl" readonly type="date" class="form-control" value="<?php echo $data['expired']; ?>">
-                        </select>
                       </div>
                     </div>
                     <div class="col-md-12 text-center">

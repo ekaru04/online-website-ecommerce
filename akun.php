@@ -172,7 +172,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
               <div id="details" class="box">
                 <p></p>
                 <h4>Deskripsi Laundry</h4>
-                <p><strong><?php echo $data['deskripsi_laundry']; ?></strong></p>
+                <p><strong><?php echo $data['deskripsi_laundry'];?></strong></p>
               <?php } ?>
                 
                 <hr>

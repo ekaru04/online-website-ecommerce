@@ -40,6 +40,7 @@ if($_SESSION['username'] == null){
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/ckeditor.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
@@ -207,7 +208,7 @@ if($_SESSION['username'] == null){
                           <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>">
                           <label for="<?= $rQuery['id_kategori'] ?>"><?= $rQuery['jenis_kategori'] ?></label>
                           <br>
-                        <?php  }?>
+                        <?php  } ?>
                         </div>
                       </div>
                     </div>
@@ -220,16 +221,17 @@ if($_SESSION['username'] == null){
                     <div class="mx-auto col-md-8">
                       <div class="form-group">
                         <label for="alamat">Deskripsi Lapak</label>
-                        <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
+                        <textarea name="deskripsi" type="text" class="form-control"><?php echo $data['deskripsi_laundry'];?></textarea>
                       </div>
                     </div>
+                    <?php } ?>
                     <div class="col-md-12 text-center">
                       <button type="submit" class="btn btn-primary" data-toggle="modal" data-target=".simpan-modal-sm"><i class="fa fa-save"></i>Simpan Gan</button>
                       
                     </div>
                   </div>
                 </form>
-                <?php } ?>
+                
               </div>
             </div>
           </div>

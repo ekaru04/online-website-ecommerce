@@ -161,19 +161,19 @@ if($_SESSION['username'] == null){
                   <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Nama Lapak </label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="nama" value="<?php echo $data['nama_laundry'] ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="nama" value=": <?php echo $data['nama_laundry'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi Lapak </label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="deskripsi" value="<?php echo $data['deskripsi_laundry'] ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="deskripsi" value=": <?php echo $data['deskripsi_laundry'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="alamat" class="col-sm-2 col-form-label">Alamat Lapak</label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="alamat" value="<?php echo $data['alamat'] ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="alamat" value=": <?php echo $data['alamat'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">

@@ -168,7 +168,7 @@ if($_SESSION['username'] == null){
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="telp">No Telepon :</label>
+                        <label for="telp">Nomer Telepon :</label>
                           <script>
                             function angka(evt) {
                               var charCode = (evt.which) ? evt.which : event.keyCode

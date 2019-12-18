@@ -200,19 +200,19 @@ if($_SESSION['username'] == null){
                   <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="email" value="<?php echo $data['email'] ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="email" value=": <?php echo $data['email'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="tgl" class="col-sm-2 col-form-label">Tanggal Berlaku</label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="tgl" value="<?php echo $data['expired']?>">
+                      <input type="text" readonly class="form-control-plaintext" id="tgl" value=": <?php echo $data['expired']?>">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="status" class="col-sm-2 col-form-label">Status</label>
                     <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="status" value="<?php echo $data['status'] ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="status" value=": <?php echo $data['status'] ?>">
                     </div>
                   </div>
                   <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="btn btn-warning btn-m">Edit</a></td>

@@ -187,7 +187,7 @@ if($_SESSION['username'] == null){
                       while($uDetail = mysqli_fetch_array($queryDetail)){
 
                       ?>
-                      <input type="text" readonly class="form-control-plaintext" id="kategori" value="<?php echo $uDetail['jenis_kategori']; ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="kategori" value=": <?php echo $uDetail['jenis_kategori']; ?>">
                     <?php } ?>
                     </div>
                   </div>

@@ -326,7 +326,15 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   </div>
                   <div class="form-group">
                     <label for="no_telp">Nomor Telepon</label>
-                    <input name="no_telp" type="text" class="form-control" maxlength="12" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="">
+                    <script>
+                      function angka(evt){
+                        var charCode = (evt.which)? evt.which : event.keyCode
+                        if (charCode > 31 && (charCode < 48 || charCode > 57))
+                        return false;
+                        return true;
+                      }
+                    </script>
+                    <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="12" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi_laundry">Deskripsi</label>

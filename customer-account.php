@@ -177,6 +177,12 @@ if($_SESSION['username'] == null){
                     </div>
                   </div>
                   <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="email" value=": <?php echo $data['email'] ?>">
+                    </div>
+                  </div>
+                  <div class="form-group row">
                     <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
                     <div class="col-sm-10">
                       
@@ -195,12 +201,6 @@ if($_SESSION['username'] == null){
                     <label for="telp" class="col-sm-2 col-form-label">Nomer Telepon</label>
                     <div class="col-sm-10">
                       <input type="text" readonly class="form-control-plaintext" id="no_telp" value=": <?php echo $data['no_telp'] ?>">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="text" readonly class="form-control-plaintext" id="email" value=": <?php echo $data['email'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">

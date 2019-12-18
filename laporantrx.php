@@ -71,6 +71,8 @@
             <h4 class="tittle-w3-agileits mb-0 mt-0">LAPORAN TRANSAKSI</h4>
               
             </div>
+            <!-- Just an image -->
+
             <!--// main-heading -->
             <section class="container">
 
@@ -89,7 +91,7 @@
                             // }
                             // $nomor =1;
                             // while($data = mysqli_fetch_array($query_mysql)){
-                                
+                            
                             if(isset($_GET['pesan'])){
                                 $pesan = $_GET['pesan']; 
                                 if($pesan == "input"){
@@ -102,6 +104,11 @@
                                 
                             }
                             ?>
+                        <form method="get">
+                            <label>PILIH TANGGAL</label>
+                            <input type="date" name="tanggal">
+                            <input type="submit" value="FILTER">
+                        </form>
                           </div>
                         </div>
                       </div>
@@ -119,11 +126,27 @@
             <th>Expired</th>
             <th>Status</th>
 		</tr>
+
+        <form method="get">
+            <label>Tanggal</label>
+            <input type="date" name="tanggal">
+            <input type="submit" value="Filter">
+        </form>
 		<?php 
 		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
-		$no = 1;
-		$data = mysqli_query($host,"SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan WHERE tb_laundry.username = tb_trx.username ORDER BY tb_trx.id_trx DESC");
-		while($d = mysqli_fetch_array($data)){
+        $no = 1;
+        $data;
+        $tgl = $_GET['tanggal'];
+        
+        if(!isset($tgl)){
+            $data = mysqli_query($host, "SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan ORDER BY tb_trx.id_trx DESC")or die(mysqli_error($host));
+        }else{
+            $data = mysqli_query($host, "SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan WHERE tb_trx.tgl_transaksi = '$tgl' ORDER BY tb_trx.id_trx DESC")or die(mysqli_error($host));
+        }
+
+        
+
+			while($d = mysqli_fetch_array($data)){
 			?>
 			<tr>
 				<td><?php echo $no++; ?></td>
@@ -143,7 +166,7 @@
                 <td><?php echo $d['expired']; ?> </td>
                 <td><?php echo $d['status']; ?> </td>
 			</tr>
-			<?php } ?>
+			<?php }  ?>
 	</table>
     <!-- <a class="tombol" href="input.php">+ Tambah Data Baru</a> -->
         </div>

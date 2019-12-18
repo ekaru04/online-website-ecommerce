@@ -136,7 +136,7 @@ if($_SESSION['username'] == null){
             </div>
             <div class="col-lg-9">
               <div class="box">
-                <h1 class="mt-3 lon">Detail Lapak</h1>
+                <h1 class="mt-2 lon">Detail Lapak</h1>
                 <hr>
                 <?php 
                     

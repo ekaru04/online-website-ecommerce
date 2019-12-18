@@ -203,7 +203,7 @@ if($_SESSION['username'] == null){
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="tgl" class="col-sm-2 col-form-label">Tanggal Berlaku</label>
+                    <label for="tgl" class="col-sm-2 col-form-label">Berlaku hingga</label>
                     <div class="col-sm-10">
                       <input type="text" readonly class="form-control-plaintext" id="tgl" value=": <?php echo $data['expired']?>">
                     </div>

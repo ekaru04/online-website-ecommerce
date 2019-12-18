@@ -4,5 +4,13 @@
     color: white;
 }
 .edit {
-    width: 50% !important;
+    width: 100% !important;
+    position: center;
+    padding: 50;
+}
+.h4 {
+    text-align: center;
+}
+.lon {
+    text-align: center;
 }

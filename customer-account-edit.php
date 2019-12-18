@@ -164,12 +164,6 @@ if($_SESSION['username'] == null){
                         <input name="alamat" type="text" class="form-control" value="<?php echo $data['alamat']; ?>">
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="alamat">Deskripsi Lapak</label>
-                        <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
-                      </div>
-                    </div>
                   </div>
                   <!-- /.row-->
                   <div class="row">
@@ -221,7 +215,12 @@ if($_SESSION['username'] == null){
                       <div class="form-group">
                         <label for="tgl">Berlaku hingga</label>
                         <input name="tgl" readonly type="date" class="form-control" value="<?php echo $data['expired']; ?>">
-                        </select>
+                      </div>
+                    </div>
+                    <div class="mx-auto col-md-8">
+                      <div class="form-group">
+                        <label for="alamat">Deskripsi Lapak</label>
+                        <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
                       </div>
                     </div>
                     <div class="col-md-12 text-center">

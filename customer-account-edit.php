@@ -136,12 +136,8 @@ if($_SESSION['username'] == null){
             </div>
             <div class="col-lg-9">
               <div class="box">
-                <h1>LondreKu</h1>
-                
-                  <!-- /.row-->
-
-                </form>
-                <h3 class="mt-5">Detail Londre</h3>
+                <h1 class="mt-3 lon">Detail LondreKu</h1>
+                <hr>
                 <?php 
                     
                     $id = $_GET['id'];

@@ -149,26 +149,26 @@ if($_SESSION['username'] == null){
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="nama">Nama Lapak</label>
+                        <label for="nama">Nama Lapak :</label>
                         <input type="hidden" name="id" value="<?php echo $data['id_laundry']; ?>">
                         <input name="nama" type="text" class="form-control" value="<?php echo $data['nama_laundry']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="alamat">Alamat Lapak</label>
+                        <label for="alamat">Alamat Lapak :</label>
                         <input name="alamat" type="text" class="form-control" value="<?php echo $data['alamat']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="alamat">Deskripsi Lapak</label>
+                        <label for="alamat">Deskripsi Lapak :</label>
                         <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="telp">No Telepon</label>
+                        <label for="telp">No Telepon :</label>
                           <script>
                             function angka(evt) {
                               var charCode = (evt.which) ? evt.which : event.keyCode
@@ -186,13 +186,13 @@ if($_SESSION['username'] == null){
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="email">Email</label>
+                        <label for="email">Email :</label>
                         <input name="email" type="text" class="form-control" value="<?php echo $data['email']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6 ">
                       <div class="form-group">
-                        <label for="tgl">Berlaku hingga</label>
+                        <label for="tgl">Berlaku hingga :</label>
                         <input name="tgl" readonly type="date" class="form-control" value="<?php echo $data['expired']; ?>">
                         </select>
                       </div>
@@ -202,7 +202,7 @@ if($_SESSION['username'] == null){
                   <div class="row">
                     <div class="col-md-6 ">
                       <div class="form-group">
-                        <label for="kategori">Kategori</label>
+                        <label for="kategori">Kategori :</label>
                         <div class="col-md-6">
                           <?php
                           $idLaundry = $_GET['id'];

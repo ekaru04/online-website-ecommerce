@@ -32,17 +32,20 @@ foreach($_FILES['foto']['name'] as $p){
         move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/pendaftarandua/uploaded/".$p);
         mysqli_query($host, $sql1);
      
-    }else{
-        echo "foto tidak boleh melebihi 5";
+    }
     }
     $indexFoto++;
-}
+
 
 mysqli_query($host, "INSERT INTO tb_laundry(id_laundry, username, nama_laundry, alamat, password, email, no_telp, deskripsi_laundry, id_detail_kategori, id_foto_laundry, expired) VALUES('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$no_telp', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
 
 header("location:lapak.php?pesan=input");
 if($indexFoto < 6){
 
+}else{
+    echo '<script type="text/javascript">
+    alert("foto tidak boleh melebihi 5");
+    </script>';
 }
 
 ?>

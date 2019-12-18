@@ -291,14 +291,14 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
               <div class="card sidebar-menu mb-4">
               <!-- membuat koneksi ke database agar kategori lapak dapat muncul -->
               <!-- <?php
-                // include "koneksi.php";
-                // $query_mysql = mysqli_query($host,"SELECT * FROM tb_kategori");
-		// $nomor = 1;
-    // $g = mysqli_fetch_array($query_mysql);
+                include "koneksi.php";
+                $query_mysql = mysqli_query($host,"SELECT * FROM tb_kategori");
+		$nomor = 1;
+    $g = mysqli_fetch_array($query_mysql);
     
-    // $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
-    // $no = 1;
-    // $data = mysqli_fetch_array($t);
+    $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
+    $no = 1;
+    $data = mysqli_fetch_array($t);
 
     // session_start();
 

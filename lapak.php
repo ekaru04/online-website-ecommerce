@@ -149,14 +149,18 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
               <div id="productMain" class="row">
                 <div class="col-md-6">
                   <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
+
                   <?php 
+
                   $dt = mysqli_query($conn, "SELECT * FROM  tb_foto_laundry order by id_foto_laundry desc");
                   while($d = mysqli_fetch_array($dt)){
                     // echo "<pre>";
                     // print_r($d['foto']);
                   ?>
-                    <div class="item"> <img src="uploaded/<?= $d['foto']; ?>" alt="" class="img-fluid"></div>
+                    <div class="item"><img src="uploaded/<?= $d['foto']; ?>" alt="" class="img-fluid"></div>
+
                     <?php } ?>
+                  
                   </div>
                  
                 </div>
@@ -165,16 +169,27 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                   <?php
 
                 $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE username='$_GET[id]'");
-                $query_kate = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$sess'");
+                $query_kate = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$_GET[id]'");
 
 		            $nomor = 1;
 		            $data = mysqli_fetch_array($query_mysql)
-		?>
+		            
+                ?>
                     <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1>
-                    <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>
-                    <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
-                    <!-- <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p> -->
-                    <!-- <p class="price"></p> -->
+                    <p class="goToDescription"><?php echo $data["alamat"]?></p>
+                    <p class="price">Kategori Laundry</p>
+                    <div class="row">
+                      <?php 
+                      while($data2 = mysqli_fetch_array($query_kate)){
+
+                      ?>
+                      
+                      <hr class="my-1">
+                      <div class="col-lg-4">
+                        <p class="text-center btn-outline-success"><?php echo $data2['jenis_kategori'];?></p>
+                      </div>
+                    <?php } ?>
+                    </div>
                     <p class="text-center buttons"><a href="https://web.whatsapp.com/send?phone=<?php echo $data['no_telp'];?>&text=Permisi,%20apa%20laundry%20ini%20bersedia%20untuk%20saya%20gunakan%20jasanya%20?" class="btn btn-primary"><i class="fa fa-phone"></i>Hubungi Laundry</a>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">

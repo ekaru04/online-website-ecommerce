@@ -215,7 +215,7 @@ if($_SESSION['username'] == null){
                       <input type="text" readonly class="form-control-plaintext" id="status" value=": <?php echo $data['status'] ?>">
                     </div>
                   </div>
-                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="btn btn-warning btn-m">Edit</a></td>
+                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="edit btn btn-success btn-lg">Edit</a></td>
                 </form>
                 <?php } ?>
                 <!--<div class="table-responsive">

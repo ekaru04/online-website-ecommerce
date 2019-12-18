@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 // fungsi include untuk menyertakan file php lain ke dalam suatu program php
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/pendaftarandua/koneksi.php'; 
 
@@ -16,39 +17,21 @@ $password = $_POST['password'];
 $email = $_POST['email'];
 $no_telp = $_POST['no_telp'];
 $deskripsi_laundry = $_POST['deskripsi_laundry'];
-$kategori = $_POST['kategori'];
-
-$indexFoto = 1 ;
+// $kategori = $_POST['kategori'];
 echo "<pre>";
-print_r($_FILES['foto']);
+$id = $getInt['id_laundry'] + 1;
+print_r($_POST); 
+foreach ($_POST['id_detail_kategori'] as $key) {
+    mysqli_query($host, "INSERT INTO tb_detail_kategori(id_laundry, id_kategori) VALUES('$id', '$key')");
+}
+$indexFoto = 1 ;
 foreach($_FILES['foto']['name'] as $p){
-// $ukuran_file = $_POST['foto']['size'];
-// $path = "uploaded/".$p;
-
-    
-    // print_r($_FILES['foto']);
-    // echo $_SERVER['DOCUMENT_ROOT']."/Rebellion/pendaftarandua/uploaded/".$p; 
-    
-    // membuat foto tidak lebih dari 5
     if($indexFoto < 6){
-        $id = $getInt['id_laundry'] + 1;
         echo $id;
         $sql1 = "INSERT INTO tb_foto_laundry VALUES ('$id', '', '$p')";
-        // echo "INSERT INTO tb_foto_laundry VALUES ('$getInt', '$p') <br>";
-        // echo $sql1;
         move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/pendaftarandua/uploaded/".$p);
         mysqli_query($host, $sql1);
-    // if ($ukuran_file<= 2000000){
-    //     if($indexFoto < 5){
-    //         $id = $getInt['id_laundry'] + 1;
-    //         echo $id;
-    //         $sql1 = "INSERT INTO tb_foto_laundry VALUES ('$id', '', '$p')";
-    //         // echo "INSERT INTO tb_foto_laundry VALUES ('$getInt', '$p') <br>";
-    //         // echo $sql1;
-    //         move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/pendaftarandua/uploaded/".$p);
-    //         mysqli_query($host, $sql1);
-
-
+     
     }else{
         echo "foto tidak boleh melebihi 5";
     }
@@ -56,9 +39,10 @@ foreach($_FILES['foto']['name'] as $p){
 }
 
 mysqli_query($host, "INSERT INTO tb_laundry(id_laundry, username, nama_laundry, alamat, password, email, no_telp, deskripsi_laundry, id_detail_kategori, id_foto_laundry, expired) VALUES('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$no_telp', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
-// echo "jumlahnya "+$indexFoto;
+
 header("location:lapak.php?pesan=input");
 if($indexFoto < 6){
+
 }
 
 ?>

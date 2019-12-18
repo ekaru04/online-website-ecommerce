@@ -1,3 +1,14 @@
+<!-- <?php
+include 'koneksi.php';
+session_start();
+$t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
+@$sess= $_SESSION['id_laundry'];
+$username = mysqli_fetch_array($t);
+// echo "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$sess'";
+// echo "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori where tb_laundry.username = '$username[username]'";
+$tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori where tb_laundry.username = '$username[username]'");
+?> -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -40,11 +51,9 @@
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
               <?php
-                include 'koneksi.php';
-                $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
                 $data = mysqli_fetch_array($t);
                 ?>
-                <li class="list-inline-item" style="color:white;">Selamat Datang <?php echo $data["username"]?> </a></li>
+                <li class="list-inline-item" style="color:white;"><?php echo $data["username"]?> </a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                 <li class="list-inline-item"><a href="#">Recently viewed</a></li>
@@ -281,22 +290,22 @@
               -->
               <div class="card sidebar-menu mb-4">
               <!-- membuat koneksi ke database agar kategori lapak dapat muncul -->
-              <?php
-                include "koneksi.php";
-                $query_mysql = mysqli_query($host,"SELECT * FROM tb_kategori");
+              <!-- <?php
+                // include "koneksi.php";
+                // $query_mysql = mysqli_query($host,"SELECT * FROM tb_kategori");
 		// $nomor = 1;
-    $g = mysqli_fetch_array($query_mysql);
+    // $g = mysqli_fetch_array($query_mysql);
     
-    $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
-    $no = 1;
-    $data = mysqli_fetch_array($t);
+    // $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
+    // $no = 1;
+    // $data = mysqli_fetch_array($t);
 
     // session_start();
 
     //   @$sess = $_SESSION['id_laundry'];
 
     //   $bismillah = mysqli_queri($host, "SELECT*FROM tb_laundry INNER JOIN tb_detail kategori ON tb _detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE id_laundry='$sess'");
-		?>
+		?> -->
 
     <!-- <?php
       // include "koneksi.php";
@@ -306,21 +315,21 @@
 
       // $bismillah = mysqli_queri($host, "SELECT*FROM tb_laundry INNER JOIN tb_detail kategori ON tb _detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE id_laundry='$sess'");
     ?> -->
-                <div class="card-header">
+                <!-- <div class="card-header">
                 
                   <h3 class="h4 card-title">Kategori</h3>
                 </div>
                 <div class="card-body">
                   <ul class="nav nav-pills flex-column category-menu">
-                    <!-- <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a> -->
-                      <ul class="list-unstyled">
+                    < <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a> -->
+                      <!-- <ul class="list-unstyled"> -->
                         <!-- <li><a class="nav-link">
                         
                         <?php echo $g["jenis_kategori"]?>
                         </a></li> -->
                         
-                      </ul>
-                    </li>
+                      <!-- </ul>
+                    </li> -->
                     <!-- <li><a class="nav-link">Jenis Cucian<span class="badge badge-light"></span></a>
                       
                     </li> -->
@@ -336,12 +345,12 @@
                 </div>
               </div>
               <!-- menampilkan waktu berakhir iklan pada lapak -->
-              <div id="details" class="box"><b>IKLAN LAPAK BERAKHIR PADA</b></br><?php echo $data["expired"]?></div>
+              
             </div>
             <div class="col-lg-9 order-1 order-lg-2">
-              <div id="productMain" class="row">
+              <div id="productMain" class="row" style="width:1110px; ">
                 <div class="col-md-6">
-                  <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
+                  <div data-slider-id="1"  class="owl-carousel shop-detail-carousel">
                   <?php 
                   include "koneksi.php";
                   $q = mysqli_query($host, "SELECT * FROM tb_laundry order by id_laundry desc");
@@ -356,7 +365,7 @@
                  
                 </div>
                 <div class="col-md-6">
-                  <div class="box">
+                  <div class="box" style="height:397px;">
                   <?php
                 include 'koneksi.php';
                
@@ -364,20 +373,20 @@
                 <!--menampilakan nama lapak laundry -->
                     <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1> 
                     <!-- menampilkan alamat lapak -->
-                    <h5 style="text-align:justify;"><?php echo $data["alamat"]?></h5>
-                    <!-- menampilkan email lapak -->
-                    <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
-                    <!-- menampilkan nomor telepon lapak -->
-                    <h5 style="text-align:justify;"><?php echo $data["no_telp"]?></h5>
+                    <h5 style="text-align:justify; text-align:center;"><?php echo $data["alamat"]?></h5>
+                    <?php
+                    while($p2 = mysqli_fetch_array($tu)){ ?>
+                    <p class="text-center"><font size="2"><?php echo $p2['jenis_kategori']; ?></font></p> <?php  } ?>
+                    <!-- <div id="details" style="text-align:center;"><b>IKLAN LAPAK BERAKHIR PADA</b></br><?php echo $data["expired"]?></div> -->
                     <!-- <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p> -->
                     <!-- <p class="price"></p> -->
-                    <p class="text-center buttons"><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Hubungi GG Loundry</a>
+                    <p class="text-center buttons"><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> <?php echo $data["no_telp"]?></a>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">
                   </div>
                 </div>
               </div>
-              <div id="details" class="box">
+              <div id="details" class="box" style="width:1080px">
                 <p></p>
                 <!-- menampilkan deskripsi lapak laundry -->
                 <h4>Deskripsi Lapak </h4>

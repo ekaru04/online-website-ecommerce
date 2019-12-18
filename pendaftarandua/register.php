@@ -339,7 +339,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   <?php
                   // menampilkan field kategori yg terdapat dalam database
                   while ($r = mysqli_fetch_assoc($o)){
-                    echo "<input type='checkbox' value=".$r['id_kategori']." > ".$r ['jenis_kategori']." <br/>";
+                    echo "<input type='checkbox' value=".$r['id_kategori']." name='id_detail_kategori[]'> ".$r ['jenis_kategori']." <br/>";
                   }
                   ?>
                   </select>

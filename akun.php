@@ -117,7 +117,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
               </nav>
             </div>
             
-           
+           <!--  DATA MASING-MASING KATALOG LAPAK  -->
             <div class="col-lg-12 order-1 order-lg-2">
               <div id="productMain" class="row">
                 <div class="col-md-6">
@@ -140,11 +140,11 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                 <div class="col-md-6">
                   <div class="box">
                     <?php
-                    while($p = mysqli_fetch_array($tu2)){ ?>
+                    while($data = mysqli_fetch_array($tu2)){ ?>
 
 
-                    <h1 class="text-center"><?php echo $p['nama_laundry']; ?></h1>
-                    <p class="goToDescription"><?php echo $p['deskripsi_laundry']; ?></p>
+                    <h1 class="text-center"><?php echo $data['nama_laundry']; ?></h1>
+                    <p class="goToDescription"><?php echo $data['alamat']; ?></p>
                     <p class="price">Kategori Laundry</p>
                       <div class="row">
                         <?php
@@ -154,9 +154,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                         <div class="col-lg-4">
                           <p class="text-center btn-outline-success"><?php echo $p2['jenis_kategori']; ?></p>
                         </div>
-                        <?php } } ?>
+                        <?php } ?>
                       </div>
-                    <p class="text-center buttons p-2"><a href="whatsapp://send?text=Hello&phone=<?php echo $p['no_telp']?>" class="btn btn-primary"><i></i>Hubungi Laundry</a></p>
+                    <p class="text-center buttons p-2"><a href="https://web.whatsapp.com/send?phone=<?php echo $data['no_telp'];?>&text=Permisi,%20apa%20laundry%20ini%20bersedia%20untuk%20saya%20gunakan%20jasanya%20?" class="btn btn-primary"><i class="fa fa-phone"></i>Hubungi Laundry</a></p>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">
 
@@ -172,25 +172,10 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
               <div id="details" class="box">
                 <p></p>
                 <h4>Deskripsi Laundry</h4>
-                <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>
-                <h4>Material &amp; care</h4>
-                <ul>
-                  <li>Polyester</li>
-                  <li>Machine wash</li>
-                </ul>
-                <h4>Size &amp; Fit</h4>
-                <ul>
-                  <li>Regular fit</li>
-                  <li>The model (height 5'8" and chest 33") is wearing a size S</li>
-                </ul>
-                <blockquote>
-                  <p><em>Define style this season with Armani's new range of trendy tops, crafted with intricate details. Create a chic statement look by teaming this lace number with skinny jeans and pumps.</em></p>
-                </blockquote>
+                <p><strong><?php echo $data['deskripsi_laundry']; ?></strong></p>
+              <?php } ?>
+                
                 <hr>
-                <div class="social">
-                  <h4>Show it to your friends</h4>
-                  <p><a href="#" class="external facebook"><i class="fa fa-facebook"></i></a><a href="#" class="external gplus"><i class="fa fa-google-plus"></i></a><a href="#" class="external twitter"><i class="fa fa-twitter"></i></a><a href="#" class="email"><i class="fa fa-envelope"></i></a></p>
-                </div>
               </div>
               <div class="row same-height-row">
                 <div class="col-md-3 col-sm-6">

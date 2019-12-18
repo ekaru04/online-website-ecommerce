@@ -105,7 +105,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
         <div class="container">
           <form role="search" class="ml-auto" action="cari.php" method="get">
             <div class="input-group">
-              <input type="text" placeholder="Search" name="search" class="form-control" >
+              <input type="text" placeholder="Cari nama laundry" name="search" class="form-control" >
               <div class="input-group-append">
                 <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
               </div>

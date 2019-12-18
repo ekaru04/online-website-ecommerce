@@ -64,7 +64,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar  </a></li>
               <?php }else{ ?>
-                <li class="list-inline-item"><a href="akun.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
                 <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               <?php } ?>
@@ -131,41 +131,21 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                   <li class="breadcrumb-item"><a href="#">Laundry</a></li>
-                  <!-- <li class="breadcrumb-item"><a href="#">Tops</a></li> -->
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-3 order-2 order-lg-1">
               <!--
               *** MENUS AND FILTERS ***
               _________________________________________________________
               -->
-              <div class="card sidebar-menu mb-4">
-              <?php
+              <!-- <?php
 
                 $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry tl INNER JOIN tb_kategori tk ON tl.id_detail_kategori=tk.id_kategori where tl.username='$_GET[id]'");
 		            $data = mysqli_fetch_array($query_mysql);
 
-		          ?>
-                <div class="card-header">
-                
-                  <h3 class="h4 card-title">Kategori</h3>
-                </div>
-                <div class="card-body">
-                  <ul class="nav nav-pills flex-column category-menu">
-                    <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a>
-                      <ul class="list-unstyled">
-                        <li><a class="nav-link"><?php echo $data["jenis_kategori"]?></a></li>
-                      </ul>
-                    </li>
-                    
-                  </ul>
-                </div>
-              </div>
+		          ?> -->
               <!-- *** MENUS AND FILTERS END ***-->
-              <div class="banner"><a href="#"><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"></a></div>
-            </div>
-            <div class="col-lg-9 order-1 order-lg-2">
+            <div class="col-lg-12 order-1 order-lg-2">
               <div id="productMain" class="row">
                 <div class="col-md-6">
                   <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
@@ -185,6 +165,8 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                   <?php
 
                 $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE username='$_GET[id]'");
+                $query_kate = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$sess'");
+
 		            $nomor = 1;
 		            $data = mysqli_fetch_array($query_mysql)
 		?>
@@ -193,7 +175,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                     <h5 style="text-align:justify;"><?php echo $data["email"]?></h5>
                     <!-- <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p> -->
                     <!-- <p class="price"></p> -->
-                    <p class="text-center buttons"><a href="https://web.whatsapp.com/send?phone=<?php echo $data['no_telp'];?>&text=Test%20doang%20sis" class="btn btn-primary"><i class="fa fa-shopping-cart"></i><?php echo $data['no_telp']?></a>
+                    <p class="text-center buttons"><a href="https://web.whatsapp.com/send?phone=<?php echo $data['no_telp'];?>&text=Permisi,%20apa%20laundry%20ini%20bersedia%20untuk%20saya%20gunakan%20jasanya%20?" class="btn btn-primary"><i class="fa fa-phone"></i>Hubungi Laundry</a>
                   </div>
                   <div data-slider-id="1" class="owl-thumbs">
                   
@@ -208,11 +190,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                   <p><em>Jika ingin menggunakan jasa kami langsung hubungi kami. Dengan senang hati kami membantu pekerjaan anda yang tertunda.</em></p>
                 </blockquote>
                 <hr>
-                <div class="social">
-                  <h4>Show it to your friends</h4>
-                  <p><a href="#" class="external facebook"><i class="fa fa-facebook"></i></a><a href="#" class="external gplus"><i class="fa fa-google-plus"></i></a><a href="#" class="external twitter"><i class="fa fa-twitter"></i></a><a href="#" class="email"><i class="fa fa-envelope"></i></a></p>
-                </div>
-              </div>
+                  </div>
                 </div>
               </div>
             </div>

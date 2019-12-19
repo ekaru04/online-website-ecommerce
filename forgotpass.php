@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Forgot Pass</title>
+	<title>Clean in Click</title>
+	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
 </head>
 <body>
 

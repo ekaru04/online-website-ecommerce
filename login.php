@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat Login Multi User Level Dengan PHP dan MySQLi - www.malasngoding.com</title>
+	<title>Clean in Click</title>
+	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>

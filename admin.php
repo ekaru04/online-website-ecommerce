@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Halaman admin - www.malasngoding.com</title>
+	<title>Clean in Click</title>
+	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
 </head>
 <body>
 	<?php 

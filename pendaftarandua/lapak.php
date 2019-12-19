@@ -309,40 +309,6 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
     //   $bismillah = mysqli_queri($host, "SELECT*FROM tb_laundry INNER JOIN tb_detail kategori ON tb _detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE id_laundry='$sess'");
 		?> -->
 
-    <!-- <?php
-      // include "koneksi.php";
-      // session_start();
-
-      // @$sess = $_SESSION['id_laundry'];
-
-      // $bismillah = mysqli_queri($host, "SELECT*FROM tb_laundry INNER JOIN tb_detail kategori ON tb _detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE id_laundry='$sess'");
-    ?> -->
-                <!-- <div class="card-header">
-                
-                  <h3 class="h4 card-title">Kategori</h3>
-                </div>
-                <div class="card-body">
-                  <ul class="nav nav-pills flex-column category-menu">
-                    < <li><a class="nav-link">Pengiriman<span class="badge badge-secondary"></span></a> -->
-                      <!-- <ul class="list-unstyled"> -->
-                        <!-- <li><a class="nav-link">
-                        
-                        
-                        </a></li> -->
-                        
-                      <!-- </ul>
-                    </li> -->
-                    <!-- <li><a class="nav-link">Jenis Cucian<span class="badge badge-light"></span></a>
-                      
-                    </li> -->
-                    <!-- <li><a href="category.html" class="nav-link">Kids  <span class="badge badge-secondary">11</span></a>
-                      <ul class="list-unstyled">
-                        <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                        <li><a href="category.html" class="nav-link">Skirts</a></li>
-                        <li><a href="category.html" class="nav-link">Pants</a></li>
-                        <li><a href="category.html" class="nav-link">Accessories</a></li>
-                      </ul>
-                    </li> -->
                   </ul>
                 </div>
               </div>

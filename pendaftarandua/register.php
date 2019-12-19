@@ -306,7 +306,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 <div class="form-group">
                 <!-- penggunaan required autofocus untuk memvalidasi jika terdapat kolom register yang belum terisi. -->
                     <label for="username">Username</label>
-                    <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
+                    <input name="username" type="teks"  class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="nama_laundry">Nama Loundry</label>
@@ -357,7 +357,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
               </div>
             
             <div class="col-md-6" >
-                  <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.<br>4. <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p>
+                  <!-- <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.<br>4. <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p> -->
                   <label for="foto">Upload Foto</label>
                   <input type="file" multiple name="foto[]" id="file">   
                   <div class="gallery"></div>

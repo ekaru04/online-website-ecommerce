@@ -1,6 +1,7 @@
 <?php 
 
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+
 $id = $_POST['id'];
 $nama = $_POST['nama'];
 $alamat = $_POST['alamat'];

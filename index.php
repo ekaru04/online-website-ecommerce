@@ -66,12 +66,9 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
     <script src="js/front.js"></script>
     <style>
       .customImages{
-        max-width: 348px;
-        max-height: 200px;
-      }
-      .customImages2{
-        max-width: 348px;
-        max-height: 200px;
+        height: 250px;
+        width: 100%;
+        overflow: hidden;
       }
     </style>
   </head>
@@ -211,9 +208,14 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
                       <?php
                       $usernameF = $data['username'];
                        $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn)); ?>
+
                       <?php while($dat = mysqli_fetch_array($query_foto)){ ?>
-                      <div class="front"><a href="lapak.php?id=<?php echo $dat['username']; ?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid" ></a></div>
-                    <?php } ?>
+                      <div class="front">
+                        <a href="lapak.php?id=<?php echo $dat['username']; ?>">
+                          <img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages">
+                        </a>
+                      </div>
+                      <?php } ?>
                     </div>
                   </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">
@@ -222,22 +224,6 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
                       <del></del> <?php echo $data['alamat']; ?>
                     </p>
                   </div>
-                  <!-- /.text-->
-                  <div class="ribbon sale">
-                    <div class="theribbon">SALE</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon gift">
-                    <div class="theribbon">GIFT</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
                 </div>
                 <!-- /.product-->
               </div>

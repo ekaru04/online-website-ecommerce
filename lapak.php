@@ -154,12 +154,12 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
 
                   <?php 
 
-                  $dt = mysqli_query($conn, "SELECT * FROM  tb_foto_laundry order by id_foto_laundry desc");
+                  $dt = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_foto_laundry ON tb_foto_laundry.id_foto_laundry = tb_laundry.id_foto_laundry WHERE username='$_GET[id]'");
                   while($d = mysqli_fetch_array($dt)){
                     // echo "<pre>";
                     // print_r($d['foto']);
                   ?>
-                    <div class="item"><img src="uploaded/<?= $d['foto']; ?>" alt="" class="img-fluid"></div>
+                    <div class="item"><img src="img/<?= $d['foto']; ?>" alt="" class="img-fluid"></div>
 
                     <?php } ?>
                   

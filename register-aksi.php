@@ -1,5 +1,4 @@
 <?php
-
 // fungsi include untuk menyertakan file php lain ke dalam suatu program php
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php'; 
 include "vendor/autoload.php";
@@ -38,7 +37,7 @@ $indexFoto = 0 ;
 foreach($_FILES['foto']['name'] as $p){
     if($indexFoto < 6){
     $sql1 = "INSERT INTO tb_foto_laundry VALUES('$getInt','$p')";
-    move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/foto/".$p);
+    move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/img/".$p);
     mysqli_query($conn, $sql1);
     $indexFoto++;
     }else{
@@ -50,7 +49,7 @@ foreach($_FILES['foto']['name'] as $p){
 
 }
 
-$a = "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email','$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')";
+$a = "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')";
 mysqli_query($conn, $a);
 
 foreach ($kategori as $key) {
@@ -74,7 +73,7 @@ foreach ($kategori as $key) {
 //     }
 
 
-mysqli_query($conn, "INSERT INTO tb_laundry(id_laundry, username, nama_laundry, alamat, password, email, no_telp, deskripsi_laundry, id_detail_kategori, id_foto_laundry, expired) VALUES('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$no_telp', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
+// mysqli_query($conn, "INSERT INTO tb_laundry(id_laundry, username, nama_laundry, alamat, password, email, no_telp, deskripsi_laundry, id_detail_kategori, id_foto_laundry, expired) VALUES('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$no_telp', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
 header("location:index.php");
 // if($indexFoto < 6){
 // 

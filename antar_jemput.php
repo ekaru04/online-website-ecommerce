@@ -164,7 +164,7 @@
         -->
         <div class="container">
           <div class="col-md-12">
-            <div class="box slideshow">
+            <!-- <div class="box slideshow">
               <h3>Get Inspired</h3>
               <p class="lead">Get the inspiration from our world class designers</p>
               <div id="get-inspired" class="owl-carousel owl-theme">
@@ -172,7 +172,7 @@
                 <div class="item"><a href="#"><img src="img/getinspired2.jpg" alt="Get inspired" class="img-fluid"></a></div>
                 <div class="item"><a href="#"><img src="img/getinspired3.jpg" alt="Get inspired" class="img-fluid"></a></div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- *** GET INSPIRED END ***-->
@@ -180,14 +180,14 @@
         *** BLOG HOMEPAGE ***
         _________________________________________________________
         -->
-        <div class="box text-center">
+        <!-- <div class="box text-center">
           <div class="container">
             <div class="col-md-12">
               <h3 class="text-uppercase">From our blog</h3>
               <p class="lead mb-0">What's new in the world of fashion? <a href="blog.html">Check our blog!</a></p>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="container">
           <div class="col-md-12">
             <div id="blog-homepage" class="row">

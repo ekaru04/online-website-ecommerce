@@ -94,9 +94,9 @@
                       </div>
 
 	<!--elemen tabel-->
-    <div class="container">
-	<table class="table table-responsive"> 
-		<tr class="thead">
+    <!-- <div class="container"> -->
+	<table class="table table-responsive" style="margin-left:-3%;"> 
+		<tr class="thead" style="margin-left:-3%;" >
 			<th>Username</th>
 			<th>Nama Lapak</th>
 			<th>Alamat</th>
@@ -105,14 +105,16 @@
 			<!-- <th>No tlp</th> -->
 			<th>Email</th>
 			<th>Foto</th>
-            <!-- <th>Password</th> -->
+            <th>Expired</th>
+            <th>Status</th>
             <th>Aksi</th>
 		</tr>
 		<?php 
 
 		include "koneksi.php";
         //include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
-		$query_mysql = mysqli_query($host,"SELECT username, nama_laundry, alamat, deskripsi_laundry, email FROM tb_laundry")or die(mysql_error());
+        $query_mysql = mysqli_query($host,"SELECT username, nama_laundry, alamat, deskripsi_laundry, email FROM tb_laundry")or die(mysql_error());
+        $data = mysqli_query($host,"select *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan");
         //query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
         $nomor = 1;
         
@@ -147,8 +149,10 @@
 
             <!-- <td><?php echo $data['deskripsi_laundry']; ?></td> -->
             <!-- <td><?php echo $data['password']; ?></td> -->
-            
+            <td><?php echo $data['alamat']; ?></td>
+			<td><?php echo $data['deskripsi_laundry']; ?></td>
 			<td>
+            <a type="button" class="btn btn-outline-danger"  >Nonaktif</a>| 
 				<!-- <a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> | -->
                 <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['username']; ?>">Hapus</a>
                 <!-- <a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					 -->

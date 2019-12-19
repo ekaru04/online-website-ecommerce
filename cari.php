@@ -1,7 +1,7 @@
 <?php
 
-
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+date_default_timezone_set('Asia/Jakarta');
 session_start();
 
 @$sess = $_SESSION['username'];

@@ -1,6 +1,9 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/pendaftarandua/koneksi.php';
-$o= mysqli_query($host, "SELECT * FROM tb_kategori");
+
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+date_default_timezone_set('Asia/Jakarta');
+$o= mysqli_query($conn, "SELECT * FROM tb_kategori");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -8,13 +11,14 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clean in Click</title>
-	  <link rel="icon" href="images/icon.jpg" type="images/icon.jpg"> 
+  	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <!-- Google fonts - Roboto -->
@@ -31,6 +35,13 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+    <script src="js/front.js"></script>
   </head>
   <body>
     <!-- navbar-->
@@ -73,7 +84,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   </p>
                 </form>
                 <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
+                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
             </div>
           </div>
@@ -286,54 +297,69 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
             <div class="col-md-6">
                 
                 <hr>
-                <?php
-                if(isset($_POST['Daftar'])){
-                  $username = $_POST['username'];
-                  $nama_laundry = $_POST['nama_laundry'];
-                  $alamat = $_POST['alamat'];
-                  $password = $_POST['password'];
-                  $email = $_POST['email'];
-                  $deskripsi_laundry = $_POST['deskripsi_laundry'];
-                  $kategori = $_POST['kategori'];                
+                <!-- <?php
+                // if(isset($_POST['Daftar'])){
+                //   $username = $_POST['username'];
+                //   $nama_laundry = $_POST['nama_laundry'];
+                //   $alamat = $_POST['alamat'];
+                //   $password = $_POST['password'];
+                //   $email = $_POST['email'];
+                //   $deskripsi_laundry = $_POST['deskripsi_laundry'];
+                //   $kategori = $_POST['kategori'];                
                   
-                  if(empty($username) || empty($nama_laundry) || empty($alamat) || empty($password) || empty($email) || empty($deskripsi_laundry) || empty($kategori)) {
-                    echo "<strong> Data Harus Diisi!</strong>";
-                  }else{
-                    //proses
-                  }
-                }
-                ?>
+                //   if(empty($username) || empty($nama_laundry) || empty($alamat) || empty($password) || empty($email) || empty($deskripsi_laundry) || empty($kategori)) {
+                //     echo "<strong> Data Harus Diisi!</strong>";
+                //   }else{
+                //     //proses
+                //   }
+                // }
+                ?> -->
                 <div class="form-group">
+                <!-- penggunaan required autofocus untuk memvalidasi jika terdapat kolom register yang belum terisi. -->
                     <label for="username">Username</label>
-                    <input name="username" type="teks" class="form-control">
+                    <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="nama_laundry">Nama Loundry</label>
-                    <input name="nama_laundry" type="text" class="form-control">
+                    <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="50" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="alamat">Alamat Lapak</label>
-                    <input name="alamat" type="text" class="form-control">
+                    <input name="alamat" type="text" class="form-control" maxlength="100" placeholder="Isi Alamat Lapak Anda" required autofocus="">
                   </div>
                   <div class="form-group">
                     <label for="password">Password</label>
-                    <input name="password" type="Password" class="form-control">
+                    <input name="password" type="Password" class="form-control" placeholder="Isi Password Akun Anda" maxlength="10" required autofocus="">
+                    <p>isi password anda 10 digit </p>
                   </div>
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input name="email" type="text" class="form-control">
+                    <input name="email" type="text" class="form-control" maxlength="50" placeholder="Isi Email Anda" required autofocus="">
+                  </div>
+                  <div class="form-group">
+                    <label for="no_telp">Nomor Telepon</label>
+                    <script>
+                      function angka(evt){
+                        var charCode = (evt.which)? evt.which : event.keyCode
+                        if (charCode > 31 && (charCode < 48 || charCode > 57))
+                        return false;
+                        return true;
+                      }
+                    </script>
+                    <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="13" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="" id="noTelpChange">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi_laundry">Deskripsi</label>
-                    <textarea class="ckeditor" name="deskripsi_laundry" id="ckeditor"></textarea>
+                    <textarea class="ckeditor" name="deskripsi_laundry" id="ckeditor" required autofocus=""></textarea>
                   </div>
                   <div class="form-group">
-                  <label for="kategori">Kategori</label>
-                  <select name="kategori" id="kategori" class="form-control">
-                  <option value="">- Pilih Kategori -</option>
+                  <label for="kategori">Kategori (Pilih Kategori yang Sesuai Dengan Lapak Anda)</label><br>
+                  <!-- <select name="kategori" id="kategori" class="form-control">
+                  <option value="">- Pilih Kategori -</option> -->
                   <?php
+                  // menampilkan field kategori yg terdapat dalam database
                   while ($r = mysqli_fetch_assoc($o)){
-                    echo "<option value=".$r['id_kategori']." > ".$r ['jenis_kategori']." </option>";
+                    echo "<input type='checkbox' value=".$r['id_kategori']." name='id_detail_kategori[]'> ".$r ['jenis_kategori']." <br/>";
                   }
                   ?>
                   </select>
@@ -342,7 +368,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
               </div>
             
             <div class="col-md-6" >
-                  <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.</p>
+                  <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.<br>4. <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p>
                   <label for="foto">Upload Foto</label>
                   <input type="file" multiple name="foto[]" id="file">   
                   <div class="gallery"></div>
@@ -446,33 +472,45 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-    <script src="js/front.js"></script>
+    
 
     <script>
+    String.prototype.replaceAt=function(index, char) {
+    var a = this.split("");
+    a[index] = char;
+    return a.join("");
+}
+
+    $('#noTelpChange').on('change', function(){
+      if(this.value[0] === '0'){
+        this.value = this.value.replaceAt(0, "+62");
+      }else{
+        swal("Nomor telpon tidak valid!");
+        this.value = "";
+      }
+    });
+
+     
     $(function(){
       var imagesPreview = function(input, placeToInsertImagePreview) {
-
     if (input.files) {
         var filesAmount = input.files.length;
-
         for (i = 0; i < filesAmount; i++) {
             var reader = new FileReader();
-
             reader.onload = function(event) {
-                $($.parseHTML('<img style=width:190px>')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                $($.parseHTML('<img style=width:190px class="delete">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
+                // peletakan foto
+                $(".delete").click(function(){
+                  $(this).remove();
+                  // jika foto diklik, maka foto akan terhapus dari halaman
+                });
             }
-
             reader.readAsDataURL(input.files[i]);
         }
     }
-
     };
-
+    // melakukan upload foto 
+    
     $('#file').on('change', function() {
     imagesPreview(this, 'div.gallery');
     });
@@ -480,7 +518,6 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     var currentFile = null;
     Dropzone.autoDiscover = false;
     var formData = new FormData();
-// $("#tambah").click(function(){
     var myDropzone = new Dropzone(".dropzone", {
   addRemoveLinks: true,
   url: "register-aksi.php",
@@ -488,18 +525,13 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
   init: function() {
     this.on("addedfile", function(file) {
         formData.append("file", file); 
-    //   if (currentFile) {
-    //     this.removeFile(currentFile);
-    //   }
-    //   currentFile = file;
     });
     this.on("removedfile", function(file) { 
       formData.delete('file');
     });
   }   
 });
-// })
-
+    // menampilkan foto pada saat upload foto di dalam halaman register menggunakan dropzone
     </script>
   </body>
 </html>

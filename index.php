@@ -68,7 +68,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
     <style>
       .customImages{
         max-width: 348px;
-        max-height: 350px;
+        max-height: 200px;
       }
     </style>
   </head>

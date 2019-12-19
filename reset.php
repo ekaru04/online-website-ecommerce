@@ -24,8 +24,8 @@ if($msg == "berhasil"){
 ?>
 
 <form method="post" action="changepass.php">
-	<input type="text" name="id_laundry" readonly hidden  value="<?php echo $_SESSION['id_laundry']; ?>">
-	<input type="text" name="email" readonly hidden  value="<?php echo $_SESSION['email']; ?>">
+	<input type="text" name="id_laundry" readonly   value="<?php echo $_SESSION['id_laundry']; ?>">
+	<input type="text" name="email" readonly   value="<?php echo $_SESSION['email']; ?>">
 	old : <input type="password" name="oldPass"><br>
 	Pass : <input type="password" name="newPass"><br>
 	Retype : <input type="password" name="rePass"><br>

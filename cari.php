@@ -88,7 +88,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
                   <div class="form-group">
-                  <p><a href="reset.php">lupa password?</a></p>                    
+                  <p><a href="lupapass.php">lupa password?</a></p>                    
                   </div>
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>

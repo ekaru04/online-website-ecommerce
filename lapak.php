@@ -87,6 +87,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
+                  <a href="lupapass.php">Lupa password?</a>
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>

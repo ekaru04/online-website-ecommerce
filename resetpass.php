@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
             } catch (Exception $e) {
                   echo $e->getMessage(); //Boring error messages from anything else!
             } finally {
-            	header("location:forgotpass.php?pesan=sukses");
+            	header("location:lupapass.php?pesan=sukses");
             }
       }else{
             echo'Email tidak terdaftar';

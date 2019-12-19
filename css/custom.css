@@ -7,6 +7,8 @@
     width: 100% !important;
     position: center;
     padding: 50;
+    background-color: #4fbfa8;
+    color: white;
 }
 .h4 {
     text-align: center;

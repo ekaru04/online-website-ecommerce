@@ -158,32 +158,32 @@ if($_SESSION['username'] == null){
                   ?>
                 <form>
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Nama Lapak </label>
-                    <div class="col-sm-10">
+                    <label for="nama" class="col-sm-3 col-form-label strong"><strong>Nama Lapak</strong> </label>
+                    <div class="col-sm-9">
                       <input type="text" readonly class="form-control-plaintext" id="nama" value=": <?php echo $data['nama_laundry'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi Lapak </label>
-                    <div class="col-sm-10">
+                    <label for="deskripsi" class="col-sm-3 col-form-label"><strong>Deskripsi Lapak</strong> </label>
+                    <div class="col-sm-9">
                       <input type="text" readonly class="form-control-plaintext" id="deskripsi" value=": <?php echo $data['deskripsi_laundry'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="alamat" class="col-sm-2 col-form-label">Alamat Lapak</label>
-                    <div class="col-sm-10">
+                    <label for="alamat" class="col-sm-3 col-form-label"><strong>Alamat Lapak</strong> </label>
+                    <div class="col-sm-9">
                       <input type="text" readonly class="form-control-plaintext" id="alamat" value=": <?php echo $data['alamat'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
+                    <label for="email" class="col-sm-3 col-form-label"><strong>Email</strong> </label>
+                    <div class="col-sm-9">
                       <input type="text" readonly class="form-control-plaintext" id="email" value=": <?php echo $data['email'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
-                    <div class="col-sm-10">
+                    <label for="kategori" class="col-sm-3 col-form-label"><strong>Kategori</strong> </label>
+                    <div class="col-sm-9">
                       
                       <?php 
                       $idLaundry = $data['id_detail_kategori'];
@@ -197,24 +197,24 @@ if($_SESSION['username'] == null){
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="telp" class="col-sm-2 col-form-label">Nomer Telepon</label>
-                    <div class="col-sm-10">
+                    <label for="telp" class="col-sm-3 col-form-label"><strong>Nomer Telepon</strong> </label>
+                    <div class="col-sm-9">
                       <input type="text" readonly class="form-control-plaintext" id="no_telp" value=": <?php echo $data['no_telp'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="tgl" class="col-sm-2 col-form-label">Berlaku hingga</label>
-                    <div class="col-sm-10">
+                    <label for="tgl" class="col-sm-3 col-form-label"><strong>Berlaku hingga</strong> </label>
+                    <div class="col-sm-9">
                       <input type="text" readonly class="form-control-plaintext" id="tgl" value=": <?php echo $data['expired']?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="status" class="col-sm-2 col-form-label">Status</label>
-                    <div class="col-sm-10">
+                    <label for="status" class="col-sm-3 col-form-label"><strong>Status</strong></label>
+                    <div class="col-sm-9">
                       <input type="text" readonly class="form-control-plaintext" id="status" value=": <?php echo $data['status'] ?>">
                     </div>
                   </div>
-                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="edit btn btn-success btn-lg">Edit</a></td>
+                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="edit btn btn-lg">Edit</a></td>
                 </form>
                 <?php } ?>
                 <!--<div class="table-responsive">

@@ -272,8 +272,8 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
         <div class="box text-center">
           <div class="container">
             <div class="col-md-12">
-              <h3 class="text-uppercase">From our blog</h3>
-              <p class="lead mb-0">What's new in the world of fashion? <a href="blog.html">Check our blog!</a></p>
+              <h3 class="text-uppercase">COBA APLIKASI CLEAN IN CLICK</h3>
+              <p class="lead mb-0">Mau laundry?Atau Tidak mau ribet pasang iklan lapak laundry?<br> Clean In Click solusinya!<a href="blog.html">Check our blog!</a></p>
             </div>
           </div>
         </div>

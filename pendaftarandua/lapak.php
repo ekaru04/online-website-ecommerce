@@ -51,6 +51,8 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
               <?php
+              include 'koneksi.php';
+              $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
                 $data = mysqli_fetch_array($t);
                 ?>
                 <li class="list-inline-item" style="color:white;"><?php echo $data["username"]?> </a></li>

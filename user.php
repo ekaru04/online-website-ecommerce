@@ -102,9 +102,8 @@
 			<th>Alamat</th>
 			<th>Deskripsi</th>
             <th>Kategori</th>		
-			<!-- <th>No tlp</th> -->
+			<th>No tlp</th>
 			<th>Email</th>
-			<th>Foto</th>
             <th>Expired</th>
             <th>Status</th>
             <th>Aksi</th>
@@ -113,8 +112,8 @@
 
 		include "koneksi.php";
         //include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
-        $query_mysql = mysqli_query($host,"SELECT username, nama_laundry, alamat, deskripsi_laundry, email FROM tb_laundry")or die(mysql_error());
-        $data = mysqli_query($host,"select *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan");
+        $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry")or die(mysql_error());
+        //$data = mysqli_query($host,"select *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan");
         //query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)
         $nomor = 1;
         
@@ -123,7 +122,7 @@
 		//menggunakan while php
 		while($data = mysqli_fetch_array($query_mysql)){// $data perintah untuk menampilkan data
             $warnaAlternate = $nomor % 2 == 0 ? "#d4d3cf" : "#ffffff";
-			//berfungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
+			//ber1fungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
 		?> 
 		<tr style="background : <?php echo $warnaAlternate; ?>;">
 			<td>B0<?php echo $user = $data['username']; ?></td>
@@ -141,18 +140,22 @@
                 }
                 ?>
             </td>
-            <!-- <td><?php echo $data['no_tlp']; ?></td> -->
+            <td><?php echo $data['no_tlp']; ?></td>
             <td><?php echo $data['email']; ?></td>
+            <td><?php echo $data['expired']; ?></td>
 
-            <td><img src= "file/<?php echo $data['foto']; ?>" alt="" style="max-width: 25%;"></td?>
+            <!-- <td><img src= "file/<?php echo $data['foto']; ?>" alt="" style="max-width: 25%;"></td?> -->
 
 
-            <!-- <td><?php echo $data['deskripsi_laundry']; ?></td> -->
+            <!-- <td><?php echo $data['expired']; ?></td> -->
             <!-- <td><?php echo $data['password']; ?></td> -->
-            <td><?php echo $data['alamat']; ?></td>
-			<td><?php echo $data['deskripsi_laundry']; ?></td>
+            <td><?php echo $data['status']; ?></td>
+			<!-- <td><?php echo $data['deskripsi_laundry']; ?></td> -->
 			<td>
-            <a type="button" class="btn btn-outline-danger"  >Nonaktif</a>| 
+            <?php if($data['status'] == "Aktif"){?>
+					<a class= "btn btn-danger btn-sm" href="non.php?id=
+					<?php echo $data['username']; ?>&status=nonaktifkan">Nonaktifkan</a>
+					<?php }else{ echo "<a class='btn btn-success btn-sm' href='non.php?id=".$data['username']."&status=aktifkan'>Aktifkan</a>"; } ?>
 				<!-- <a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> | -->
                 <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['username']; ?>">Hapus</a>
                 <!-- <a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					 -->

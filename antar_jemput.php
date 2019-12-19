@@ -97,14 +97,14 @@
         _________________________________________________________
         -->
         <div id="hot">
-          <div class="box py-4">
+          <!-- <div class="box py-4"> -->
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h2 class="mb-0">Hot this week</h2>
+                  <!-- <h2 class="mb-0">Hot this week</h2> -->
                 </div>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
           <div class="container">
             <div class="row">

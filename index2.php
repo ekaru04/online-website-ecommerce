@@ -35,6 +35,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
 <html>
 <head>
 	<title>Clean in Click</title>
+	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/custom.css">
   <link rel="stylesheet" type="text/css" href="css/animate.css">

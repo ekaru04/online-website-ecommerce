@@ -9,6 +9,7 @@ if(@$_GET['id_laundry'] != null){
 <html>
 <head>
 	<title>Forgot Pass</title>
+	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
 </head>
 <body>
 

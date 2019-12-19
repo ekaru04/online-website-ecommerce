@@ -34,7 +34,8 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Obaju : e-commerce template</title>
+    <title>Clean in Click</title>
+	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">

@@ -106,15 +106,10 @@
                   <!-- <ul class="nav nav-pills flex-column"> -->
                   <a href="index.php" class="nav-link active"><i class="fa fa-list">
                   </i> KATALOG</a>
-                  <!-- <a href="customer-wishlist.html" class="nav-link"
-                  ><i class="fa fa-heart"></i> TR</a> -->
                   <a href="user.php" class="nav-link">
                   <i class="fa fa-user"></i> DATA KONSUMEN </a>
-                  <!-- <a href="index.html" class="nav-link">
-                  <i class="fa fa-sign-out"></i> Logout</a></ul> -->
                 </div>
               </div>
-              <!-- /.col-lg-3-->
               <!-- *** CUSTOMER MENU END ***-->
             </div>
             <div class="col-lg-9">
@@ -181,12 +176,6 @@
 	</form> 
               </div>
             </div>
-	<!-- <div class="col-lg-6">
-              <div class="box">
-                <h1>LIHAT SEMUA DATA</h1>
-                <a href="index.php">
-                <!-- Lihat Semua Data</a> -->
-                <!-- <button type="button" class="btn btn-outline-secondary">Lihat Semua Data</button> -->
             </div>
           </div> -->
           

@@ -20,8 +20,7 @@ if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
     if($ukuran < 1044070){			
         move_uploaded_file($file_tmp, 'file/'.$nama_file);
         $query = mysqli_query($host,"INSERT INTO tb_laundry (username,nama_laundry, alamat,id_kategori, no_tlp, email,id_foto_laundry, deskripsi_laundry, `password`)  VALUES('$username','$Nama_lapak','$Alamat','$Kategori','$No_Tlp','$email','$nama_file', '$deskripsi','$password')");
-        // echo "INSERT INTO registrasi_laundry(username, Nama_lapak, Alamat, Kategori, No_Tlp, Email, foto, deskripsi, `password`)  VALUES('$username','$Nama_lapak','$Alamat','$Kategori','$No_Tlp','$email','$nama_file', '$deskripsi','$password','$nama_file')";
-        if($query){
+       if($query){
             echo 'FILE BERHASIL DI UPLOAD';
             header("lOcAtioN:../Rebellion/user.php");
         }else{

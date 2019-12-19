@@ -79,15 +79,6 @@
                           <div class="modal-content">
                           <?php //untuk membuat pesan bahwa data berhasil di inputkan
                             include "koneksi.php";
-                            // if(isset($_GET['cari'])){
-                            //     $cari = $_GET['cari'];
-                            //     $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry where nama_laundry like '%$cari%'")or die(mysql_error());			
-                            // }else{
-                            //     $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry")or die(mysql_error());
-                            // }
-                            // $nomor =1;
-                            // while($data = mysqli_fetch_array($query_mysql)){
-                                
                             if(isset($_GET['pesan'])){
                                 $pesan = $_GET['pesan']; 
                                 if($pesan == "input"){

@@ -16,7 +16,6 @@ switch($durasi){
 		break;
 }
 
-
 $p = mysqli_query($host, "SELECT tb_laundry.expired FROM tb_laundry WHERE username='$username'");
 $tgl = mysqli_fetch_array($p);
 $date = date("Ymd");

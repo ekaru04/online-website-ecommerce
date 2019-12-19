@@ -17,8 +17,7 @@ if($_SESSION['username'] == null){
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Clean in Click</title>
-	  <link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
+    <title>Obaju : e-commerce template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">

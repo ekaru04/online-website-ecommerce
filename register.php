@@ -1,7 +1,6 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
-date_default_timezone_set('Asia/Jakarta');
 $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
 
 ?>
@@ -18,7 +17,6 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- Font Awesome CSS-->
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <!-- Google fonts - Roboto -->
@@ -35,13 +33,6 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-    <script src="js/front.js"></script>
   </head>
   <body>
     <!-- navbar-->
@@ -56,10 +47,8 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="list-inline-item"><a href="register.php">Register</a></li>
-                <li class="list-inline-item"><a href="contact.php">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
+                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               </ul>
             </div>
           </div>
@@ -72,19 +61,17 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="customer-orders.html" method="post">
+                <form action="cek_login.php" method="post">
                   <div class="form-group">
-                    <input id="email-modal" type="text" placeholder="email" class="form-control">
+                    <input id="email-modal" type="text" placeholder="username" class="form-control" name="username">
                   </div>
                   <div class="form-group">
-                    <input id="password-modal" type="password" placeholder="password" class="form-control">
+                    <input id="password-modal" type="password" placeholder="password" class="form-control" name="password">
                   </div>
                   <p class="text-center">
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
-                <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
             </div>
           </div>
@@ -346,7 +333,7 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
                         return true;
                       }
                     </script>
-                    <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="13" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="" id="noTelpChange">
+                    <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="12" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="" id="noTelpChange">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi_laundry">Deskripsi</label>
@@ -472,9 +459,15 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
-    
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+    <script src="js/front.js"></script>
 
     <script>
+    
     String.prototype.replaceAt=function(index, char) {
     var a = this.split("");
     a[index] = char;
@@ -488,9 +481,8 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
         swal("Nomor telpon tidak valid!");
         this.value = "";
       }
-    });
+    }); 
 
-     
     $(function(){
       var imagesPreview = function(input, placeToInsertImagePreview) {
     if (input.files) {

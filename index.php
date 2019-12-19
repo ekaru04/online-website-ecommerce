@@ -1,6 +1,5 @@
 <?php
 
-
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 date_default_timezone_set('Asia/Jakarta');
 session_start();
@@ -67,6 +66,10 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
     <script src="js/front.js"></script>
     <style>
       .customImages{
+        max-width: 348px;
+        max-height: 200px;
+      }
+      .customImages2{
         max-width: 348px;
         max-height: 200px;
       }
@@ -209,7 +212,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
                       $usernameF = $data['username'];
                        $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn)); ?>
                       <?php while($dat = mysqli_fetch_array($query_foto)){ ?>
-                      <div class="front"><a href="lapak.php?id=<?php echo $dat['username']; ?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="customImages" ></a></div>
+                      <div class="front"><a href="lapak.php?id=<?php echo $dat['username']; ?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid" ></a></div>
                     <?php } ?>
                     </div>
                   </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>
@@ -323,10 +326,30 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
     <script>
-      var status = <?php echo $_GET['pesan'] == "expired" ? true : false; ?>;
-      if(status == true){
-        swal("Peringatan", "Akun Anda dinonaktifkan karena masa berlaku akun sudah habis, hubungi admin untuk mengaktifkan kembali akun anda");
+      const status = <?php echo $_GET['pesan'] == "expired" ? "true" : "false"; ?>;
+      const statusTenggat = <?php 
+                                if(isset($_GET['tenggat']))
+                                {
+                                  if((int)$_GET['tenggat'] <= 0){
+                                    echo "false";
+                                  }
+                                  else{
+                                    echo "true";
+                                  }
+                                }else
+                                {
+                                  echo "false";
+                                }
+                          ?>;
+      if(status == true && statusTenggat == false){
+        swal("Peringatan", "Masa berlaku akun anda sudah habis, akun anda akan segera di nonaktifkan."+
+          "Harap segera membayar untuk memperpanjang masa aktif akun anda.");
+      }else
+      {
+        swal("Peringatan", "Masa berlaku akun anda akan habis dalam "+<?= isset($_GET['tenggat']) ? $_GET['tenggat'] : "0"; ?>+" Hari, akun anda di nonaktifkan."+
+                  "Harap segera membayar untuk memperpanjang masa aktif akun anda.");
       }
+
     </script>
    
 

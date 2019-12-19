@@ -3,13 +3,11 @@
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 date_default_timezone_set('Asia/Jakarta');
 session_start();
+
 @$sess = $_SESSION['username'];
+
 $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
 $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
-
-if($_SESSION['username'] == null){
-  header("Location: index.php");
-}
 
 ?>
 <!DOCTYPE html>
@@ -50,17 +48,18 @@ if($_SESSION['username'] == null){
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="../index2.php" class="btn btn-success btn-sm">Ekaru</a><a href="#" class="ml-1">Saya nub lur, jangan dibully</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="../index2.php" class="btn btn-success btn-sm"><?php echo date("Y-m-d")?></a><a href="#" class="ml-1"></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <?php if(@$sess == null){
+
                 ?>
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
                 <?php }else{ ?>
                 <li class="list-inline-item"><a href="index.php"><?php echo @$_SESSION['username']; ?></a></li>
-                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
                 <?php } ?>
+                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               </ul>
             </div>
           </div>
@@ -73,7 +72,7 @@ if($_SESSION['username'] == null){
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="../cek_login.php" method="post">
+                <form action="cek_login.php" method="post">
                   <div class="form-group">
                     <input id="email-modal" type="text" placeholder="username" class="form-control" name="username">
                   </div>
@@ -106,7 +105,6 @@ if($_SESSION['username'] == null){
           </form>
         </div>
       </div>
-      <?php include "navbar.php" ?>
     </header>
     <div id="all">
       <div id="content">
@@ -146,22 +144,22 @@ if($_SESSION['username'] == null){
                   <h3>BCA - 0000000000000 a/n Franciska</h3>
                   <div class="table-responsive">
                     <form>
-						Paket Iklan: 
-						<select class="form-control" name="paket">
-						    <option class="text-justify" >---- Pilih Paket ----</option>
-						    <?php
+            Paket Iklan: 
+            <select class="form-control" name="paket">
+                <option class="text-justify" >---- Pilih Paket ----</option>
+                <?php
                     while($r = mysqli_fetch_assoc($o)){
                     echo "<option value=".$r['id_iklan'].">".$r['durasi_iklan']."hari -".$r['harga_iklan']."</option>";
                     }
             
                 ?>
-						</select>
+            </select>
             <br>
             <div class="pt-3" style="border: 1px solid black; height: 200px; margin: auto; text-align: center;">
                 <p style="margin-top: 10%"><input type="file" name="foto" hidden id="uploadFoto"></input> <label for="tombolUpload" id="labelUpload"></label><button id="tombolUpload">Upload Foto</button></p>
             </div>
-						<input type="submit" name="submit" value="OK"></input>
-					</form>
+            <input type="submit" name="submit" value="OK"></input>
+          </form>
                   </div>
                   <!-- /.table-responsive-->
                   <div class="box-footer d-flex justify-content-between flex-column flex-lg-row">
@@ -300,6 +298,7 @@ $('#tombolUpload').click(function(event){
     event.preventDefault();
     $('#uploadFoto').click();
 });
+
 $('#uploadFoto').change(function(){
     $('#labelUpload').html("1 Foto Telah Diupload");
 });

@@ -1,14 +1,12 @@
 <?php 
 
 include 'koneksi.php';
-// $id= $_POST['id'];   
 $username =  $_POST ['username'];
 $Nama_lapak = $_POST['nama_laundry'];
 $Alamat= $_POST['alamat'];
 $Kategori = $_POST['id_kattegori'];
 $No_Tlp = $_POST['no_tlp'];
 $email = $_POST['email'];
-// $foto = $_POST['foto'];
 $deskripsi = $_POST['deskripsi_laundry'];
 $password = $_POST['password'];
 
@@ -33,6 +31,4 @@ if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
 }else{
     echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
 }
-// mysqli_query($host,"UPDATE registrasi_laundry  SET Nama_lapak='$Nama', Alamat='$Alamat', Kategori='$Kategori', No_Tlp='$No_Tlp', Email='$email' WHERE id_lapak_laundry='$id'");
-// header("location:user.php?pesan=update");
 ?>  

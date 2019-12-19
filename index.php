@@ -37,13 +37,17 @@
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d")?></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+              <?php if(@$sess == null){ ?>
+                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
+                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
+              <?php }else{ ?>
+                <li class="list-inline-item"><a href="customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
+                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
+              <?php } ?>
               </ul>
             </div>
           </div>
@@ -56,17 +60,24 @@
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="" method="post">
+                <form action="cek_login.php" method="post">
                   <div class="form-group">
-                    <input id="email-modal" type="text" placeholder="email" name="username" class="form-control">
+                    <input id="email-modal" type="text" placeholder="username" name="username" class="form-control">
                   </div>
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
+                  <a href="lupapass.php">Lupa password?</a>
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
+                
+          <!-- mengambil data dari dtabase untuk login  -->
+              </div>
+            </div>
+          </div>r
+        </div>
                 <?php 
           if(isset($_POST['login'])){
             $host = mysqli_connect("localhost", "root", "", "laundry");

@@ -468,6 +468,8 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     <script src="js/front.js"></script>
 
     <script>
+
+     
     $(function(){
       var imagesPreview = function(input, placeToInsertImagePreview) {
 
@@ -479,9 +481,10 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
 
             reader.onload = function(event) {
                 $($.parseHTML('<img style=width:190px class="delete">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                // $("<span class='pip'><br/><span class=\"remove\">Remove image</span>")
+                // peletakan foto
                 $(".delete").click(function(){
                   $(this).remove();
+                  // jika foto diklik, maka foto akan terhapus dari halaman
                 });
             }
             reader.readAsDataURL(input.files[i]);
@@ -489,9 +492,10 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     }
 
     };
+    // melakukan upload foto 
 
-    // menampilkan foto pada saat upload foto di dalam halaman register menggunakan dropzone
 
+    
     $('#file').on('change', function() {
     imagesPreview(this, 'div.gallery');
     });
@@ -499,7 +503,6 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
     var currentFile = null;
     Dropzone.autoDiscover = false;
     var formData = new FormData();
-// $("#tambah").click(function(){
     var myDropzone = new Dropzone(".dropzone", {
   addRemoveLinks: true,
   url: "register-aksi.php",
@@ -507,17 +510,13 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
   init: function() {
     this.on("addedfile", function(file) {
         formData.append("file", file); 
-    //   if (currentFile) {
-    //     this.removeFile(currentFile);
-    //   }
-    //   currentFile = file;
     });
     this.on("removedfile", function(file) { 
       formData.delete('file');
     });
   }   
 });
-// })
+    // menampilkan foto pada saat upload foto di dalam halaman register menggunakan dropzone
 
     </script>
   </body>

@@ -141,7 +141,7 @@
 					<?php echo $data['username']; ?>&status=nonaktifkan">Nonaktifkan</a>
 					<?php }else{ echo "<a class='btn btn-success btn-sm' href='non.php?id=".$data['username']."&status=aktifkan'>Aktifkan</a>"; } ?>
 				<!-- <a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> | -->
-                <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['username']; ?>">Hapus</a>
+                <!-- <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['username']; ?>">Hapus</a> -->
                 <!-- <a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					 -->
 			</td>
 		</tr>

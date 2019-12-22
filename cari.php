@@ -35,13 +35,13 @@
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Clean In Click</a><a href="#" class="ml-1">Budayakan Malas Mencuci</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="index.php" >Kembali</a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <!-- <li class="list-inline-item"><a href="contact.html">Contact</a></li> -->
+                <!-- <li class="list-inline-item"><a href="#">Recently viewed</a></li> -->
               </ul>
             </div>
           </div>
@@ -97,7 +97,7 @@
         _________________________________________________________
         -->
         <div id="hot">
-          <div class="box py-4">
+          <!-- <div class="box py-4">
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
@@ -105,9 +105,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="container">
-            <div class="product-slider owl-carousel owl-theme">
+            <!-- <div class="product-slider owl-carousel owl-theme"> -->
             <?php 
         include_once "koneksi.php";
         $search=$_POST["search"];
@@ -158,7 +158,7 @@
                 </div>
                 <!-- /.product-->
               </div>
-    <?php }} ?>
+    <?php } ?>
               <!-- /.product-slider-->
             </div>
             <!-- /.container-->
@@ -170,7 +170,7 @@
         *** GET INSPIRED ***
         _________________________________________________________
         -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="col-md-12">
             <div class="box slideshow">
               <h3>Get Inspired</h3>
@@ -182,24 +182,24 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- *** GET INSPIRED END ***-->
         <!--
         *** BLOG HOMEPAGE ***
         _________________________________________________________
         -->
-        <div class="box text-center">
+        <!-- <div class="box text-center">
           <div class="container">
             <div class="col-md-12">
               <h3 class="text-uppercase">From our blog</h3>
               <p class="lead mb-0">What's new in the world of fashion? <a href="blog.html">Check our blog!</a></p>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="container">
           <div class="col-md-12">
             <div id="blog-homepage" class="row">
-              <div class="col-sm-6">
+              <!-- <div class="col-sm-6">
                 <div class="post">
                   <h4><a href="post.html">Fashion now</a></h4>
                   <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a></p>
@@ -207,8 +207,8 @@
                   <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                   <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a></p>
                 </div>
-              </div>
-              <div class="col-sm-6">
+              </div> -->
+              <!-- <div class="col-sm-6">
                 <div class="post">
                   <h4><a href="post.html">Who is who - example blog post</a></h4>
                   <p class="author-category">By <a href="#">John Slim</a> in <a href="">About Minimal</a></p>
@@ -216,7 +216,7 @@
                   <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
                   <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a></p>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- /#blog-homepage-->
           </div>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- menampilkan judul dari web -->
     <title>Clean in Click</title>
   	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">

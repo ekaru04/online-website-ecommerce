@@ -24,6 +24,7 @@
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <!-- menampilkan judul web -->
         <title>Clean In Click</title>
   </head>
   <body>
@@ -62,6 +63,7 @@
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
+                  <!-- login dengan username dan password yang tersedia dan diambil dari database -->
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>

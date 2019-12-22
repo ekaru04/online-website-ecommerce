@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- menampilkan judul dari web -->
     <title>Clean in Click</title>
   	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">
@@ -63,6 +64,7 @@
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
+                  <!-- login dengan username dan password yang tersedia dan di ambil dari database -->
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>

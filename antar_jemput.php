@@ -32,6 +32,7 @@
       *** TOPBAR ***
       _________________________________________________________
       -->
+      <!-- untuk membuat navbar yang berisi nama web, logout, register dan contact -->
       <div id="top">
         <div class="container">
           <div class="row">

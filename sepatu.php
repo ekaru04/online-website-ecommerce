@@ -97,7 +97,7 @@
         
         _________________________________________________________
         -->
-        <!-- <div id="hot">
+        <div id="hot">
           <div class="box py-4">
             <div class="container">
               <div class="row">
@@ -106,7 +106,7 @@
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
           <div class="container">
             <div class="row">
             <?php 
@@ -132,7 +132,7 @@
                     </p>
                   </div>
                   <!-- /.text-->
-                  <!-- <div class="ribbon sale">
+                  <div class="ribbon sale">
                     <div class="theribbon">SALE</div>
                     <div class="ribbon-background"></div>
                   </div> -->
@@ -145,8 +145,8 @@
                   <!-- <div class="ribbon gift">
                     <div class="theribbon">GIFT</div>
                     <div class="ribbon-background"></div>
-                  </div> -->
-                  <!-- /.ribbon-->
+                  </div>
+                   /.ribbon-->
                 </div>
                 <!-- /.product-->
               </div>
@@ -163,7 +163,7 @@
         *** GET INSPIRED ***
         _________________________________________________________
         -->
-        <!-- <div class="container">
+        <div class="container">
           <div class="col-md-12">
             <div class="box slideshow">
               <h3>Get Inspired</h3>
@@ -175,7 +175,7 @@
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
         <!-- *** GET INSPIRED END ***-->
         <!--
         *** BLOG HOMEPAGE ***

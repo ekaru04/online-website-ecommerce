@@ -40,8 +40,8 @@
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="index.php" >Logout</a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <!-- <li class="list-inline-item"><a href="contact.html">Contact</a></li> -->
+                <!-- <li class="list-inline-item"><a href="#">Recently viewed</a></li> -->
               </ul>
             </div>
           </div>
@@ -131,20 +131,20 @@
                     </p>
                   </div>
                   <!-- /.text-->
-                  <div class="ribbon sale">
+                  <!-- <div class="ribbon sale">
                     <div class="theribbon">SALE</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
-                  <div class="ribbon new">
+                  <!-- <div class="ribbon new">
                     <div class="theribbon">NEW</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
-                  <div class="ribbon gift">
+                  <!-- <div class="ribbon gift">
                     <div class="theribbon">GIFT</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
                 </div>
                 <!-- /.product-->

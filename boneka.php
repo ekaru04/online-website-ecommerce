@@ -24,6 +24,8 @@
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <!-- menampilkan judul dari web -->
+        <title>Clean In Click</title>
   </head>
   <body>
     <!-- navbar-->
@@ -35,6 +37,7 @@
       <div id="top">
         <div class="container">
           <div class="row">
+          <!-- menampilkan navbar yang berisi nama web, tombol logout register dan contact-->
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a  class="btn btn-success btn-sm">Clean In Click</a><a href="#" class="ml-1">Budayakan Malas Mencuci</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
@@ -61,6 +64,7 @@
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
+                  <!-- untuk login -->
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>

@@ -35,7 +35,7 @@
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Clean In Click</a><a href="#" class="ml-1">Budayakan Malas Mencuci</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="index.php" >Logout</a></li>
@@ -97,7 +97,7 @@
         _________________________________________________________
         -->
         <div id="hot">
-          <div class="box py-4">
+          <!-- <div class="box py-4">
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
@@ -105,7 +105,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="container">
             <div class="row">
             <?php 
@@ -131,20 +131,20 @@
                     </p>
                   </div>
                   <!-- /.text-->
-                  <div class="ribbon sale">
+                  <!-- <div class="ribbon sale">
                     <div class="theribbon">SALE</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
-                  <div class="ribbon new">
+                  <!-- <div class="ribbon new">
                     <div class="theribbon">NEW</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
-                  <div class="ribbon gift">
+                  <!-- <div class="ribbon gift">
                     <div class="theribbon">GIFT</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
                 </div>
                 <!-- /.product-->
@@ -162,7 +162,7 @@
         *** GET INSPIRED ***
         _________________________________________________________
         -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="col-md-12">
             <div class="box slideshow">
               <h3>Get Inspired</h3>
@@ -174,7 +174,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- *** GET INSPIRED END ***-->
         <!--
         *** BLOG HOMEPAGE ***

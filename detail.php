@@ -37,13 +37,13 @@
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Clean In Click</a><a href="#" class="ml-1">Budayakan Malas Mencuci</a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <!-- <li class="list-inline-item"><a href="#">Recently viewed</a></li> -->
               </ul>
             </div>
           </div>
@@ -271,12 +271,12 @@
                 </ol>
               </nav>
             </div>
-            <div class="col-lg-3 order-2 order-lg-1">
+            <!-- <div class="col-lg-3 order-2 order-lg-1"> -->
               <!--
               *** MENUS AND FILTERS ***
               _________________________________________________________
               -->
-              <div class="card sidebar-menu mb-4">
+              <!-- <div class="card sidebar-menu mb-4">
                 <div class="card-header">
                   <h3 class="h4 card-title">Categories</h3>
                 </div>
@@ -308,8 +308,8 @@
                     </li>
                   </ul>
                 </div>
-              </div>
-              <div class="card sidebar-menu mb-4">
+              </div> -->
+              <!-- <div class="card sidebar-menu mb-4">
                 <div class="card-header">
                   <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
                 </div>
@@ -340,8 +340,8 @@
                     <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
                   </form>
                 </div>
-              </div>
-              <div class="card sidebar-menu mb-4">
+              </div> -->
+              <!-- <div class="card sidebar-menu mb-4">
                 <div class="card-header">
                   <h3 class="h4 card-title">Colours <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
                 </div>
@@ -377,31 +377,31 @@
                     <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
                   </form>
                 </div>
-              </div>
+              </div> -->
               <!-- *** MENUS AND FILTERS END ***-->
-              <div class="banner"><a href="#"><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"></a></div>
+              <!-- <div class="banner"><a href="#"><img src="img/banner.jpg" alt="sales 2014" class="img-fluid"></a></div> -->
             </div>
-            <div class="col-lg-9 order-1 order-lg-2">
-              <div id="productMain" class="row">
-                <div class="col-md-6">
-                  <div data-slider-id="1" class="owl-carousel shop-detail-carousel">
+            <div class="col-lg-9 order-1 order-lg-2" >
+              <div id="productMain" class="row" >
+                <div class="col-md-6" >
+                  <div data-slider-id="1" class="owl-carousel shop-detail-carousel" >
                     <div class="item"> <img src="img/detailbig1.jpg" alt="" class="img-fluid"></div>
                     <div class="item"> <img src="img/detailbig2.jpg" alt="" class="img-fluid"></div>
                     <div class="item"> <img src="img/detailbig3.jpg" alt="" class="img-fluid"></div>
                   </div>
-                  <div class="ribbon sale">
+                  <!-- <div class="ribbon sale">
                     <div class="theribbon">SALE</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
-                  <div class="ribbon new">
+                  <!-- <div class="ribbon new">
                     <div class="theribbon">NEW</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
                 </div>
-                <div class="col-md-6">
-                  <div class="box">
+                <div class="col-md-6" style="300px">
+                  <div class="box" >
                     <h1 class="text-center">White Blouse Armani</h1>
                     <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product details, material &amp; care and sizing</a></p>
                     <p class="price">$124.00</p>

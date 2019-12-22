@@ -40,7 +40,7 @@
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="index.php" >Kembali</a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <!-- <li class="list-inline-item"><a href="contact.html">Contact</a></li> -->
+                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
                 <!-- <li class="list-inline-item"><a href="#">Recently viewed</a></li> -->
               </ul>
             </div>

@@ -131,20 +131,20 @@
                     </p>
                   </div>
                   <!-- /.text-->
-                  <div class="ribbon sale">
+                  <!-- <div class="ribbon sale">
                     <div class="theribbon">SALE</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
-                  <div class="ribbon new">
+                  <!-- <div class="ribbon new">
                     <div class="theribbon">NEW</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
-                  <div class="ribbon gift">
+                  <!-- <div class="ribbon gift">
                     <div class="theribbon">GIFT</div>
                     <div class="ribbon-background"></div>
-                  </div>
+                  </div> -->
                   <!-- /.ribbon-->
                 </div>
                 <!-- /.product-->
@@ -162,7 +162,7 @@
         *** GET INSPIRED ***
         _________________________________________________________
         -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="col-md-12">
             <div class="box slideshow">
               <h3>Get Inspired</h3>
@@ -174,20 +174,20 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- *** GET INSPIRED END ***-->
         <!--
         *** BLOG HOMEPAGE ***
         _________________________________________________________
         -->
-        <div class="box text-center">
+        <!-- <div class="box text-center">
           <div class="container">
             <div class="col-md-12">
               <h3 class="text-uppercase">From our blog</h3>
               <p class="lead mb-0">What's new in the world of fashion? <a href="blog.html">Check our blog!</a></p>
             </div>
           </div>
-        </div>
+        </div> -->
         <div class="container">
           <div class="col-md-12">
             <div id="blog-homepage" class="row">

@@ -181,15 +181,15 @@
         *** BLOG HOMEPAGE ***
         _________________________________________________________
         -->
-        <div class="box text-center">
+        <!-- <div class="box text-center">
           <div class="container">
             <div class="col-md-12">
               <h3 class="text-uppercase">From our blog</h3>
               <p class="lead mb-0">What's new in the world of fashion? <a href="blog.html">Check our blog!</a></p>
             </div>
           </div>
-        </div>
-        <div class="container">
+        </div> -->
+        <!-- <div class="container">
           <div class="col-md-12">
             <div id="blog-homepage" class="row">
               <div class="col-sm-6">
@@ -210,7 +210,7 @@
                   <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a></p>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- /#blog-homepage-->
           </div>
         </div>

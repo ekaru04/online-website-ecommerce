@@ -86,21 +86,21 @@
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Men<b class="caret"></b></a>
+              <!-- <li class="nav-item"><a href="#" class="nav-link active">Home</a></li> -->
+              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Kategori<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
                     <div class="row">
                       <div class="col-md-6 col-lg-3">
-                        <h5>Clothing</h5>
+                        <h5>Kategori</h5>
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">T-shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link">Antar Jemput</a></li>
+                          <li class="nav-item"><a href="#" class="nav-link">Tidak Antar Jemput</a></li>
+                          <!-- <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
+                          <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li> -->
                         </ul>
                       </div>
-                      <div class="col-md-6 col-lg-3">
+                      <!-- <div class="col-md-6 col-lg-3">
                         <h5>Shoes</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
@@ -108,8 +108,8 @@
                           <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
                         </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
+                      </div> -->
+                      <!-- <div class="col-md-6 col-lg-3">
                         <h5>Accessories</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
@@ -119,30 +119,30 @@
                           <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
                         </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
+                      </div> -->
+                      <!-- <div class="col-md-6 col-lg-3">
                         <h5>Featured</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                        </ul>
-                        <h5>Looks and trends</h5>
+                        </ul> -->
+                        <!-- <h5>Looks and trends</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                        </ul>
+                        </ul> -->
                       </div>
                     </div>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Ladies<b class="caret"></b></a>
+              <!-- <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Ladies<b class="caret"></b></a> -->
                 <ul class="dropdown-menu megamenu">
                   <li>
                     <div class="row">
-                      <div class="col-md-6 col-lg-3">
+                      <!-- <div class="col-md-6 col-lg-3">
                         <h5>Clothing</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">T-shirts</a></li>
@@ -150,8 +150,8 @@
                           <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li>
                         </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
+                      </div> -->
+                      <!-- <div class="col-md-6 col-lg-3">
                         <h5>Shoes</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
@@ -159,8 +159,8 @@
                           <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
                         </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
+                      </div> -->
+                      <!-- <div class="col-md-6 col-lg-3">
                         <h5>Accessories</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
@@ -169,14 +169,14 @@
                           <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                        </ul>
-                        <h5>Looks and trends</h5>
+                        </ul> -->
+                        <!-- <h5>Looks and trends</h5>
                         <ul class="list-unstyled mb-3">
                           <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
                           <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
                         </ul>
-                      </div>
+                      </div> -->
                       <div class="col-md-6 col-lg-3">
                         <div class="banner"><a href="#"><img src="img/banner.jpg" alt="" class="img img-fluid"></a></div>
                         <div class="banner"><a href="#"><img src="img/banner2.jpg" alt="" class="img img-fluid"></a></div>
@@ -185,7 +185,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Template<b class="caret"></b></a>
+              <!-- <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Template<b class="caret"></b></a> -->
                 <ul class="dropdown-menu megamenu">
                   <li>
                     <div class="row">

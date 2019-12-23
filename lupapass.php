@@ -203,24 +203,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
                           <li class="nav-item"><a href="detail.html" class="nav-link">Product detail</a></li>
                         </ul>
                       </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>User</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="register.html" class="nav-link">Register / login</a></li>
-                          <li class="nav-item"><a href="customer-orders.html" class="nav-link">Orders history</a></li>
-                          <li class="nav-item"><a href="customer-order.html" class="nav-link">Order history detail</a></li>
-                          <li class="nav-item"><a href="customer-wishlist.html" class="nav-link">Wishlist</a></li>
-                          <li class="nav-item"><a href="customer-account.html" class="nav-link">Customer account / change password</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Order process</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="basket.html" class="nav-link">Shopping cart</a></li>
-                          <li class="nav-item"><a href="checkout1.html" class="nav-link">Checkout - step 1</a></li>
-                          <li class="nav-item"><a href="checkout2.html" class="nav-link">Checkout - step 2</a></li>
-                          <li class="nav-item"><a href="checkout3.html" class="nav-link">Checkout - step 3</a></li>
-                          <li class="nav-item"><a href="checkout4.html" class="nav-link">Checkout - step 4</a></li>
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">

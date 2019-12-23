@@ -129,18 +129,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
             <div class="col-md-12">
             <h1 class="text-center">Temukan Akun Anda</h1>
             <hr>
-                <p class="text-center">Ketik email atau nomor telepon untuk mencari akun Anda</p>
-                <form action="input-aksi.php" method="post" enctype="multipart/form-data">
-                <table > 
-                <tr>
-                <div class="form-group">
-                        <input type="text" class="form-control" name="username">		 	
-                </div>	
-                </tr>			
-		</table>
-	</form> 
+                <p class="text-center">Ketik username atau nomor telepon untuk mencari akun Anda</p>
+                <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>
                 <hr>
-                </div>
+                <button type="button" class="btn btn-primary" style="width: 100%;
           </div>
         </div>
       </div>

@@ -27,6 +27,7 @@ foreach ($_POST['id_detail_kategori'] as $key) {
 }
 $indexFoto = 1 ;
 foreach($_FILES['foto']['name'] as $p){
+    // menampilkan foto yang tidak boleh lebih dari 5
     if($indexFoto < 6){
         echo $id;
         $sql1 = "INSERT INTO tb_foto_laundry VALUES ('$id', '', '$p')";

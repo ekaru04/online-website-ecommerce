@@ -48,7 +48,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <li class="list-inline-item"><a href="register.php">Register</a></li>
                 <li class="list-inline-item"><a href="contact.php">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <!-- <li class="list-inline-item"><a href="#">Recently viewed</a></li> -->
               </ul>
             </div>
           </div>

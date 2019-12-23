@@ -61,6 +61,7 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
               $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
                 $data = mysqli_fetch_array($t);
                 ?>
+                <!-- menampilkan data yang tersedia di databse secara urut dari id yang terbesar/lapak terakhir daftar di database -->
                 <li class="list-inline-item" style="color:white;"><?php echo $data["username"]?> </a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>

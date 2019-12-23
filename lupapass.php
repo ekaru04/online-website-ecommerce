@@ -136,8 +136,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
             <div class="col-md-12">
             <h1 class="text-center">Temukan Akun Anda</h1>
             <hr>
-                <p class="lead text-center">Belum Punya Akun Lapak?</p>
-                <p class="text-center">Dengan membuat akun lapak, kamu bisa mempromosikan lapak loundry kamu disini. Selamat mendaftar ^^</p>
+                <p class="text-center">Ketik email atau nomor telepon untuk mencari akun Anda</p>
                 <p class="text-muted text-center">Jika kamu memiliki pertanyaan, silahkan hubungi kami di <a href="contact.html">contact us</a>, Kami akan senang menjawab pertanyaan dari kamu.</p>
             </div>
             <div class="col-md-6">

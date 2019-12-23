@@ -122,7 +122,7 @@
             ?>
 			<td><?php echo $data['nama_laundry']; ?></td>
 			<td><?php echo $data['alamat']; ?></td>
-			<td><?php echo $data['deskripsi_laundry']; ?></td>
+			<td><?= substr($data['deskripsi_laundry']."...", 0, 30)?></td>
             <td>
                 <?php
                 while($reData = mysqli_fetch_array($queryKategori)){
@@ -134,7 +134,6 @@
             <td><?php echo $data['email']; ?></td>
             <td><?php echo $data['expired']; ?></td>
             <td><?php echo $data['status']; ?></td>
-			<!-- <td><?php echo $data['deskripsi_laundry']; ?></td> -->
 			<td>
             <?php if($data['status'] == "Aktif"){?>
 					<a class= "btn btn-danger btn-sm" href="non.php?id=

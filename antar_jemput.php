@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <!-- menampilkan judul dari website-->
+  <title>Clean In Click</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
@@ -67,6 +69,7 @@
                   </p>
                 </form>
                 <?php 
+                // jika login akan mencocokkan dengan data yang ada di database
           if(isset($_POST['login'])){
             $host = mysqli_connect("localhost", "root", "", "laundry");
             $username = $_POST['username'];
@@ -74,8 +77,10 @@
             $q = mysqli_query($host, "SELECT * FROM tb_laundry where username='$username' and password='$password'");
             $cek = mysqli_num_rows($q);
             if($cek > 0){
+              // jika berhasil login langsung masuk ke halaman katalog antar jemput 
               header("location:katalog_antarjemput.php");
             }else{
+              // jika gagal login akan mendapat pesan dan mengisi username dan password lagi
               echo "gagal login";
             }
           }

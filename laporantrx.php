@@ -127,7 +127,7 @@
 		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
         $no = 1;
         $data;
-        $tgl = $_GET['tanggal'];
+        $tgl = @$_GET['tanggal'];
         
         if(!isset($tgl)){
             $data = mysqli_query($host, "SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan ORDER BY tb_trx.id_trx DESC")or die(mysqli_error($host));

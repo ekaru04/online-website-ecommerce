@@ -68,19 +68,12 @@
                                 <i class="fas fa-spinner"></i>
                             </a>
                             <div class="dropdown-menu top-grid-scroll drop-2">
-                                <h3 class="sub-title-w3-agileits">Permintaan </h3>
-                                <a href="#" class="dropdown-item mt-3">
-                                    <h4>
-                                        <i class="fas fa-chart-pie mr-3"></i>default</h4>
-                                </a>
-                                <a href="#" class="dropdown-item mt-3">
-                                    <h4>
-                                        <i class="fab fa-connectdevelop mr-3"></i>Permintaan Terbaru</h4>
-                                </a>
-                                <a href="#" class="dropdown-item mt-3">
-                                    <h4>
-                                        <i class="fas fa-tasks mr-3"></i>Permintaan Terlama</h4>
-                                </a>
+                            <?php if($d['status'] == "Belum_Terkonfirmasi"){?>
+					<a class= "btn btn-danger btn-sm" href="konfirmasi_aksi.php?id=
+					<?php echo $d['username']; ?>
+					&durasi=<?php echo $d['durasi']; ?>
+					&id_trx=<?php echo $d['id_trx']; ?>">KONFIRMASI</a>
+					<?php }else{ echo "Telah Terkonfirmasi"; } ?>
                                
                             </div>
                         </li>

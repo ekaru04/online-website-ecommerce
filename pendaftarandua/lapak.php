@@ -1,5 +1,7 @@
 <!-- <?php
+// include dari database laundry
 include 'koneksi.php';
+// membuat session untuk menampilkkan kategori lebih dari 1
 session_start();
 $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
 @$sess= $_SESSION['id_laundry'];
@@ -14,6 +16,7 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- menampilkan judul website -->
     <title>Clean in Click</title>
 	  <link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">
@@ -52,14 +55,16 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
               <?php
+              // include ke database laundry
               include 'koneksi.php';
+              // mengambil data id laundry dari tabel laundry 
               $t = mysqli_query($host,"SELECT * FROM tb_laundry ORDER BY id_laundry Desc");
                 $data = mysqli_fetch_array($t);
                 ?>
                 <li class="list-inline-item" style="color:white;"><?php echo $data["username"]?> </a></li>
                 <li class="list-inline-item"><a href="register.html">Register</a></li>
                 <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <!-- <li class="list-inline-item"><a href="#">Recently viewed</a></li> -->
               </ul>
             </div>
           </div>
@@ -321,7 +326,9 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                 <div class="col-md-6">
                   <div data-slider-id="1"  class="owl-carousel shop-detail-carousel">
                   <?php 
+                  // include database laundry
                   include "koneksi.php";
+                  // mengambil id laundry dari urutan yang terakhir di dalam tabel laundry 
                   $q = mysqli_query($host, "SELECT * FROM tb_laundry order by id_laundry desc");
                   $ddata = mysqli_fetch_array($q);
                   // echo "SELECT * FROM  tb_foto_laundry WHERE id_laundry='$ddata[id_laundry]' order by id_foto_laundry desc";
@@ -343,6 +350,7 @@ $tu = mysqli_query($host, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                     <h1 class="text-center"><?php echo $data["nama_laundry"]?></h1> 
                     <!-- menampilkan alamat lapak -->
                     <h5 style="text-align:justify; text-align:center;"><?php echo $data["alamat"]?></h5>
+                    <!-- menampilkan kategori lebih dari 1 menggunakaan session -->
                     <?php
                     while($p2 = mysqli_fetch_array($tu)){ ?>
                     <p class="text-center"><font size="2"><?php echo $p2['jenis_kategori']; ?></font></p> <?php  } ?>

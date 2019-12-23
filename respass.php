@@ -129,9 +129,18 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
             <div class="col-md-12">
             <h1 class="text-center">Reset Kata Sandi Anda</h1>
             <hr>
+            <div class="row">
+                      <div class="col-md-6 col-lg-3">
                <b> <p class="text-center">Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?</p></b>
+               <input type="checkbox" name="hobi[]" value="1" checked/><b> Kirim Kode Melalui SMS </b>
+
+              <h3><b>&emsp; +62*******027</b></h3></br>
+                <input type="checkbox" name="hobi[]" value="2"/>2. Otomotif<br />
                
-          </div>
+        
+                </div> 
+                 </div>
+                 </div>
         </div>
       </div>
     </div>

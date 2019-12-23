@@ -305,6 +305,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 ?> -->
                 <div class="form-group">
                 <!-- penggunaan required autofocus untuk memvalidasi jika terdapat kolom register yang belum terisi. -->
+                <!-- membuat form pendaftaran lapak -->
                     <label for="username">Username</label>
                     <input name="username" type="teks"  class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
                   </div>
@@ -328,6 +329,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   <div class="form-group">
                     <label for="no_telp">Nomor Telepon</label>
                     <script>
+                    // berfungsi untuk menampilkan hanya angka saja tidak boleh huruf atau simbol
                       function angka(evt){
                         var charCode = (evt.which)? evt.which : event.keyCode
                         if (charCode > 31 && (charCode < 48 || charCode > 57))
@@ -338,6 +340,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                     <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="12" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="">
                   </div>
                   <div class="form-group">
+                  <!-- fungsi ckeditor pada form deskripsi untuk menampilkan variasi dalam mengisi deskripsi seperti tulisan tebal dll -->
                     <label for="deskripsi_laundry">Deskripsi</label>
                     <textarea class="ckeditor" name="deskripsi_laundry" id="ckeditor" required autofocus=""></textarea>
                   </div>
@@ -355,7 +358,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                   </div>
                   
               </div>
-            
+            <!-- untuk upload foto -->
             <div class="col-md-6" >
                   <!-- <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.<br>4. <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p> -->
                   <label for="foto">Upload Foto</label>

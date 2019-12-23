@@ -5,6 +5,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/pendaftarandua/koneksi.php';
 
 $getInt = mysqli_fetch_array(mysqli_query($host, "SELECT id_laundry FROM tb_laundry order by id_laundry desc"));
 
+// berfungsi untuk menambah tanggal 1 bulan untuk pengiklanan lapak secara gratis di awal pendaftaran
 $date = date("Ymd");
 $day30 = strtotime($date . " + 1 months");
 $fDay = date("Ymd", $day30);

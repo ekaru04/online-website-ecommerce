@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/pendaftarandua/koneksi.php';
-$o= mysqli_query($host, "SELECT * FROM tb_kategori");
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
+// $o= mysqli_query($host, "SELECT * FROM tb_kategori");
 ?>
 <!DOCTYPE html>
 <html>
@@ -224,16 +224,7 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                         </ul>
                       </div>
                       <div class="col-md-6 col-lg-3">
-                        <h5>Pages and blog</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="blog.html" class="nav-link">Blog listing</a></li>
-                          <li class="nav-item"><a href="post.html" class="nav-link">Blog Post</a></li>
-                          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-                          <li class="nav-item"><a href="text.html" class="nav-link">Text page</a></li>
-                          <li class="nav-item"><a href="text-right.html" class="nav-link">Text page - right sidebar</a></li>
-                          <li class="nav-item"><a href="404.html" class="nav-link">404 page</a></li>
-                          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                        </ul>
+                      
                       </div>
                     </div>
                   </li>
@@ -287,21 +278,6 @@ $o= mysqli_query($host, "SELECT * FROM tb_kategori");
                 
                 <hr>
                 <!-- <?php
-                // if(isset($_POST['Daftar'])){
-                //   $username = $_POST['username'];
-                //   $nama_laundry = $_POST['nama_laundry'];
-                //   $alamat = $_POST['alamat'];
-                //   $password = $_POST['password'];
-                //   $email = $_POST['email'];
-                //   $deskripsi_laundry = $_POST['deskripsi_laundry'];
-                //   $kategori = $_POST['kategori'];                
-                  
-                //   if(empty($username) || empty($nama_laundry) || empty($alamat) || empty($password) || empty($email) || empty($deskripsi_laundry) || empty($kategori)) {
-                //     echo "<strong> Data Harus Diisi!</strong>";
-                //   }else{
-                //     //proses
-                //   }
-                // }
                 ?> -->
                 <div class="form-group">
                 <!-- penggunaan required autofocus untuk memvalidasi jika terdapat kolom register yang belum terisi. -->

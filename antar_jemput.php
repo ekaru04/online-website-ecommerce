@@ -189,10 +189,10 @@
             </div>
           </div>
         </div> -->
-        <div class="container">
+        <!-- <div class="container">
           <div class="col-md-12">
             <div id="blog-homepage" class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-6"> -->
                 <!-- <div class="post">
                   <h4><a href="post.html">Fashion now</a></h4>
                   <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a></p>

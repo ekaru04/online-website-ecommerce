@@ -1,4 +1,5 @@
 <?php
+// berfungsi upload foto menggunakan target direktori
 if (!empty($_FILES)) {
     $targetDir = "uploaded/";
     $fileName = $_FILES['file']['name'];

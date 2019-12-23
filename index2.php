@@ -1,5 +1,5 @@
 <?php
-
+// include koneksi dari database
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
 date_default_timezone_set('Asia/Jakarta');
 session_start();
@@ -17,11 +17,13 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
 
     if(strtotime(date("Y-m-d")) < strtotime($info['expired'])){
         if($dueExpire <= 7 ){
+			// jika masa iklan berakhir kurang dari 1 minggu terdapat pesan untuk melakukan perpanjangan iklan
           echo "<h6>Dalam $dueExpire hari lapak otomatis terhapus, silahkan lakukan perpanjangan</h6>";  
         }
     }
     else{
       ?>
+	  <!-- akan muncul pesan jika lapak telah expired/ masa iklan habis -->
         <div class="alert alert-danger">Expired</div>
       <?php
     }

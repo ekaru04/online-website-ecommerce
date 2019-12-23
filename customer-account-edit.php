@@ -64,6 +64,7 @@ if($_SESSION['username'] == null){
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               <?php }else{ ?>
+              <!-- menampilkan data username dari database -->
                 <li class="list-inline-item"><a href="#"><?php echo $_SESSION['username']; ?></a></li>
                 <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>

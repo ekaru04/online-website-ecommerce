@@ -7,6 +7,7 @@ $status = $_GET['status'];
 $query;
 
 switch($status){
+	// meng aktifkan dan menonaktifkan lapak yang terdaftar di database dari sisi admin
 	case "aktifkan":
 		$query = "UPDATE tb_laundry SET status='Aktif' WHERE username='$username'";
 		break;

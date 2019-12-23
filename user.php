@@ -130,6 +130,7 @@
                 }
                 ?>
             </td>
+            <!-- menampilkan data yang ada di database -->
             <td><?php echo $data['no_tlp']; ?></td>
             <td><?php echo $data['email']; ?></td>
             <td><?php echo $data['expired']; ?></td>

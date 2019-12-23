@@ -131,12 +131,13 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
             <hr>
                 <p class="text-center">Ketik username atau nomor telepon untuk mencari akun Anda</p>
                 <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>
-                <hr>
-              <button type="button" class="btn btn-primary">Cari</button>
-            <button type="button" class="btn btn-secondary">Batal</button>
-          </div>
+                <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Cari</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+      </div>
         </div>
       </div>
+    </div>
     </div>
     <!--
     *** COPYRIGHT ***

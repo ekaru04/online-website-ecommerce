@@ -146,12 +146,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-2 mb-lg-0">
-            <p class="text-center text-lg-left">©2019 clean in click</p>
+         <center>   <p>©2019 clean in click</p></center>
           </div>
-          <div class="col-lg-6">
-            <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">Bootstrapious</a>
-              <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
-            </p>
           </div>
         </div>
       </div>
@@ -164,58 +160,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="js/front.js"></script>
-
-    <script>
-
-     
-    $(function(){
-      var imagesPreview = function(input, placeToInsertImagePreview) {
-
-    if (input.files) {
-        var filesAmount = input.files.length;
-
-        for (i = 0; i < filesAmount; i++) {
-            var reader = new FileReader();
-
-            reader.onload = function(event) {
-                $($.parseHTML('<img style=width:190px class="delete">')).attr('src', event.target.result).appendTo(placeToInsertImagePreview);
-                // peletakan foto
-                $(".delete").click(function(){
-                  $(this).remove();
-                  // jika foto diklik, maka foto akan terhapus dari halaman
-                });
-            }
-            reader.readAsDataURL(input.files[i]);
-        }
-    }
-
-    };
-    // melakukan upload foto 
-
-
-    
-    $('#file').on('change', function() {
-    imagesPreview(this, 'div.gallery');
-    });
-    })
-    var currentFile = null;
-    Dropzone.autoDiscover = false;
-    var formData = new FormData();
-    var myDropzone = new Dropzone(".dropzone", {
-  addRemoveLinks: true,
-  url: "register-aksi.php",
-  maxFiles:5,
-  init: function() {
-    this.on("addedfile", function(file) {
-        formData.append("file", file); 
-    });
-    this.on("removedfile", function(file) { 
-      formData.delete('file');
-    });
-  }   
-});
-    // menampilkan foto pada saat upload foto di dalam halaman register menggunakan dropzone
-
     </script>
   </body>
 </html>

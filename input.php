@@ -136,7 +136,7 @@
 		</div>
 		<div class="form-group">
                   <label for="Kategori">Kategori</label>
-                  <select name=id_kategori" id="Kategori" class="form-control">
+                  <select name="id_kategori" id="Kategori" class="form-control">
                   <option value="">- Pilih Kategori -</option>
                     <option value="antar jemput"> Antar Jemput </option>
                     <option value="tidak antar jemput"> Tidak Antar Jemput </option>
@@ -179,7 +179,7 @@
               </div>
             </div>
             </div>
-          </div> -->
+          </div>
           
         </div>
       </div>

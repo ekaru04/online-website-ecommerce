@@ -118,17 +118,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
       </div>
     </header>
     <div id="all">
-      <div id="content">
+      <!-- <div id="content"> -->
         <div class="container">
-          <div class="row">
             <div class="col-lg-12">
               <!-- breadcrumb-->
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li aria-current="page" class="breadcrumb-item active">New account / Sign in</li>
-                </ol>
-              </nav>
             </div>
             <form action="register-aksi.php" method="post" enctype="multipart/form-data">
             <div class="box">
@@ -137,77 +130,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
             <h1 class="text-center">Temukan Akun Anda</h1>
             <hr>
                 <p class="text-center">Ketik email atau nomor telepon untuk mencari akun Anda</p>
-                <p class="text-muted text-center">Jika kamu memiliki pertanyaan, silahkan hubungi kami di <a href="contact.html">contact us</a>, Kami akan senang menjawab pertanyaan dari kamu.</p>
-            </div>
-            <div class="col-md-6">
-                
-                <hr>
-                <!-- <?php
-                ?> -->
-                <div class="form-group">
-                <!-- penggunaan required autofocus untuk memvalidasi jika terdapat kolom register yang belum terisi. -->
-                    <label for="username">Username</label>
-                    <input name="username" type="teks"  class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
-                  </div>
-                  <div class="form-group">
-                    <label for="nama_laundry">Nama Loundry</label>
-                    <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="50" required autofocus="">
-                  </div>
-                  <div class="form-group">
-                    <label for="alamat">Alamat Lapak</label>
-                    <input name="alamat" type="text" class="form-control" maxlength="100" placeholder="Isi Alamat Lapak Anda" required autofocus="">
-                  </div>
-                  <div class="form-group">
-                    <label for="password">Password</label>
-                    <input name="password" type="Password" class="form-control" placeholder="Isi Password Akun Anda" maxlength="10" required autofocus="">
-                    <p>isi password anda 10 digit </p>
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input name="email" type="text" class="form-control" maxlength="50" placeholder="Isi Email Anda" required autofocus="">
-                  </div>
-                  <div class="form-group">
-                    <label for="no_telp">Nomor Telepon</label>
-                    <script>
-                      function angka(evt){
-                        var charCode = (evt.which)? evt.which : event.keyCode
-                        if (charCode > 31 && (charCode < 48 || charCode > 57))
-                        return false;
-                        return true;
-                      }
-                    </script>
-                    <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="12" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="">
-                  </div>
-                  <div class="form-group">
-                    <label for="deskripsi_laundry">Deskripsi</label>
-                    <textarea class="ckeditor" name="deskripsi_laundry" id="ckeditor" required autofocus=""></textarea>
-                  </div>
-                  <div class="form-group">
-                  <label for="kategori">Kategori (Pilih Kategori yang Sesuai Dengan Lapak Anda)</label><br>
-                  <!-- <select name="kategori" id="kategori" class="form-control">
-                  <option value="">- Pilih Kategori -</option> -->
-                  <?php
-                  // menampilkan field kategori yg terdapat dalam database
-                  while ($r = mysqli_fetch_assoc($o)){
-                    echo "<input type='checkbox' value=".$r['id_kategori']." name='id_detail_kategori[]'> ".$r ['jenis_kategori']." <br/>";
-                  }
-                  ?>
-                  </select>
-                  </div>
-                  
-              </div>
-            
-            <div class="col-md-6" >
-                  <!-- <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.<br>4. <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p> -->
-                  <label for="foto">Upload Foto</label>
-                  <input type="file" multiple name="foto[]" id="file">   
-                  <div class="gallery"></div>
-                  <div class="text-center">
-                    <input  type="submit" name="daftar" value="Daftar" class="btn btn-primary">
-                  </div>
-            </div>
-            </div>
-          </form>
+                </div>
           </div>
         </div>
       </div>

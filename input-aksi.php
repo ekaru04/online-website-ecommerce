@@ -17,19 +17,25 @@ $email = $_POST['email'];
 $deskripsi = $_POST['deskripsi_laundry'];
 $password = $_POST['password'];
 if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+    // membuat aturan untuk ukuran file
     if($ukuran < 1044070){			
         move_uploaded_file($file_tmp, 'file/'.$nama_file);
         $query = mysqli_query($host,"INSERT INTO tb_laundry (username,nama_laundry, alamat,id_kategori, no_tlp, email,id_foto_laundry, deskripsi_laundry, `password`)  VALUES('$username','$Nama_lapak','$Alamat','$Kategori','$No_Tlp','$email','$nama_file', '$deskripsi','$password')");
-       if($query){
+    //    jika file di upload maka akan keluar pemberitahuan di bawah ini
+        if($query){
+        //    pemberitahuan jika berhasil upload
             echo 'FILE BERHASIL DI UPLOAD';
             header("lOcAtioN:../Rebellion/user.php");
         }else{
-            echo 'GAGAL MENGUPLOAD GAMBAR';
+            // pemberitahuan jika gagal upload
+            echo 'GAGAL MENGUPLOAD GAMBAR'; 
         }
     }else{
+        // pemberitahuan jika file terlalu besar
         echo 'UKURAN FILE TERLALU BESAR';
     }
 }else{
+    // pemberitahuan jika ekstensi file tidak diperbolehkan 
     echo 'EKSTENSI FILE YANG DI UPLOAD TIDAK DI PERBOLEHKAN';
 }
  //query mysql untuk menjalankan perintah pada mysql (untuk menampilkan data pada tabel user variabel)

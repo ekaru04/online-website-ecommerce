@@ -125,9 +125,10 @@ include "koneksi.php";
             <div class="row">
             <div class="col-md-12">
             <h1 class="text-center">Pilih Kata Sandi Baru</h1>
-            <hr>
-                <p class="text">Buat kata sandi baru yang berisi sedikitnya 6 karakter. Kata sandi yang kuat adalah kombinasi huruf, angka, dan tanda baca.</p>
+            <p class="text-center">Buat kata sandi baru yang berisi sedikitnya 6 karakter. Kata sandi yang kuat adalah kombinasi huruf, angka, dan tanda baca.</p>
 
+            <hr>
+              
                 <div class="form-group">
 				<label>Password lama</label>
         <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>

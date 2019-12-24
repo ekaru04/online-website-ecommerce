@@ -131,18 +131,18 @@ include "koneksi.php";
               
                 <div class="form-group">
 				<label>Password lama</label>
-        <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>
+        <input class="form-control" type="text" placeholder="password lama" readonly>
 		</div>	
 		<div class="form-group">
 				<label>Password Baru</label>
-				<input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>		 	
+				<input class="form-control" type="text" placeholder="Password Baru" readonly>		 	
 		</div>	
 		<div class="form-group">	
 				<label>Ulangi Password Baru</label>
-        <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>	
+        <input class="form-control" type="text" placeholder="Ulangi Password Baru" readonly>	
 		</div>
                 <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Cari</button>
+        <button type="button" class="btn btn-primary">simpan</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
       </div>
         </div>

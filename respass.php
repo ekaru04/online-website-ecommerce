@@ -76,7 +76,6 @@ include "koneksi.php";
         </div>
         <!-- *** TOP BAR END ***-->
         
-        
       </div>
       <nav class="navbar navbar-expand-lg">
         <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
@@ -125,14 +124,18 @@ include "koneksi.php";
             <div class="col-md-12">
             <h1 class="text-center">Reset Kata Sandi Anda</h1>
             <hr>
-            <div class="row">
+            <!-- <div class="row">
+                      <div class="col-md-6 col-lg-3"> -->
+               <b> <p>Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?</p></b>
+               <div class="row">
                       <div class="col-md-6 col-lg-3">
-               <b> <p class="text-center">Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?</p></b>
                <input type="checkbox" name="hobi[]" value="1" checked/><b> Kirim Kode Melalui SMS </b>
-
               <h3><b>&emsp; +62*******027</b></h3></br>
-                <input type="checkbox" name="hobi[]" value="2"/>2. Otomotif<br />
-               
+                <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
+                <h3><b>&emsp; +62*******027</b></h3></br>
+
+                <div class="row">
+                      <div class="col-md-6 col-lg-3">
         
                 </div> 
                  </div>
@@ -140,6 +143,8 @@ include "koneksi.php";
         </div>
       </div>
     </div>
+    </div>
+                 </div>
     <!--
     *** COPYRIGHT ***
     _________________________________________________________

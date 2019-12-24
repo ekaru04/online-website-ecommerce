@@ -134,26 +134,25 @@ include "koneksi.php";
             <hr>
                <b> <p>Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?</p></b>
                <div class="row">
-                      <div class="col-md-8">
-               <input type="checkbox" name="hobi[]" value="1" checked/><b> Kirim Kode Melalui SMS </b>
-              <h3><b>&emsp; +62*******027</b></h3></br>
-                <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
-                <h5><b>&emsp; fran*********1011@gmail.com</b></h5></br>
-                </div> 
+                  <div class="col-md-6">
+                      <input type="checkbox" name="hobi[]" value="1" checked/><b> Kirim Kode Melalui SMS </b>
+                      <h3><b>&emsp; +62*******027</b></h3></br>
+                      <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
+                      <h5><b>&emsp; fran*********1011@gmail.com</b></h5></br>
                  </div>
-                 </div>
-                 </div>
-                <!-- <div class="row"> -->
-                      <div class="col-md-4 ">
-                        <div class="garis_verikal"></div>
+                      <div class="col-md-6">
+                        <div class="garis_verikal">
+                        </div>
                    </div>
                        </div>
-                         </div>
+                         </div> 
                           </div> 
+                          <hr>
+                          
                             </div>
-                              </div>      
-                          </div>
-                        </div>
+
+                            </div>   
+
     <!-- *** COPYRIGHT ** -->
     <div id="copyright">
       <div class="container">

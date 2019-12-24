@@ -130,7 +130,7 @@ include "koneksi.php";
             <div class="box">
             <div class="row">
             <div class="col-md-12">
-            <h1 class="text-center">Reset Kata Sandi Anda</h1>
+            <h1 class="text-center">Masukkan kode keamanan</h1>
             <hr>
                <b> <p>Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?</p></b>
                <div class="row">

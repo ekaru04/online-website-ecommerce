@@ -127,7 +127,19 @@ include "koneksi.php";
             <h1 class="text-center">Pilih Kata Sandi Baru</h1>
             <hr>
                 <p class="text">Buat kata sandi baru yang berisi sedikitnya 6 karakter. Kata sandi yang kuat adalah kombinasi huruf, angka, dan tanda baca.</p>
-                <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>
+
+                <div class="form-group">
+				<label>Password lama</label>
+        <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>
+		</div>	
+		<div class="form-group">
+				<label>Password Baru</label>
+				<input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>		 	
+		</div>	
+		<div class="form-group">	
+				<label>Ulangi Password Baru</label>
+        <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>	
+		</div>
                 <div class="modal-footer">
         <button type="button" class="btn btn-primary">Cari</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

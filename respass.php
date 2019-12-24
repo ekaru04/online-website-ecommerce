@@ -1,7 +1,5 @@
 <?php
-// include koneksi di database
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/lupapass.php/koneksi.php';
-// $o= mysqli_query($host, "SELECT * FROM tb_kategori");
+include "koneksi.php";
 ?>
 <!DOCTYPE html>
 <html>

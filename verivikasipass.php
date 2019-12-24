@@ -123,14 +123,14 @@ include "koneksi.php";
             <div class="box">
             <div class="row">
             <div class="col-md-12">
-            <h1 class="text">Masukkan Kode Keamanan</h1>
+            <h1 class="text">Reset Kata Sandi Anda</h1>
             <hr>
-                <p class="text">Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 karakter.</p>
-                <input class="form-control" type="text" placeholder="masukkan kode" readonly><p> </p>
-                <p class="text">Kami mengirimi Anda kode ke:</p><p>
-                +6285******027</p>
+                <p class="text">Masukkan Email Anda untuk Reset Password </p>
+                <input class="form-control" type="text" placeholder="masukkan email" readonly><p> </p>
+                <!-- <p class="text">Kami mengirimi Anda kode ke:</p><p>
+                +6285******027</p> -->
                 <div class="modal-footer">
-                <p class=" text-muted"><a href="pembayayaran.php"><strong>Belum menerima kode?</strong> 
+                <p class=" text-muted"><a href="pembayayaran.php"><strong></strong> 
                &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <button type="button" class="btn btn-primary">Lanjutkan</button>
         <button type="button"  class="btn btn-secondary" data-dismiss="modal">Batal</button>

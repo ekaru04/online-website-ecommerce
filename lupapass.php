@@ -124,9 +124,9 @@ include "koneksi.php";
             <div class="box">
             <div class="row">
             <div class="col-md-12">
-            <h1 class="text-center">Temukan Akun Anda</h1>
+            <h1 class="text-center">Pilih Kata Sandi Baru</h1>
             <hr>
-                <p class="text-center">Ketik username atau nomor telepon untuk mencari akun Anda</p>
+                <p class="text">Buat kata sandi baru yang berisi sedikitnya 6 karakter. Kata sandi yang kuat adalah kombinasi huruf, angka, dan tanda baca.</p>
                 <input class="form-control" type="text" placeholder="username/nomor telepon..." readonly>
                 <div class="modal-footer">
         <button type="button" class="btn btn-primary">Cari</button>

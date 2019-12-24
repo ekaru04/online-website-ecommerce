@@ -148,7 +148,12 @@ include "koneksi.php";
                          </div> 
                           </div> 
                           <hr>
-                          <p class=" text-muted"><a href="pembayayaran.php"><strong>anda sudah tidak memiliki akses?</strong>
+                          <p class=" text-muted"><a href="pembayayaran.php"><strong>anda sudah tidak memiliki akses?</strong> 
+                          <a class="modal-footer">
+                          <p class=" text-muted"><a href="pembayayaran.php"><strong>anda sudah tidak memiliki akses?</strong> 
+        <button type="button" class="btn btn-primary">Cari</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+      </a>
                             </div>
 
                             </div>   

@@ -4,6 +4,13 @@ include "koneksi.php";
 <!DOCTYPE html>
 <html>
   <head>
+  <style>
+	.garis_verikal{
+		border-left: 1px black solid;
+		height: 170px;
+		width: 0px;
+	}
+	</style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clean in Click</title>
@@ -133,7 +140,9 @@ include "koneksi.php";
               <h3><b>&emsp; +62*******027</b></h3></br>
                 <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
                 <h5><b>&emsp; fran*********1011@gmail.com</b></h5></br>
-
+                <body>
+	<div class="garis_verikal"></div>
+</body>
                 <div class="row">
                       <div class="col-md-6 col-lg-3">
         

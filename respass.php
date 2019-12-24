@@ -147,17 +147,15 @@ include "koneksi.php";
                 <!-- <div class="row"> -->
                       <div class="col-md-4 ">
                         <div class="garis_verikal"></div>
-                      
-               
-      
-      </div>
-    </div>
-    </div>
-                 </div>
-    <!--
-    *** COPYRIGHT ***
-    _________________________________________________________
-    -->
+                   </div>
+                       </div>
+                         </div>
+                          </div> 
+                            </div>
+                              </div>      
+                          </div>
+                        </div>
+    <!-- *** COPYRIGHT ** -->
     <div id="copyright">
       <div class="container">
         <div class="row">

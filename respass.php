@@ -132,7 +132,7 @@ include "koneksi.php";
                <input type="checkbox" name="hobi[]" value="1" checked/><b> Kirim Kode Melalui SMS </b>
               <h3><b>&emsp; +62*******027</b></h3></br>
                 <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
-                <h3><b>&emsp; +62*******027</b></h3></br>
+                <h5><b>&emsp; +62*******027</b></h5></br>
 
                 <div class="row">
                       <div class="col-md-6 col-lg-3">

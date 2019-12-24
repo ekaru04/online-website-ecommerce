@@ -116,17 +116,19 @@ include "koneksi.php";
     </header>
     <div id="all">
         <div class="container">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
               <!-- breadcrumb-->
             </div>
             <form action="register-aksi.php" method="post" enctype="multipart/form-data">
             <div class="box">
             <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
             <h1 class="text">Masukkan Kode Keamanan</h1>
             <hr>
                 <p class="text">Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 karakter.</p>
-                <input class="form-control" type="text" placeholder="masukkan kode" readonly>
+                <input class="form-control" type="text" placeholder="masukkan kode" readonly><p> </p>
+                <p class="text">Kami mengirimi Anda kode ke:</p><p>
+                +6285******027</p>
                 <div class="modal-footer">
         <button type="button" class="btn btn-primary">Cari</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>

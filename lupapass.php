@@ -46,7 +46,6 @@ include "koneksi.php";
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <li class="list-inline-item"><a href="register.php">Register</a></li>
                 <li class="list-inline-item"><a href="contact.php">Contact</a></li>
-                <!-- <li class="list-inline-item"><a href="#">Recently viewed</a></li> -->
               </ul>
             </div>
           </div>
@@ -70,6 +69,7 @@ include "koneksi.php";
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
+                <p class="text-center text-muted"><a href="lupapass.php"><strong>forget account?</strong>
                 <p class="text-center text-muted">Not registered yet?</p>
                 <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
@@ -77,8 +77,7 @@ include "koneksi.php";
           </div>
         </div>
         <!-- *** TOP BAR END ***-->
-        
-        
+
       </div>
       <nav class="navbar navbar-expand-lg">
         <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
@@ -137,6 +136,9 @@ include "koneksi.php";
       </div>
     </div>
     </div>
+    <br>
+    <br>
+    <br>
     <!--
     *** COPYRIGHT ***
     _________________________________________________________

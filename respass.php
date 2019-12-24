@@ -121,8 +121,7 @@ include "koneksi.php";
       </div>
     </header>
     
-    <div id="all">
-      <!-- <div id="content"> -->
+    <div id="all"> </div>
         <div class="container">
             <div class="col-lg-12">
               <!-- breadcrumb-->

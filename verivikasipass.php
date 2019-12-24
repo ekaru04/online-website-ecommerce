@@ -132,16 +132,12 @@ include "koneksi.php";
             <div class="col-md-12">
             <h1 class="text-center">Masukkan kode keamanan</h1>
             <hr>
-               <b> <p>Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?</p></b>
+               <b> <p>Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 karakter.</p></b>
                <div class="row">
                   <div class="col-md-6">
-                      <input type="checkbox" name="hobi[]" value="1" checked/><b> Kirim Kode Melalui SMS </b>
-                      <h3><b>&emsp; +62*******027</b></h3></br>
-                      <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
-                      <h5><b>&emsp; fran*********1011@gmail.com</b></h5></br>
+                  <input class="form-control" type="text" placeholder="massukkan kode" readonly>
                  </div>
                       <div class="col-md-6">
-                        <div class="garis_verikal">
                         </div>
                    </div>
                        </div>

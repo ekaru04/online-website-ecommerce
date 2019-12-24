@@ -148,7 +148,7 @@ include "koneksi.php";
                          </div> 
                           </div> 
                           <hr>
-                          
+                          <p class=" text-muted"><a href="pembayayaran.php"><strong>anda sudah tidak memiliki akses?</strong>
                             </div>
 
                             </div>   

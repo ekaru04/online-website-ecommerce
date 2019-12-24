@@ -130,9 +130,10 @@ include "koneksi.php";
                 <p class="text">Kami mengirimi Anda kode ke:</p><p>
                 +6285******027</p>
                 <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Cari</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-      </div>
+                <p class=" text-muted"><a href="pembayayaran.php"><strong>Belum menerima kode?</strong> 
+               &emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button type="button" class="btn btn-primary">Lanjutkan</button>
+        <button type="button"  class="btn btn-secondary" data-dismiss="modal">Batal</button>
         </div>
       </div>
     </div>

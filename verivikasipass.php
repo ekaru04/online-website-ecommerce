@@ -4,14 +4,6 @@ include "koneksi.php";
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8">
-  <style>
-	.garis_verikal{
-		border-left: 1px black solid;
-		height: 170px;
-		width: 0px;
-	}
-	</style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clean in Click</title>
@@ -46,13 +38,14 @@ include "koneksi.php";
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="ml-1"></a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0">
+           
+            <a  class="ml-1"></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <li class="list-inline-item"><a href="register.php">Register</a></li>
                 <li class="list-inline-item"><a href="contact.php">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
               </ul>
             </div>
           </div>
@@ -76,6 +69,7 @@ include "koneksi.php";
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
+                <p class="text-center text-muted"><a href="lupapass.php"><strong>forget account?</strong>
                 <p class="text-center text-muted">Not registered yet?</p>
                 <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
@@ -83,7 +77,7 @@ include "koneksi.php";
           </div>
         </div>
         <!-- *** TOP BAR END ***-->
-        
+
       </div>
       <nav class="navbar navbar-expand-lg">
         <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
@@ -120,41 +114,43 @@ include "koneksi.php";
         </div>
       </div>
     </header>
-    
-    <div id="all"> </div>
+    <div id="all">
         <div class="container">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
               <!-- breadcrumb-->
             </div>
             <form action="register-aksi.php" method="post" enctype="multipart/form-data">
             <div class="box">
             <div class="row">
-            <div class="col-md-12">
-            <h1 class="text-center">Masukkan kode keamanan</h1>
+            <div class="col-md-6">
+            <h1 class="text">Masukkan Kode Keamanan</h1>
             <hr>
-               <b> <p>Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 karakter.</p></b>
-               <div class="row">
-                  <div class="col-md-6">
-                  <input class="form-control" type="text" placeholder="massukkan kode" readonly>
-                 </div>
-                      <div class="col-md-6">
-                        </div>
-                   </div>
-                       </div>
-                         </div> 
-                          </div> 
-
-                          <div class="modal-footer">
-                          <p class=" text-muted"><a href="pembayayaran.php"><strong>anda sudah tidak memiliki akses?</strong> 
-                          &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        <button type="button" class="btn btn-primary">Lanjutkan</button>
-        <button type="button"  class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                <p class="text">Harap periksa pesan teks berisi kode di ponsel Anda. Kode Anda memiliki panjang 6 karakter.</p>
+                <input class="form-control" type="text" placeholder="masukkan kode" readonly>
+                <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Cari</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
       </div>
-                            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-                            </div>   
-
-    <!-- *** COPYRIGHT ** -->
+    <!--
+    *** COPYRIGHT ***
+    _________________________________________________________
+    -->
     <div id="copyright">
       <div class="container">
         <div class="row">

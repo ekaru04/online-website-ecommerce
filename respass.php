@@ -4,6 +4,7 @@ include "koneksi.php";
 <!DOCTYPE html>
 <html>
   <head>
+  <meta charset="UTF-8">
   <style>
 	.garis_verikal{
 		border-left: 1px black solid;
@@ -119,6 +120,7 @@ include "koneksi.php";
         </div>
       </div>
     </header>
+    
     <div id="all">
       <!-- <div id="content"> -->
         <div class="container">
@@ -140,12 +142,11 @@ include "koneksi.php";
               <h3><b>&emsp; +62*******027</b></h3></br>
                 <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
                 <h5><b>&emsp; fran*********1011@gmail.com</b></h5></br>
-                <body>
-	<div class="garis_verikal"></div>
-</body>
                 <div class="row">
                       <div class="col-md-6 col-lg-3">
-        
+                      <body>
+                        <div class="garis_verikal"></div>
+                      </body>
                 </div> 
                  </div>
                  </div>

@@ -10,8 +10,8 @@
 <script src="js/sweetalert.min.js"></script>
 <script>
 	swal({
-  title: "Success!",
-  text: "Redirecting in 2 seconds.",
+  title: "Terkirim!",
+  text: "Bukti pembayaran terkirim",
   type: "success",
   showConfirmButton: true
 }, function(){

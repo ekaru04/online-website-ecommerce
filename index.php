@@ -28,6 +28,15 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
           // echo "<h6>".date("d-m-y")."</h6>";
       ?>
 
+<?php
+
+$msg = @$_GET['msg'];
+if($msg == "berhasil"){
+  echo "<h4>password telah diganti</h4>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>

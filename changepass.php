@@ -1,4 +1,5 @@
 <?php
+
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 if(isset($_POST['reset'])){
 	$id = $_POST['id_laundry'];
@@ -15,7 +16,8 @@ if(isset($_POST['reset'])){
 			$update = "UPDATE tb_laundry SET password='$newPass' WHERE email='$email' AND id_laundry='$id'";
 			$result2 = mysqli_query($conn, $update);
 			if($result2){
-				header("location:reset.php?msg=berhasil");
+				header("location:index.php?msg=berhasil");
+
 			}
 		}else{
 			header("location:reset.php?msg=sama");
@@ -24,5 +26,5 @@ if(isset($_POST['reset'])){
 		header("location:reset.php?msg=sama2");
 	}
 }
-header("location:index.php");
+
 ?>

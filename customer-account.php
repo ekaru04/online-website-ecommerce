@@ -139,7 +139,9 @@ if($_SESSION['username'] == null){
                   <ul class="nav nav-pills flex-column">
                     <a href="customer-account.php" class="nav-link active"><i class="fa fa-list"></i>Edit Lapak</a>
                     <a href="akun.php" class="nav-link"><i class="fa fa-user"></i>Tampilan Lapak</a>
-                    <a href="pembayaran2.php" class="nav-link"><i class="fa fa-money"></i>Pembayaran</a></ul>
+                    <a href="pembayaran2.php" class="nav-link"><i class="fa fa-money"></i>Pembayaran</a>
+                    <a href="reset.php" class="nav-link"><i class="fa fa-question"></i>Lupa Password</a>
+                  </ul>
                 </div>
               </div>
               <!-- /.col-lg-3-->
@@ -160,19 +162,19 @@ if($_SESSION['username'] == null){
                   ?>
                 <form>
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Nama Lapak </label>
+                    <label for="nama" class="col-sm-2 col-form-label"><strong>NAMA LAPAK</strong></label>
                     <div class="col-sm-10">
                       <input type="text" readonly class="form-control-plaintext" id="nama" value="<?php echo $data['nama_laundry'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="alamat" class="col-sm-2 col-form-label">Alamat Lapak</label>
+                    <label for="alamat" class="col-sm-2 col-form-label"><strong>ALAMAT LAPAK</strong></label>
                     <div class="col-sm-10">
                       <input type="text" readonly class="form-control-plaintext" id="alamat" value="<?php echo $data['alamat'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
+                    <label for="kategori" class="col-sm-2 col-form-label"><strong>KATEGORI</strong></label>
                     <div class="col-sm-10">
                       
                       <?php 
@@ -187,13 +189,13 @@ if($_SESSION['username'] == null){
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="telp" class="col-sm-2 col-form-label">No Telepon</label>
+                    <label for="telp" class="col-sm-2 col-form-label"><strong>Telepon</strong></label>
                     <div class="col-sm-10">
                       <input type="text" readonly class="form-control-plaintext" id="no_telp" value="<?php echo $data['no_telp'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <label for="email" class="col-sm-2 col-form-label"><strong>EMAIL</strong></label>
                     <div class="col-sm-10">
                       <input type="text" readonly maxlength="2" class="form-control-plaintext" id="email" value="<?php echo $data['email'] ?>">
                     </div>
@@ -210,8 +212,12 @@ if($_SESSION['username'] == null){
                       <input type="text" readonly class="form-control-plaintext" id="status" value="<?php echo $data['status'] ?>">
                     </div>
                   </div>
-                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="btn btn-warning btn-m">Edit</a></td>
+                  
+                  
                 </form>
+                <form action="customer-account-edit.php" method="POST">
+                      <td class="edit"><button name="id" value="<?php echo $data['id_laundry'] ?>" class="btn btn-warning btn-m" type="submit">Edit</button></td>  
+                  </form>
                 <?php } ?>
                 <!--<div class="table-responsive">
                   <table class="table table-hover">

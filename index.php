@@ -83,7 +83,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d")?></a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d");?></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
               <?php if(@$sess == null){ ?>
@@ -192,7 +192,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
 
             <?php 
 
-          		$query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry")or die(mysql_error());
+          		$query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY RAND() LIMIT 6")or die(mysql_error());
               
               $qs = mysqli_query($conn, "SELECT DISTINCT id_foto_laundry, foto FROM tb_foto_laundry GROUP BY id_foto_laundry ORDER BY id_foto_laundry");
           		$nomor = 1;
@@ -262,7 +262,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
           <div class="container">
             <div class="col-md-12">
               <h3 class="text-uppercase">COBA APLIKASI CLEAN IN CLICK</h3>
-              <p class="lead mb-0">Mau laundry?Atau Tidak mau ribet pasang iklan lapak laundry?<br> Clean In Click solusinya!<a href="blog.html">Check our blog!</a></p>
+              <p class="lead mb-0">Mau laundry ?<br> Tidak ingin keluar kamar untuk mencari laundry yang cocok ?<br> Cari laundry yang cocok buat mu di CLEAN IN CLICK!</p>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@ $dueExpire = round((strtotime($info['expired']) - time()) / 86400);
       if(status == true && statusTenggat == false){
         swal("Peringatan", "Masa berlaku akun anda sudah habis, akun anda akan segera di nonaktifkan."+
           "Harap segera membayar untuk memperpanjang masa aktif akun anda.");
-      }else
+      }else if(statusTenggat == true)
       {
         swal("Peringatan", "Masa berlaku akun anda akan habis dalam "+<?= isset($_GET['tenggat']) ? $_GET['tenggat'] : "0"; ?>+" Hari, akun anda di nonaktifkan."+
                   "Harap segera membayar untuk memperpanjang masa aktif akun anda.");

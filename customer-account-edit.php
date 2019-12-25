@@ -40,12 +40,12 @@ if($_SESSION['username'] == null){
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="js/ckeditor.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="js/front.js"></script>
+    <script src="js/ckeditor/ckeditor.js"></script>
   </head>
   <body>
     <!-- navbar-->
@@ -145,7 +145,7 @@ if($_SESSION['username'] == null){
                 <h3 class="mt-5">Detail Londre</h3>
                 <?php 
                     
-                    $id = $_GET['id'];
+                    $id = @$_POST['id'];
                     $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE id_laundry='$id'")or die(mysql_error());
                     $nomor = 1;
                     while($data = mysqli_fetch_array($query_mysql)){
@@ -197,15 +197,27 @@ if($_SESSION['username'] == null){
                         <label for="kategori">Kategori</label>
                         <div class="col-md-6">
                           <?php
-                          $idLaundry = $_GET['id'];
+                          $idLaundry = @$_POST['id'];
                           $query = "SELECT * FROM tb_kategori";
                           $tQuery = mysqli_query($conn, $query);
                           $oQuery = mysqli_query($conn, "SELECT * FROM tb_detail_kategori WHERE id_laundry = '$idLaundry'");
-                         
+                            
+                          $hasil = mysqli_fetch_array($oQuery);
+
                           while($rQuery = mysqli_fetch_array($tQuery)){
                                 
                           ?>
-                          <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>">
+                            
+                          <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>"
+
+                          <?php foreach($hasil as $kunci){
+                                  if($kunci == $rQuery["id_kategori"]){
+                                    echo "checked";
+                                    break;
+                                  }
+                                  //echo $kunci == $rQuery["id_kategori"] ? "checked"
+                              } ?>>
+
                           <label for="<?= $rQuery['id_kategori'] ?>"><?= $rQuery['jenis_kategori'] ?></label>
                           <br>
                         <?php  } ?>
@@ -221,7 +233,7 @@ if($_SESSION['username'] == null){
                     <div class="mx-auto col-md-8">
                       <div class="form-group">
                         <label for="alamat">Deskripsi Lapak</label>
-                        <textarea name="deskripsi" type="text" class="form-control"><?php echo $data['deskripsi_laundry'];?></textarea>
+                        <textarea name="deskripsi" type="text" class="ckeditor" id="ckeditor"><?php echo $data['deskripsi_laundry'];?></textarea>
                       </div>
                     </div>
                     <?php } ?>

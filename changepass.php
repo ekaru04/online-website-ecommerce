@@ -24,4 +24,5 @@ if(isset($_POST['reset'])){
 		header("location:reset.php?msg=sama2");
 	}
 }
+header("location:index.php");
 ?>

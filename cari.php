@@ -167,8 +167,14 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
-                      <div class="front"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="img/laundry.jpg" alt="" class="img-fluid"></a></div>
-                      <div class="back"><a href="lapak.php?id=<?php echo $data['username']?>"><img src="img/laundry.jpg" alt="" class="img-fluid"></a></div>
+                      <?php
+                      $usernameF = $data['username'];
+                       $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn));
+                       
+                       while($dat = mysqli_fetch_array($query_foto)){ ?>
+                      <div class="front"><a href="lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid"></a>
+                      </div>
+                    <?php } ?>
                     </div>
                   </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">

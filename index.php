@@ -201,8 +201,9 @@ if($msg == "berhasil"){
 
             <?php 
 
-          		$query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY RAND() LIMIT 6")or die(mysql_error());
-              
+          		// $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY RAND() LIMIT 6")or die(mysql_error());
+              $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry")or die(mysql_error());
+
               $qs = mysqli_query($conn, "SELECT DISTINCT id_foto_laundry, foto FROM tb_foto_laundry GROUP BY id_foto_laundry ORDER BY id_foto_laundry");
           		$nomor = 1;
           		while($data = mysqli_fetch_array($query_mysql)){
@@ -216,9 +217,10 @@ if($msg == "berhasil"){
                     <div class="flipper">
                       <?php
                       $usernameF = $data['username'];
-                       $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn)); ?>
+                       $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn));
+                       
+                            while($dat = mysqli_fetch_array($query_foto)){ ?>
 
-                      <?php while($dat = mysqli_fetch_array($query_foto)){ ?>
                       <div class="front">
                         <a href="lapak.php?id=<?php echo $dat['username']; ?>">
                           <img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages">

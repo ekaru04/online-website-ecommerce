@@ -210,7 +210,7 @@ if($_SESSION['username'] == null){
                             
                           <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>"
 
-                          <?php foreach($hasil as $kunci){
+                          <?php foreach($hasil  as $kunci){
                                   if($kunci == $rQuery["id_kategori"]){
                                     echo "checked";
                                     break;

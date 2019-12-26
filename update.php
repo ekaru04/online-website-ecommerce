@@ -16,6 +16,7 @@ if($no_telp[0] == "0"){
 $no_telp = substr_replace($no_telp, "+62", 0, 1);
 }
 mysqli_query($conn, "UPDATE tb_laundry SET nama_laundry='$nama', alamat='$alamat', deskripsi_laundry='$deskripsi', email='$email', no_telp='$no_telp' WHERE id_laundry='$id'");
+
 mysqli_query($conn, "DELETE FROM tb_detail_kategori WHERE id_laundry='$id'");
 
 

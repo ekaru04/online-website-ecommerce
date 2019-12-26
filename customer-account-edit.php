@@ -142,7 +142,7 @@ if($_SESSION['username'] == null){
                   <!-- /.row-->
 
                 </form>
-                <h3 class="mt-5">Detail Londre</h3>
+                <h3 class="mt-5">Detail Laundry</h3>
                 <?php 
                     
                     $id = @$_POST['id'];

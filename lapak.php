@@ -46,6 +46,13 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="js/front.js"></script>
+    <style>
+      .customImages{
+        height: 303px;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
     <!-- navbar-->
@@ -160,7 +167,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                     // echo "<pre>";
                     // print_r($d['foto']);
                   ?>
-                    <div class="item"><img src="img/<?= $d['foto']; ?>" alt="" class="img-fluid"></div>
+                    <div class="item"><img src="img/<?= $d['foto']; ?>" alt="" class="img-fluid customImages"></div>
 
                     <?php } ?>
                   

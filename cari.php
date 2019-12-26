@@ -43,6 +43,13 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="js/front.js"></script>
+    <style>
+      .customImages{
+        height: 250px;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
     <!-- navbar-->
@@ -172,7 +179,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                        $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn));
                        
                        while($dat = mysqli_fetch_array($query_foto)){ ?>
-                      <div class="front"><a href="lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid"></a>
+                      <div class="front"><a href="lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
+                      </div>
+                      <div class="back"><a href="lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
                       </div>
                     <?php } ?>
                     </div>

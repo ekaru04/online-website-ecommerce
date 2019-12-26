@@ -27,6 +27,7 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
@@ -38,6 +39,7 @@ $o= mysqli_query($conn, "SELECT * FROM tb_kategori");
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     <script src="js/front.js"></script> 
   </head>
   <body>

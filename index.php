@@ -226,6 +226,11 @@ if($msg == "berhasil"){
                           <img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages">
                         </a>
                       </div>
+                      <div class="back">
+                        <a href="lapak.php?id=<?php echo $dat['username']; ?>">
+                          <img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages">
+                        </a>
+                      </div>
                       <?php } ?>
                     </div>
                   </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>

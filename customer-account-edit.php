@@ -201,8 +201,10 @@ if($_SESSION['username'] == null){
                           $query = "SELECT * FROM tb_kategori";
                           $tQuery = mysqli_query($conn, $query);
                           $oQuery = mysqli_query($conn, "SELECT * FROM tb_detail_kategori WHERE id_laundry = '$idLaundry'");
-                            
-                          $hasil = mysqli_fetch_array($oQuery);
+                          $pilihan = [];
+                          while($hasil = mysqli_fetch_array($oQuery)){
+                            array_push($pilihan, $hasil["id_kategori"]);
+                          }
 
                           while($rQuery = mysqli_fetch_array($tQuery)){
                                 
@@ -210,11 +212,14 @@ if($_SESSION['username'] == null){
                             
                           <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>"
 
-                          <?php foreach($hasil as $kunci){
+                          <?php foreach($pilihan as $kunci){
+                                
+                                //print_r($rQuery["id_kategori"]);
                                   if($kunci == $rQuery["id_kategori"]){
                                     echo "checked";
                                     break;
                                   }
+                                //  Hehe kebiasa pake ctrl+k+c di vscode :v
                                   //echo $kunci == $rQuery["id_kategori"] ? "checked"
                               } ?>>
 

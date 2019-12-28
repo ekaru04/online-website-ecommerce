@@ -1,4 +1,7 @@
+<?php
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,6 +38,14 @@
     <link rel="shortcut icon" href="favicon.png">
   </head>
   <body>
+  <?php
+$msg = @$_GET['pesan'];
+if($msg == "sukses"){
+  echo "<h4>Email telah terkirim</h4>";
+}else if($msg == "gagal"){
+  echo "<h4>Email tidak terdaftar</h4>";
+} 
+?>
     <!-- navbar-->
     <header class="header mb-5">
       <!--
@@ -44,7 +55,7 @@
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="ml-1"></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
@@ -74,8 +85,6 @@
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
-                <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
             </div>
           </div>
@@ -83,28 +92,7 @@
         <!-- *** TOP BAR END ***-->
         
       </div>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
-          <div class="navbar-buttons">
-            <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
-          </div>
-          <div id="navigation" class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Men<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                     
-              <!-- /.nav-collapse-->
-              <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
-              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>3 items in cart</span></a></div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      
       <div id="search" class="collapse">
         <div class="container">
           <form role="search" class="ml-auto">
@@ -119,51 +107,43 @@
       </div>
     </header>
     
-    <div id="all"></div>
-      <!-- <div id="content"> -->
+    <div id="all"> 
         <div class="container">
             <div class="col-lg-12">
               <!-- breadcrumb-->
             </div>
-            <form action="register-aksi.php" method="post" enctype="multipart/form-data">
+      <form action="resetpass.php" method="post" enctype="multipart/form-data">
         <div class="box">
           <div class="row">
             <div class="col-md-12">
-            <h1 class="text-center">Reset Kata Sandi Anda</h1>
+              <h1 class="text-center">Reset Kata Sandi Anda</h1>
             <hr>
             <!-- <div class="row">
                       <div class="col-md-6 col-lg-3"> -->
-               <b> <p>Bagaimana Anda ingin mendapatkan kode untuk mereset kata sandi Anda?</p></b>
+            <br>
                <div class="row">
                   <div class="col-md-6">
-                    <input type="checkbox" name="hobi[]" value="1" checked/> Kirim Kode Melalui SMS <br> 
-                    <input type="checkbox" name="hobi[]" value="2"/> Kirim Kode Melalui Email<br />
+                     <div class="form-group">
+                        <label>Masukan Email</label>
+                          <input class="form-control" type="text" name="email" placeholder="email">
+                    </div>  
                   </div>
-                  <div class="col-md-6">
-                    <div class="garis_verikal">
-                    </div>
-                  </div>
+                <div class="col-md-6">
+                  <div class="garis_verikal"></div>
+                </div>
               </div>
-
+              <div class="modal-footer">
+                  <button type="submit" name="submit" class="btn btn-primary">Verifikasi</button>
+              </div>
             </div>
           </div>
         </div>
       </form>
-                
-    <!--
-    *** COPYRIGHT ***
-    _________________________________________________________
-    -->
-    <div id="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-2 mb-lg-0">
-         <center>   <p>©2019 clean in click</p></center>
-          </div>
-          </div>
-        </div>
-      </div>
     </div>
+  </div>
+
+    <!-- *** COPYRIGHT ** -->
+    <?php include "footer.php"; ?>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>

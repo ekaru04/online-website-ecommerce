@@ -69,7 +69,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 
                         ?>
                         <div class="col-lg-4">
-                          <input class="cariSesuatu" type="checkbox" name="kategori[]" <?php echo "value=".$r['id_kategori'].">".$r['jenis_kategori'].""; ?> 
+                          <input class="cariSesuatu" type="checkbox" name="kategori[]" <?php echo "value=".$r['id_kategori'].">".$r['jenis_kategori'].""; ?> >
 
                             
                         </div>

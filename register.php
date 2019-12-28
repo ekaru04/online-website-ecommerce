@@ -309,7 +309,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
     var a = this.split("");
     a[index] = char;
     return a.join("");
-}
+    }
 
     $('#noTelpChange').on('change', function(){
       if(this.value[0] === '0'){

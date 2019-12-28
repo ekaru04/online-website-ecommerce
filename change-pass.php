@@ -16,14 +16,14 @@ if(isset($_POST['reset'])){
 			$update = "UPDATE tb_laundry SET password='$newPass' WHERE email='$email' AND id_laundry='$id'";
 			$result2 = mysqli_query($conn, $update);
 			if($result2){
-				header("location:reset-pass-akun.php?msg=berhasil");
+				header("location:reset-pass.php?msg=berhasil");
 
 			}
 		}else{
-			header("location:reset-pass-akun.php?msg=sama");
+			header("location:reset-pass.php?msg=sama");
 		}
 	}else{
-		header("location:reset-pass-akun.php?msg=sama2");
+		header("location:reset-pass.php?msg=sama2");
 	}
 }
 

@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
       $id = $data['id_laundry'];
       $nama = $data['nama_laundry'];
       $emailData = $data['email'];
-      $url = 'http://'.$_SERVER['SERVER_NAME'].'/Rebellion/res.php?id_laundry='.$id.'&email='.$emailData;
+      $url = 'http://'.$_SERVER['SERVER_NAME'].'/Rebellion/reset-pass.php?id_laundry='.$id.'&email='.$emailData;
       $message = 'Link Reset.<br>'.$url;
       if ($email == $emailData){
                   $mail = new PHPMailer(true); // the true param means it will throw exceptions on errors, which we need to catch
@@ -41,10 +41,10 @@ if (isset($_POST['submit'])) {
             } catch (Exception $e) {
                   echo $e->getMessage(); //Boring error messages from anything else!
             } finally {
-            	header("location:lupapass.php?pesan=sukses");
+            	header("location:verif-email.php?pesan=sukses");
             }
       }else{
-            echo'Email tidak terdaftar';
+            header("location:verif-email.php?pesan=gagal");
       }
 }
 ?>

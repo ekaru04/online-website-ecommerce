@@ -34,12 +34,14 @@ if($_SESSION['username'] == null){
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
@@ -91,8 +93,6 @@ if($_SESSION['username'] == null){
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
-                <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ if($_SESSION['username'] == null){
                               return true;
                             }
                           </script>
-                        <input name="no_telp" type="tel" maxlength="13" onkeypress="return angka(event)" required class="form-control" value="<?php echo $data['no_telp']; ?>">
+                        <input name="no_telp" type="tel" maxlength="13" onkeypress="return angka(event)" required class="form-control" id="noTelpChange" value="<?php echo $data['no_telp']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -345,6 +345,21 @@ if($_SESSION['username'] == null){
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
+    <script>
+      String.prototype.replaceAt=function(index, char) {
+    var a = this.split("");
+    a[index] = char;
+    return a.join("");
+    }
 
+    $('#noTelpChange').on('change', function(){
+      if(this.value[0] === '0'){
+        this.value = this.value.replaceAt(0, "+62");
+      }else{
+        swal("Nomor telpon tidak valid!");
+        this.value = "";
+      }
+    }); 
+    </script>
   </body>
 </html>

@@ -161,7 +161,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                     <div class="left"></div>
                     <div class="right">
                       <!-- <button class="btn btn-outline-secondary"><i class="fa fa-refresh"></i> Update cart</button> -->
-                      <button type="submit" class="btn btn-primary">Kirim Bukti Pembayaran <i class="fa fa-send"></i></button>
+                      <button type="submit" name="submit" value="submit" class="btn btn-primary">Kirim Bukti Pembayaran <i class="fa fa-send"></i></button>
                     </div>
                   </div>
                 </form>

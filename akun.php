@@ -135,17 +135,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategor
                     <div class="item"> 
                       <img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages">
                     </div><?php } ?>
-                  </div>                
-                  <div class="ribbon sale">
-                    <div class="theribbon">SALE</div>
-                    <div class="ribbon-background"></div>
                   </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
                 </div>
                 <div class="col-md-6">
                   <div class="box">

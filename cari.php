@@ -193,21 +193,6 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                     </p>
                   </div>
                   <!-- /.text-->
-                  <div class="ribbon sale">
-                    <div class="theribbon">SALE</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon new">
-                    <div class="theribbon">NEW</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
-                  <div class="ribbon gift">
-                    <div class="theribbon">GIFT</div>
-                    <div class="ribbon-background"></div>
-                  </div>
-                  <!-- /.ribbon-->
                 </div>
                 <!-- /.product-->
               </div>
@@ -230,21 +215,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
         *** GET INSPIRED ***
         _________________________________________________________
         -->
-        <div class="p-5"> 
-        <div class="container">
-          <div class="col-md-12">
-            <div class="box slideshow">
-              <h3>Get Inspired</h3>
-              <p class="lead">Get the inspiration from our world class designers</p>
-              <div id="get-inspired" class="owl-carousel owl-theme">
-                <div class="item"><a href="#"><img src="img/getinspired1.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                <div class="item"><a href="#"><img src="img/getinspired2.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                <div class="item"><a href="#"><img src="img/getinspired3.jpg" alt="Get inspired" class="img-fluid"></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        
         <!-- *** GET INSPIRED END ***-->
         <!--
         *** BLOG HOMEPAGE ***
@@ -253,34 +224,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
         <div class="box text-center">
           <div class="container">
             <div class="col-md-12">
-              <h3 class="text-uppercase">From our blog</h3>
-              <p class="lead mb-0">What's new in the world of fashion? <a href="blog.html">Check our blog!</a></p>
+              <h3 class="text-uppercase">COBA APLIKASI CLEAN IN CLICK</h3>
+              <p class="lead mb-0">Mau laundry ?<br> Tidak ingin keluar kamar untuk mencari laundry yang cocok ?<br> Cari laundry yang cocok buat mu di CLEAN IN CLICK!</p>
             </div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="col-md-12">
-            <div id="blog-homepage" class="row">
-              <div class="col-sm-6">
-                <div class="post">
-                  <h4><a href="post.html">Fashion now</a></h4>
-                  <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a></p>
-                  <hr>
-                  <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                  <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a></p>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="post">
-                  <h4><a href="post.html">Who is who - example blog post</a></h4>
-                  <p class="author-category">By <a href="#">John Slim</a> in <a href="">About Minimal</a></p>
-                  <hr>
-                  <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                  <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a></p>
-                </div>
-              </div>
-            </div>
-            <!-- /#blog-homepage-->
           </div>
         </div>
         <!-- /.container-->

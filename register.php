@@ -120,10 +120,9 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
             <div class="box">
             <div class="row">
             <div class="col-md-12">
-            <h1 class="text-center">Akun Baru</h1>
-                <p class="lead text-center">Belum Punya Akun Lapak?</p>
-                <p class="text-center">Dengan membuat akun lapak, kamu bisa mempromosikan lapak loundry kamu disini. Selamat mendaftar ^^</p>
-                <p class="text-muted text-center">Jika kamu memiliki pertanyaan, silahkan hubungi kami di <a href="contact.html">contact us</a>, Kami akan senang menjawab pertanyaan dari kamu.</p>
+            <h1 class="text-center">DAFTAR</h1>
+                <p class="text-center">Anda dapat mempromosikan Laundry anda disini selama 30 Hari kedepan. Selamat mendaftar ^^</p>
+                <p class="text-muted text-center">Jika kamu memiliki pertanyaan, silahkan hubungi kontak yang tertera dibawah</p>
             </div>
             <div class="col-md-6">
                 
@@ -151,7 +150,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
                     <input name="username" type="teks" class="form-control" placeholder="Isi Username Anda" maxlength="10" required autofocus="">
                   </div>
                   <div class="form-group">
-                    <label for="nama_laundry">Nama Loundry</label>
+                    <label for="nama_laundry">Nama Laundry</label>
                     <input name="nama_laundry" type="text" class="form-control" placeholder="Isi Nama Laundry Anda" maxlength="50" required autofocus="">
                   </div>
                   <div class="form-group">
@@ -168,7 +167,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
                     <input name="email" type="text" class="form-control" maxlength="50" placeholder="Isi Email Anda" required autofocus="">
                   </div>
                   <div class="form-group">
-                    <label for="no_telp">Nomor Telepon</label>
+                    <label for="no_telp">Nomor Whatsapp</label>
                     <script>
                       function angka(evt){
                         var charCode = (evt.which)? evt.which : event.keyCode
@@ -177,7 +176,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
                         return true;
                       }
                     </script>
-                    <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="12" placeholder="Isi Nomor Telepon Anda yang Aktif" required autofocus="" id="noTelpChange">
+                    <input name="no_telp" type="text" onkeypress="return angka(event)" class="form-control" maxlength="12" placeholder="Isi Nomor Whatsapp Anda yang Aktif" required autofocus="" id="noTelpChange">
                   </div>
                   <div class="form-group">
                     <label for="deskripsi_laundry">Deskripsi</label>
@@ -198,7 +197,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
               </div>
             
             <div class="col-md-6" >
-                  <p>Aturan Upload Foto Lapak : <br/> 1. Pindah Foto lapak ke dalam Folder <b>PICTURES</b>. Lalu Upload dengan menekan tombol <b>CHOOSE FILE</b> di bawah ini.<br/>2. Foto lapak Maksimal <b>5</b>.<br/>3.  Ukuran foto maksimal <b>2 MB</b>.<br>4. <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p>
+                  <p>Upload foto Laundry : <br> <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p>
                   <label for="foto">Upload Foto</label>
                   <input type="file" multiple name="foto[]" id="file">   
                   <div class="gallery"></div>

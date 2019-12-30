@@ -123,6 +123,7 @@
             <input type="date" name="tanggal">
             <input type="submit" value="Filter">
         </form>
+        <hr>
 		<?php 
 		include 'koneksi.php';
         $no = 1;

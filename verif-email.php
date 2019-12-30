@@ -1,5 +1,7 @@
 <?php
+
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+date_default_timezone_set('Asia/Jakarta');
 
 ?>
 <!DOCTYPE html>
@@ -55,13 +57,11 @@ if($msg == "sukses"){
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="ml-1"></a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d");?></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="list-inline-item"><a href="register.php">Register</a></li>
-                <li class="list-inline-item"><a href="contact.php">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
+                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
+                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               </ul>
             </div>
           </div>
@@ -74,12 +74,12 @@ if($msg == "sukses"){
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="customer-orders.html" method="post">
+                <form action="cek_login.php" method="post">
                   <div class="form-group">
-                    <input id="email-modal" type="text" placeholder="email" class="form-control">
+                    <input id="email-modal" type="text" name="username" placeholder="username" class="form-control">
                   </div>
                   <div class="form-group">
-                    <input id="password-modal" type="password" placeholder="password" class="form-control">
+                    <input id="password-modal" type="password" name="password" placeholder="password" class="form-control">
                   </div>
                   <p class="text-center">
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>

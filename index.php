@@ -147,10 +147,8 @@ if($msg == "berhasil"){
           <div class="row">
             <div class="col-md-12">
               <div id="main-slider" class="owl-carousel owl-theme">
-                <div class="item"><img src="img/laundry.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/godai.png" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider3.jpg" alt="" class="img-fluid"></div>
-                <div class="item"><img src="img/main-slider4.jpg" alt="" class="img-fluid"></div>
+                <div class="item"><img src="img/gglaundry-outside.jpeg" alt="" class="img-fluid"></div>
+                <div class="item"><img src="img/gglaundry-inside.jpeg" alt="" class="img-fluid"></div>
               </div>
               <!-- /#main-slider-->
             </div>
@@ -256,19 +254,6 @@ if($msg == "berhasil"){
         *** GET INSPIRED ***
         _________________________________________________________
         -->
-        <div class="container">
-          <div class="col-md-12">
-            <div class="box slideshow">
-              <h3>Get Inspired</h3>
-              <p class="lead">Get the inspiration from our world class designers</p>
-              <div id="get-inspired" class="owl-carousel owl-theme">
-                <div class="item"><a href="#"><img src="img/getinspired1.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                <div class="item"><a href="#"><img src="img/getinspired2.jpg" alt="Get inspired" class="img-fluid"></a></div>
-                <div class="item"><a href="#"><img src="img/getinspired3.jpg" alt="Get inspired" class="img-fluid"></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- *** GET INSPIRED END ***-->
         <!--
         *** BLOG HOMEPAGE ***
@@ -282,31 +267,7 @@ if($msg == "berhasil"){
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="col-md-12">
-            <div id="blog-homepage" class="row">
-              <div class="col-sm-6">
-                <div class="post">
-                  <h4><a href="post.html">Fashion now</a></h4>
-                  <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a></p>
-                  <hr>
-                  <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                  <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a></p>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="post">
-                  <h4><a href="post.html">Who is who - example blog post</a></h4>
-                  <p class="author-category">By <a href="#">John Slim</a> in <a href="">About Minimal</a></p>
-                  <hr>
-                  <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                  <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a></p>
-                </div>
-              </div>
-            </div>
-            <!-- /#blog-homepage-->
-          </div>
-        </div>
+        
         <!-- /.container-->
         <!-- *** BLOG HOMEPAGE END ***-->
       </div>

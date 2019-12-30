@@ -1,6 +1,6 @@
 <?php
 
-include "koneksi.php";
+include 'koneksi.php';
 $o= mysqli_query($host, "SELECT * FROM tb_kategori");
 
 ?>

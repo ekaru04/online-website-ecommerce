@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion-admin/koneksi.php';
+include 'koneksi.php';
 
 @$sess = $_SESSION['user_admin'];
 

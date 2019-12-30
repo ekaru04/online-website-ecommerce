@@ -35,7 +35,7 @@ $kategori = $_POST['id_detail_kategori'];
 $indexFoto = 0 ;
 
 foreach($_FILES['foto']['name'] as $p){
-    if($indexFoto < 6){
+    if($indexFoto < 6){ 
     $sql1 = "INSERT INTO tb_foto_laundry VALUES('$getInt','$p')";
     move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/img/".$p);
     mysqli_query($conn, $sql1);

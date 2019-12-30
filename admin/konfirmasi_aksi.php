@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion-admin/koneksi.php';
+include 'koneksi.php';
 
 $strBulan = null;
 $username = $_GET['id'];

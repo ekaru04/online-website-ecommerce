@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion-admin/koneksi.php';
+include "koneksi.php";
 $o= mysqli_query($host, "SELECT * FROM tb_kategori");
 
 ?>

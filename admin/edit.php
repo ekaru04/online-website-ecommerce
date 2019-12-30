@@ -100,7 +100,7 @@
                   <input id="username" type="hidden"  class="form-control" name="username" value="<?php echo $data['username'] ?>">
                    <!-- <label for="username">Username</label>
                     
-								<!-- <input type="text" name="nama" value="<?php echo $data['lapak'] ?> "> -->
+								<input type="text" name="nama" value="<?php echo $data['lapak'] ?> "> -->
                   </div>
                   <div class="form-group">
                     <label for="Nama_lapak">Nama Lapak</label>

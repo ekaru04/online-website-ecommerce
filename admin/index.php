@@ -66,7 +66,7 @@
                 <!-- <script type="text/javascript">  -->
 				<?php 
 					//include merupan perintah untuk menyisipkanfile php ke dalam file php yang lainnya
-                    include "koneksi.php";
+                    include 'koneksi.php';
                     if(isset($_GET['cari'])){
                         $cari = $_GET['cari'];
                         $query_mysql = mysqli_query($host,"SELECT * FROM tb_laundry where nama_laundry like '%$cari%'")or die(mysql_error());			

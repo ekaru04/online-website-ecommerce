@@ -33,12 +33,9 @@ $date = date("Ymd");
 	}
 }
 
-//header("Location:notif.php");
+header("Location:notif.php");
 
 // header("Location:../lapak/pembayaran2.php?pesan=berhasil");
 
-//Coba praktekno neh opo'o kok error
-// ok
-// ga mlebu njir username
 
 ?>

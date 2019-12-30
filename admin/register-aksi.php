@@ -1,13 +1,13 @@
 <?php
 // fungsi include untuk menyertakan file php lain ke dalam suatu program php
-include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php'; 
-include "vendor/autoload.php";
+include 'koneksi.php';
+// include "vendor/autoload.php";
 
 use Intervention\Image\ImageManagerStatic as Image;
 
-$getInt = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(id_foto_laundry) FROM tb_foto_laundry"))[0];
+$getInt = mysqli_fetch_array(mysqli_query($host, "SELECT COUNT(id_foto_laundry) FROM tb_foto_laundry"))[0];
 
-$b = mysqli_fetch_array(mysqli_query($conn, "SELECT MAX(AUTO_INCREMENT) FROM information_schema.tables WHERE table_name = 'tb_laundry'"))[0];
+$b = mysqli_fetch_array(mysqli_query($host, "SELECT MAX(AUTO_INCREMENT) FROM information_schema.tables WHERE table_name = 'tb_laundry'"))[0];
 
 
 $date = date("Ymd");
@@ -38,7 +38,7 @@ foreach($_FILES['foto']['name'] as $p){
     if($indexFoto < 6){
     $sql1 = "INSERT INTO tb_foto_laundry VALUES('$getInt','$p')";
     move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/img/".$p);
-    mysqli_query($conn, $sql1);
+    mysqli_query($host, $sql1);
     $indexFoto++;
     }else{
         echo '<script type="text/javascript">
@@ -49,12 +49,23 @@ foreach($_FILES['foto']['name'] as $p){
 
 }
 
-// $a = "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')";
-mysqli_query($conn, "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')")or die(mysqli_error($conn));
+mysqli_query($host, "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')")or die(mysqli_error($host));
 
 foreach ($kategori as $key) {
-    mysqli_query($conn, "INSERT INTO tb_detail_kategori VALUES('$b', '$key')")or die(mysqli_error($conn));
+    mysqli_query($host, "INSERT INTO tb_detail_kategori VALUES('$b', '$key')")or die(mysqli_error($host));
     }
+// mysqli_query($host, "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')")or die(mysqli_error($host));
+
+//     foreach ($kategori as $key) {
+//     mysqli_query($host, "INSERT INTO tb_detail_kategori VALUES('$b', '$key')")or die(mysqli_error($host));
+//     }
+
+
+
+
+// foreach ($kategori as $key) {
+//     mysqli_query($host, "INSERT INTO tb_detail_kategori VALUES('$c', '$key')")or die(mysqli_error($host));
+// }
 
 
 
@@ -74,7 +85,7 @@ foreach ($kategori as $key) {
 
 
 // mysqli_query($conn, "INSERT INTO tb_laundry(id_laundry, username, nama_laundry, alamat, password, email, no_telp, deskripsi_laundry, id_detail_kategori, id_foto_laundry, expired) VALUES('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$no_telp', '$deskripsi_laundry', '$kategori', '$getInt', '$fDay' )");
-header("location:index.php");
+header("location:user.php");
 // if($indexFoto < 6){
 // 
 // }

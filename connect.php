@@ -1,9 +1,18 @@
 <?php 
-
-$conn = mysqli_connect("localhost","root","","laundry");
-
-if (mysqli_connect_errno()){
-	echo "koneksi gagal : " . mysqli_connect_error();
+// isi nama host, username mysql, dan password mysql anda
+$conn = mysqli_connect("localhost","root","", "laundry");
+ 
+if($conn){
+	// echo "koneksi host berhasil.<br/>";
+}else{
+	// echo "koneksi gagal.<br/>";
 }
-
+// isikan dengan nama database yang akan di hubungkan
+//$db = mysqli_select_db("test");
+ 
+//if($db){
+	//echo "koneksi database berhasil.";
+//}//else{
+	//echo "koneksi database gagal.";
+//}
 ?>

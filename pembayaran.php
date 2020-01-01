@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,16 +95,16 @@
 			<th>Status</th>
 		</tr>
 		<?php 
-		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
+		include 'koneksi.php';
 		$no = 1;
-		$data = mysqli_query($host,"select *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan");
+		$data = mysqli_query($host,"SELECT *, tb_iklan.durasi_iklan as durasi from tb_trx JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan where status='Belum_Terkonfirmasi' ORDER BY id_trx DESC");
 		while($d = mysqli_fetch_array($data)){
 			?>
 			<tr>
 				<td><?php echo $no++; ?></td>
 				<td><?php echo $d['username']; ?></td> 
-				<td><?php echo $d['id_iklan']; ?></td>
-				<td><img src="file/<?php echo $d['foto_bukti']; ?>" style="width:80px" alt=""></td>
+				<td><?php echo $d['durasi']." ","Hari"; ?></td>
+				<td><img src="../img/<?= $d['foto_bukti']; ?>" style="width:80px" alt=""></td>
 				<td>
 					<?php if($d['status'] == "Belum_Terkonfirmasi"){?>
 					<a class= "btn btn-danger btn-sm" href="konfirmasi_aksi.php?id=
@@ -126,10 +128,8 @@
     <!-- Sidebar-nav Js -->
     <script>
         $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
             });
-        });
     </script>
     <!--// Sidebar-nav Js -->
 

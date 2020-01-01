@@ -123,8 +123,9 @@
             <input type="date" name="tanggal">
             <input type="submit" value="Filter">
         </form>
+        <hr>
 		<?php 
-		include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/koneksi.php';
+		include 'koneksi.php';
         $no = 1;
         $data;
         $tgl = @$_GET['tanggal'];
@@ -132,7 +133,7 @@
         if(!isset($tgl)){
             $data = mysqli_query($host, "SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan ORDER BY tb_trx.id_trx DESC")or die(mysqli_error($host));
         }else{
-            $data = mysqli_query($host, "SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan WHERE tb_trx.tgl_transaksi = '$tgl' ORDER BY tb_trx.id_trx DESC")or die(mysqli_error($host));
+            $data = mysqli_query($host, "SELECT * FROM tb_trx INNER JOIN tb_laundry ON tb_laundry.username = tb_trx.username INNER JOIN tb_iklan ON tb_iklan.id_iklan = tb_trx.id_iklan WHERE tb_trx.tgl = '$tgl' ORDER BY tb_trx.id_trx DESC")or die(mysqli_error($host));
         }
 
         
@@ -153,7 +154,7 @@
 					&id_trx=<?php echo $d['id_trx']; ?>">KONFIRMASI</a>
 					<?php }else{ echo "Telah Terkonfirmasi"; } ?>
 				</td> -->
-                <td><?php echo $d['tgl_transaksi']; ?> </td>
+                <td><?php echo $d['tgl']; ?> </td>
                 <td><?php echo $d['expired']; ?> </td>
                 <td><?php echo $d['status']; ?> </td>
 			</tr>

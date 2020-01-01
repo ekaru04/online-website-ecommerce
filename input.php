@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- menampilkan judul dari website -->
     <title>Clean In Click</title>
   <link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -122,7 +121,6 @@
 		<table>
 		<tr>
 		<div class="form-group">
-    <!-- form input lapak dari sisi admin -->
 				<label>Username</label>
 				<input type="text" class="form-control" name="username">		 	
 		</div>	
@@ -136,7 +134,7 @@
 		</div>
 		<div class="form-group">
                   <label for="Kategori">Kategori</label>
-                  <select name="id_kategori" id="Kategori" class="form-control">
+                  <select name=id_kategori" id="Kategori" class="form-control">
                   <option value="">- Pilih Kategori -</option>
                     <option value="antar jemput"> Antar Jemput </option>
                     <option value="tidak antar jemput"> Tidak Antar Jemput </option>
@@ -179,7 +177,7 @@
               </div>
             </div>
             </div>
-          </div>
+          </div> -->
           
         </div>
       </div>

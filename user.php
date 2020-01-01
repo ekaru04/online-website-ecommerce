@@ -1,3 +1,9 @@
+<?php 
+
+date_default_timezone_set('Asia/Jakarta');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +45,13 @@
     <!--web-fonts-->
     <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    <style>
+        .tdBreak{
+            max-width: 150px;
+            word-wrap: break-word;
+        }
+    </style>
     <!--//web-fonts-->
 </head>
 
@@ -85,7 +98,8 @@
 
 	<!--elemen tabel-->
    
-	<table class="table table-responsive" style="margin-left:-3%;"> 
+
+	<table class="table table-responsive"> 
 		<tr class="thead" style="margin-left:-3%;" >
 			<th>Username</th>
 			<th>Nama Lapak</th>
@@ -115,33 +129,33 @@
 			//ber1fungsi memecahkan data menjadi array dan memasukkan ke dalma variabel data dalam bentuk perulangan
 		?> 
 		<tr style="background : <?php echo $warnaAlternate; ?>;">
-			<td>B0<?php echo $user = $data['username']; ?></td>
+			<td><?php echo $user = $data['username']; ?></td>
             <?php
             
                 $queryKategori = mysqli_query($host, "SELECT tb_kategori.jenis_kategori FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_laundry INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE tb_laundry.username = '$user'");
             ?>
 			<td><?php echo $data['nama_laundry']; ?></td>
 			<td><?php echo $data['alamat']; ?></td>
-			<td><?= substr($data['deskripsi_laundry']."...", 0, 30)?></td>
+			<td class="tdBreak"><?php echo $data['deskripsi_laundry']; ?></td>
             <td>
                 <?php
                 while($reData = mysqli_fetch_array($queryKategori)){
-                    echo $reData['jenis_kategori']."<br><br>";
+                    echo "<li>".$reData['jenis_kategori']."</li>";
                 }
                 ?>
             </td>
-            <!-- menampilkan data yang ada di database -->
-            <td><?php echo $data['no_tlp']; ?></td>
+            <td><?php echo $data['no_telp']; ?></td>
             <td><?php echo $data['email']; ?></td>
             <td><?php echo $data['expired']; ?></td>
             <td><?php echo $data['status']; ?></td>
+			
 			<td>
             <?php if($data['status'] == "Aktif"){?>
 					<a class= "btn btn-danger btn-sm" href="non.php?id=
 					<?php echo $data['username']; ?>&status=nonaktifkan">Nonaktifkan</a>
 					<?php }else{ echo "<a class='btn btn-success btn-sm' href='non.php?id=".$data['username']."&status=aktifkan'>Aktifkan</a>"; } ?>
 				<!-- <a class="edit" href="edit.php?id=<?php echo $data['username']; ?>"><img src="images/edit.png"  style="width:15%"></a> | -->
-                <!-- <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['username']; ?>">Hapus</a> -->
+                <a class="btn btn-danger btn-sm"  href="hapus.php?id=<?php echo $data['id_laundry']; ?>">Hapus</a>
                 <!-- <a class="hapus" href="hapus.php?id=<?php echo $data['username']; ?>"><img src="images/hapus.png"  style="width:50%"></a>					 -->
 			</td>
 		</tr>
@@ -149,6 +163,8 @@
 	</table>
         </div>
     </div>
+
+
     <!-- Required common Js -->
     <script src='js/jquery-2.2.3.min.js'></script>
     <!-- //Required common Js -->
@@ -156,9 +172,7 @@
     <!-- Sidebar-nav Js -->
     <script>
         $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-            });
+            $('#sidebar').toggleClass('active');
         });
     </script>
     <!--// Sidebar-nav Js -->

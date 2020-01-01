@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="input.php" id= "data">
+                    <a href="register.php" id= "data">
                     <i class="fas fa-folder-plus"></i>
                       TAMBAH DATA KONSUMEN
                     </a>

@@ -169,7 +169,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
               <!-- /.box-->
             <!-- /.col-lg-9-->
               </div>
-              <div class="box">
+              <!-- <div class="box">
                 <div class="box-header">
                   <h4 class="mb-0">Via Pembayaran</h4>
                 </div>
@@ -181,9 +181,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                     <input type="text" class="form-control"><span class="input-group-append">
                       <button type="button" class="btn btn-primary"><i class="fa fa-gift"></i></button></span>
                   </div>
-                  <!-- /input-group-->
+                  
                 </form>
-              </div>
+              </div> -->
             </div>
             <!-- /.col-md-3-->
           </div>

@@ -134,7 +134,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
             <div class="row">
             <?php 
                 
-                  $queryKategori = "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori WHERE";
+                  $queryKategori = "SELECT DISTINCT(tb_laundry.nama_laundry), tb_laundry.* FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori WHERE";
                   
                 @$id_kategori = explode(",", $_GET['id']);
 
@@ -144,7 +144,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                         $queryKategori .= " OR ";
                     }
                   }
-
+                  // echo $queryKategori;
                   @$search = $_GET["search"];
                   @$listing = $_GET["listing"];
 

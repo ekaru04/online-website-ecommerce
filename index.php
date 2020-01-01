@@ -149,6 +149,7 @@ if($msg == "berhasil"){
               <div id="main-slider" class="owl-carousel owl-theme">
                 <div class="item"><img src="img/gglaundry-outside.jpeg" alt="" class="img-fluid"></div>
                 <div class="item"><img src="img/gglaundry-inside.jpeg" alt="" class="img-fluid"></div>
+                <div class="item"><img src="img/laundry.jpg" alt="" class="img-fluid"></div>
               </div>
               <!-- /#main-slider-->
             </div>

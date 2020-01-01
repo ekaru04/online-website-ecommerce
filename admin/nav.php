@@ -43,14 +43,14 @@ include 'koneksi.php';
                               <div class="form-group">
                                 <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                               </div>
-                              <a href="lupapass.php">Lupa password?</a>
+                              <!-- <a href="lupapass.php">Lupa password?</a> -->
                               <p class="text-center">
                                 <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                               </p>
                             </form>
                          <?php }else{ ?>
                             <h6 class="sub-title-w3-agileits"><?php echo $_SESSION['user_admin']; ?></h6>
-                            <a class="dropdown-item" href="login.html">Logout</a>
+                            <a class="dropdown-item" href="keluar_aksi.php">Keluar</a>
                         </div>
                         <?php }  ?>
                     </div>     

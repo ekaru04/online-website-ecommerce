@@ -1,6 +1,7 @@
 <?php 
 
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
+date_default_timezone_set('Asia/Jakarta');
 session_start();
 
 @$sess = $_SESSION['username'];
@@ -47,19 +48,18 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="../index2.php" class="btn btn-success btn-sm">Ekaru</a><a href="#" class="ml-1">Saya nub lur, jangan dibully</a></div>
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="../index2.php" class="btn btn-success btn-sm"><?php echo date("Y-m-d")?></a><a href="#" class="ml-1"></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <?php if(@$sess == null){
 
                 ?>
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="list-inline-item"><a href="register.html">Daftar</a></li>
+                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
                 <?php }else{ ?>
-                <li class="list-inline-item"><a href="../index2.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="index.php"><?php echo @$_SESSION['username']; ?></a></li>
                 <?php } ?>
-                <li class="list-inline-item"><a href="contact.html">Hubungi Siska</a></li>
-                <li class="list-inline-item"><a href="../keluar_aksi.php">Keluar</a></li>
+                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               </ul>
             </div>
           </div>
@@ -72,7 +72,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="../cek_login.php" method="post">
+                <form action="cek_login.php" method="post">
                   <div class="form-group">
                     <input id="email-modal" type="text" placeholder="username" class="form-control" name="username">
                   </div>
@@ -83,8 +83,6 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
-                <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
             </div>
           </div>
@@ -143,30 +141,27 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                   <p class="text-muted">Transfer ke rekening yang tertera.</p>
                   <h3>BCA - 0000000000000 a/n Franciska</h3>
                   <div class="table-responsive">
-                    <form>
-						Paket Iklan: 
-						<select class="form-control" name="paket">
-						    <option class="text-justify" >---- Pilih Paket ----</option>
-						    <?php
+            Paket Iklan: 
+            <select class="form-control" name="paket">
+                <option class="text-justify" >---- Pilih Paket ----</option>
+                <?php
                     while($r = mysqli_fetch_assoc($o)){
                     echo "<option value=".$r['id_iklan'].">".$r['durasi_iklan']."hari -".$r['harga_iklan']."</option>";
                     }
             
                 ?>
-						</select>
+            </select>
             <br>
             <div class="pt-3" style="border: 1px solid black; height: 200px; margin: auto; text-align: center;">
                 <p style="margin-top: 10%"><input type="file" name="foto" hidden id="uploadFoto"></input> <label for="tombolUpload" id="labelUpload"></label><button id="tombolUpload">Upload Foto</button></p>
             </div>
-						<input type="submit" name="submit" value="OK"></input>
-					</form>
                   </div>
                   <!-- /.table-responsive-->
                   <div class="box-footer d-flex justify-content-between flex-column flex-lg-row">
                     <div class="left"></div>
                     <div class="right">
-                      <button class="btn btn-outline-secondary"><i class="fa fa-refresh"></i> Update cart</button>
-                      <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+                      <!-- <button class="btn btn-outline-secondary"><i class="fa fa-refresh"></i> Update cart</button> -->
+                      <button type="submit" name="submit" value="submit" class="btn btn-primary">Kirim Bukti Pembayaran <i class="fa fa-send"></i></button>
                     </div>
                   </div>
                 </form>
@@ -174,7 +169,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
               <!-- /.box-->
             <!-- /.col-lg-9-->
               </div>
-              <div class="box">
+              <!-- <div class="box">
                 <div class="box-header">
                   <h4 class="mb-0">Via Pembayaran</h4>
                 </div>
@@ -186,9 +181,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                     <input type="text" class="form-control"><span class="input-group-append">
                       <button type="button" class="btn btn-primary"><i class="fa fa-gift"></i></button></span>
                   </div>
-                  <!-- /input-group-->
+                  
                 </form>
-              </div>
+              </div> -->
             </div>
             <!-- /.col-md-3-->
           </div>
@@ -199,90 +194,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     *** FOOTER ***
     _________________________________________________________
     -->
-    <div id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Pages</h4>
-            <ul class="list-unstyled">
-              <li><a href="text.html">About us</a></li>
-              <li><a href="text.html">Terms and conditions</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li><a href="contact.html">Contact us</a></li>
-            </ul>
-            <hr>
-            <h4 class="mb-3">User section</h4>
-            <ul class="list-unstyled">
-              <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-              <li><a href="register.html">Regiter</a></li>
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Top categories</h4>
-            <h5>Men</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Shirts</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-            <h5>Ladies</h5>
-            <ul class="list-unstyled">
-              <li><a href="category.html">T-shirts</a></li>
-              <li><a href="category.html">Skirts</a></li>
-              <li><a href="category.html">Pants</a></li>
-              <li><a href="category.html">Accessories</a></li>
-            </ul>
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Where to find us</h4>
-            <p><strong>Obaju Ltd.</strong><br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact page</a>
-            <hr class="d-block d-md-none">
-          </div>
-          <!-- /.col-lg-3-->
-          <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Get the news</h4>
-            <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-            <form>
-              <div class="input-group">
-                <input type="text" class="form-control"><span class="input-group-append">
-                  <button type="button" class="btn btn-outline-secondary">Subscribe!</button></span>
-              </div>
-              <!-- /input-group-->
-            </form>
-            <hr>
-            <h4 class="mb-3">Stay in touch</h4>
-            <p class="social"><a href="#" class="facebook external"><i class="fa fa-facebook"></i></a><a href="#" class="twitter external"><i class="fa fa-twitter"></i></a><a href="#" class="instagram external"><i class="fa fa-instagram"></i></a><a href="#" class="gplus external"><i class="fa fa-google-plus"></i></a><a href="#" class="email external"><i class="fa fa-envelope"></i></a></p>
-          </div>
-          <!-- /.col-lg-3-->
-        </div>
-        <!-- /.row-->
-      </div>
-      <!-- /.container-->
-    </div>
-    <!-- /#footer-->
-    <!-- *** FOOTER END ***-->
-    
-    
-    <!--
-    *** COPYRIGHT ***
-    _________________________________________________________
-    -->
-    <div id="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-2 mb-lg-0">
-            <p class="text-center text-lg-left">©2019 Your name goes here.</p>
-          </div>
-          <div class="col-lg-6">
-            <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">Bootstrapious</a>
-              <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <?php include "footer.php"; ?>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>

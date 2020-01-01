@@ -102,7 +102,7 @@ if($msg == "berhasil"){
   echo "<h4>password tidak tedaftar</h4>";
 }
 ?>
-  <form action="changepass.php" method="post" enctype="multipart/form-data">
+  <form action="change-pass-akun.php" method="post" enctype="multipart/form-data">
     <div class="box">
       <div class="row">
         <div class="col-md-12">

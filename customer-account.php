@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/distri/connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 
 session_start();
 @$sess = $_SESSION['username'];
@@ -18,7 +18,7 @@ if($_SESSION['username'] == null){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clean in Click</title>
-  	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
+	 <link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -66,7 +66,8 @@ if($_SESSION['username'] == null){
       <div id="top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-12 text-center text-lg-right">
+            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d");?></a></div>
+            <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <?php if($sess == null){
 
@@ -121,7 +122,7 @@ if($_SESSION['username'] == null){
               <!-- breadcrumb-->
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                   <li aria-current="page" class="breadcrumb-item active">Lapakku</li>
                 </ol>
               </nav>
@@ -139,7 +140,9 @@ if($_SESSION['username'] == null){
                   <ul class="nav nav-pills flex-column">
                     <a href="customer-account.php" class="nav-link active"><i class="fa fa-list"></i>Edit Lapak</a>
                     <a href="akun.php" class="nav-link"><i class="fa fa-user"></i>Tampilan Lapak</a>
-                    <a href="pembayaran2.php" class="nav-link"><i class="fa fa-money"></i>Pembayaran</a></ul>
+                    <a href="pembayaran2.php" class="nav-link"><i class="fa fa-money"></i>Pembayaran</a>
+                    <a href="reset-pass-akun.php" class="nav-link"><i class="fa fa-question"></i>Lupa Password</a>
+                  </ul>
                 </div>
               </div>
               <!-- /.col-lg-3-->
@@ -147,7 +150,8 @@ if($_SESSION['username'] == null){
             </div>
             <div id="customer-orders" class="col-lg-9">
               <div class="box">
-                <h1 class="mt-2 lon">Detail Lapak</h1>
+                <h1>Lapakku</h1>
+                <p class="lead">Detail lapak</p>
                 <hr>
                 <?php 
                   
@@ -159,32 +163,20 @@ if($_SESSION['username'] == null){
                   ?>
                 <form>
                   <div class="form-group row">
-                    <label for="nama" class="col-sm-3 col-form-label strong"><strong>Nama Lapak</strong> </label>
-                    <div class="col-sm-9">
-                      <input type="text" readonly class="form-control-plaintext" id="nama" value=": <?php echo $data['nama_laundry'] ?>">
+                    <label for="nama" class="col-sm-2 col-form-label"><strong>NAMA LAPAK</strong></label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="nama" value="<?php echo $data['nama_laundry'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="deskripsi" class="col-sm-3 col-form-label"><strong>Deskripsi Lapak</strong> </label>
-                    <div class="col-sm-9">
-                      <input type="text" readonly class="form-control-plaintext" id="deskripsi" value=": <?php echo $data['deskripsi_laundry'] ?>">
+                    <label for="alamat" class="col-sm-2 col-form-label"><strong>ALAMAT LAPAK</strong></label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="alamat" value="<?php echo $data['alamat'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="alamat" class="col-sm-3 col-form-label"><strong>Alamat Lapak</strong> </label>
-                    <div class="col-sm-9">
-                      <input type="text" readonly class="form-control-plaintext" id="alamat" value=": <?php echo $data['alamat'] ?>">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="email" class="col-sm-3 col-form-label"><strong>Email</strong> </label>
-                    <div class="col-sm-9">
-                      <input type="text" readonly class="form-control-plaintext" id="email" value=": <?php echo $data['email'] ?>">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="kategori" class="col-sm-3 col-form-label"><strong>Kategori</strong> </label>
-                    <div class="col-sm-9">
+                    <label for="kategori" class="col-sm-2 col-form-label"><strong>KATEGORI</strong></label>
+                    <div class="col-sm-10">
                       
                       <?php 
                       $idLaundry = $data['id_detail_kategori'];
@@ -193,30 +185,40 @@ if($_SESSION['username'] == null){
                       while($uDetail = mysqli_fetch_array($queryDetail)){
 
                       ?>
-                      <input type="text" readonly class="form-control-plaintext" id="kategori" value=": <?php echo $uDetail['jenis_kategori']; ?>">
+                      <input type="text" readonly class="form-control-plaintext" id="kategori" value="<?php echo $uDetail['jenis_kategori']; ?>">
                     <?php } ?>
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="telp" class="col-sm-3 col-form-label"><strong>Nomer Telepon</strong> </label>
-                    <div class="col-sm-9">
-                      <input type="text" readonly class="form-control-plaintext" id="no_telp" value=": <?php echo $data['no_telp'] ?>">
+                    <label for="telp" class="col-sm-2 col-form-label"><strong>Telepon</strong></label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="no_telp" value="<?php echo $data['no_telp'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="tgl" class="col-sm-3 col-form-label"><strong>Berlaku hingga</strong> </label>
-                    <div class="col-sm-9">
-                      <input type="text" readonly class="form-control-plaintext" id="tgl" value=": <?php echo $data['expired']?>">
+                    <label for="email" class="col-sm-2 col-form-label"><strong>EMAIL</strong></label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly maxlength="2" class="form-control-plaintext" id="email" value="<?php echo $data['email'] ?>">
                     </div>
                   </div>
                   <div class="form-group row">
-                    <label for="status" class="col-sm-3 col-form-label"><strong>Status</strong></label>
-                    <div class="col-sm-9">
-                      <input type="text" readonly class="form-control-plaintext" id="status" value=": <?php echo $data['status'] ?>">
+                    <label for="tgl" class="col-sm-2 col-form-label">Tanggal Berlaku</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="tgl" value="<?php echo $data['expired']?>">
                     </div>
                   </div>
-                  <td class="edit"><a href="customer-account-edit.php?id=<?php echo $data['id_laundry'] ?>" class="edit btn btn-lg">Edit</a></td>
+                  <div class="form-group row">
+                    <label for="status" class="col-sm-2 col-form-label">Status</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="status" value="<?php echo $data['status'] ?>">
+                    </div>
+                  </div>
+                  
+                  
                 </form>
+                <form action="customer-account-edit.php" method="POST">
+                      <td class="edit"><button name="id" value="<?php echo $data['id_laundry'] ?>" class="btn btn-warning btn-m" type="submit">Edit</button></td>  
+                  </form>
                 <?php } ?>
                 <!--<div class="table-responsive">
                   <table class="table table-hover">
@@ -276,34 +278,45 @@ if($_SESSION['username'] == null){
     *** FOOTER ***
     _________________________________________________________
     -->
-     
-
- <div id="footer">
+    <div id="footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6">
+            <h4 class="mb-3">Pages</h4>
+            <ul class="list-unstyled">
+              <li><a href="text.html">About us</a></li>
+              <li><a href="text.html">Terms and conditions</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+            <hr>
             <h4 class="mb-3">User section</h4>
             <ul class="list-unstyled">
-              <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
               <li><a href="register.html">Regiter</a></li>
             </ul>
           </div>
           <!-- /.col-lg-3-->
           <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Contact Admin</h4>
-            <h5><strong>Franciska W</strong></h5>
+            <h4 class="mb-3">Top categories</h4>
+            <h5>Men</h5>
             <ul class="list-unstyled">
-              <li>Email</li>
+              <li><a href="category.html">T-shirts</a></li>
+              <li><a href="category.html">Shirts</a></li>
+              <li><a href="category.html">Accessories</a></li>
             </ul>
-            <h5><strong>Achmad Wildhan Eka</strong></h5>
+            <h5>Ladies</h5>
             <ul class="list-unstyled">
-              <li><a href="mailto: wildhan.simdig04@gmail.com">wildhan.simdig04@gmail.com</a></li>
+              <li><a href="category.html">T-shirts</a></li>
+              <li><a href="category.html">Skirts</a></li>
+              <li><a href="category.html">Pants</a></li>
+              <li><a href="category.html">Accessories</a></li>
             </ul>
           </div>
           <!-- /.col-lg-3-->
           <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Alamat Kantor</h4>
-            <p><strong>Perum Tidar Cluster</strong><br>Blok Sekian<br>Tidar<br>45Y 73J<br>Jember<br><strong>Great Britain</strong></p>
+            <h4 class="mb-3">Where to find us</h4>
+            <p><strong>Obaju Ltd.</strong><br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact page</a>
             <hr class="d-block d-md-none">
           </div>
           <!-- /.col-lg-3-->
@@ -330,10 +343,6 @@ if($_SESSION['username'] == null){
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
     
-      
-    <!-- /#footer-->
-    <!-- *** FOOTER END ***-->
-    
     
     <!--
     *** COPYRIGHT ***
@@ -343,9 +352,10 @@ if($_SESSION['username'] == null){
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-2 mb-lg-0">
-            <p class="text-center text-lg-left">©2019 Click in Click.</p>
+            <p class="text-center text-lg-left">©2019 Your name goes here.</p>
           </div>
           <div class="col-lg-6">
+            <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">Bootstrapious</a>
               <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
             </p>
           </div>

@@ -1,7 +1,7 @@
 <?php
 
 
-include $_SERVER['DOCUMENT_ROOT'].'/distri/connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 
 
@@ -11,7 +11,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
         <div class="container"><a href="index.php" class="navbar-brand home"><img src="img/mesin_cuci.png" width="80px"hight="80px"  class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
           <div class="navbar-buttons">
             <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
-            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
+            <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button>
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
@@ -69,12 +69,15 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 
                         ?>
                         <div class="col-lg-4">
-                          <input class="cariSesuatu" type="checkbox" name="kategori[]" <?php echo "value=".$r['id_kategori'].">".$r['jenis_kategori'].""; ?> 
+                          <input class="cariSesuatu" type="checkbox" name="kategori[]" <?php echo "value=".$r['id_kategori'].">".$r['jenis_kategori'].""; ?> >
+
                             
                         </div>
                         <?php }  ?> 
 
-                      <button id="btnCari">Filter</button>
+                      <hr>
+                      <button type="submit" class="btn btn-primary" id="btnCari">Filter Kategori<i class="fa fa-send"></i></button>
+                      <!-- <button id="btnCari">Filter</button> -->
 
                     </div>
                   </li>
@@ -107,7 +110,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
             <div class="input-group">
               <input type="text" placeholder="Cari nama laundry" name="search" class="form-control" >
               <div class="input-group-append">
-                <button type="button" class="btn btn-primary"><i class="fa fa-search"></i></button>
+                <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
               </div>
             </div>
           </form>

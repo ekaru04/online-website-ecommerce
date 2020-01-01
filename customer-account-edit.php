@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/distri/connect.php';
+include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
 @session_start();
 
 $sess = $_SESSION['username'];
@@ -17,8 +17,7 @@ if($_SESSION['username'] == null){
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Clean in Click</title>
-	  <link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
+    <title>Obaju : e-commerce template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -35,17 +34,20 @@ if($_SESSION['username'] == null){
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
     <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
     <script src="js/front.js"></script>
+    <script src="js/ckeditor/ckeditor.js"></script>
   </head>
   <body>
     <!-- navbar-->
@@ -64,7 +66,6 @@ if($_SESSION['username'] == null){
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               <?php }else{ ?>
-              <!-- menampilkan data username dari database -->
                 <li class="list-inline-item"><a href="#"><?php echo $_SESSION['username']; ?></a></li>
                 <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
@@ -92,8 +93,6 @@ if($_SESSION['username'] == null){
                     <button class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
                 </form>
-                <p class="text-center text-muted">Not registered yet?</p>
-                <p class="text-center text-muted"><a href="register.html"><strong>Register now</strong></a>! It is easy and done in 1 minute and gives you access to special discounts and much more!</p>
               </div>
             </div>
           </div>
@@ -138,11 +137,15 @@ if($_SESSION['username'] == null){
             </div>
             <div class="col-lg-9">
               <div class="box">
-                <h1 class="mt-2 lon">Detail Lapak</h1>
-                <hr>
+                <h1>LondreKu</h1>
+                
+                  <!-- /.row-->
+
+                </form>
+                <h3 class="mt-5">Detail Laundry</h3>
                 <?php 
                     
-                    $id = $_GET['id'];
+                    $id = @$_POST['id'];
                     $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE id_laundry='$id'")or die(mysql_error());
                     $nomor = 1;
                     while($data = mysqli_fetch_array($query_mysql)){
@@ -151,84 +154,101 @@ if($_SESSION['username'] == null){
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="nama"><strong>Nama Lapak</strong> :</label>
+                        <label for="nama">Nama Lapak</label>
                         <input type="hidden" name="id" value="<?php echo $data['id_laundry']; ?>">
                         <input name="nama" type="text" class="form-control" value="<?php echo $data['nama_laundry']; ?>">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="alamat"><strong>Alamat Lapak</strong> :</label>
+                        <label for="alamat">Alamat Lapak</label>
                         <input name="alamat" type="text" class="form-control" value="<?php echo $data['alamat']; ?>">
                       </div>
                     </div>
+                  </div>
+                  <!-- /.row-->
+                  <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="alamat"><strong>Deskripsi Lapak</strong> :</label>
-                        <input name="deskripsi" type="text" class="form-control" value="<?php echo $data['deskripsi_laundry']; ?>">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="telp"><strong>Nomer Telepon</strong> :</label>
+                        <label for="telp">No Telepon</label>
                           <script>
                             function angka(evt) {
                               var charCode = (evt.which) ? evt.which : event.keyCode
                               if (charCode > 31 && (charCode < 48 || charCode > 57))
+                        
                                 return false;
                               return true;
                             }
                           </script>
-                        <input name="no_telp" type="tel" maxlength="13" onkeypress="return angka(event)" required class="form-control" value="<?php echo $data['no_telp']; ?>">
+                        <input name="no_telp" type="tel" maxlength="13" onkeypress="return angka(event)" required class="form-control" id="noTelpChange" value="<?php echo $data['no_telp']; ?>">
                       </div>
                     </div>
-                  </div>
-
-                  <!-- /.row-->
-                  <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label for="email"><strong>Email</strong> :</label>
+                        <label for="email">Email</label>
                         <input name="email" type="text" class="form-control" value="<?php echo $data['email']; ?>">
                       </div>
                     </div>
-                    <div class="col-md-6 ">
-                      <div class="form-group">
-                        <label for="tgl"><strong>Berlaku hingga</strong> :</label>
-                        <input name="tgl" readonly type="date" class="form-control" value="<?php echo $data['expired']; ?>">
-                        </select>
-                      </div>
-                    </div>
                   </div>
                   <!-- /.row-->
                   <div class="row">
                     <div class="col-md-6 ">
                       <div class="form-group">
-                        <label for="kategori"><strong>Kategori</strong> :</label>
+                        <label for="kategori">Kategori</label>
                         <div class="col-md-6">
                           <?php
-                          $idLaundry = $_GET['id'];
+                          $idLaundry = @$_POST['id'];
                           $query = "SELECT * FROM tb_kategori";
                           $tQuery = mysqli_query($conn, $query);
                           $oQuery = mysqli_query($conn, "SELECT * FROM tb_detail_kategori WHERE id_laundry = '$idLaundry'");
-                         
+                          $pilihan = [];
+                          while($hasil = mysqli_fetch_array($oQuery)){
+                            array_push($pilihan, $hasil["id_kategori"]);
+                          }
+
                           while($rQuery = mysqli_fetch_array($tQuery)){
                                 
                           ?>
-                          <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>">
+                            
+                          <input type="checkbox" name="kategori[]" id="<?= $rQuery['id_kategori'] ?>" value="<?= $rQuery['id_kategori'] ?>"
+
+                          <?php foreach($pilihan as $kunci){
+                                
+                                //print_r($rQuery["id_kategori"]);
+                                  if($kunci == $rQuery["id_kategori"]){
+                                    echo "checked";
+                                    break;
+                                  }
+                                //  Hehe kebiasa pake ctrl+k+c di vscode :v
+                                  //echo $kunci == $rQuery["id_kategori"] ? "checked"
+                              } ?>>
+
                           <label for="<?= $rQuery['id_kategori'] ?>"><?= $rQuery['jenis_kategori'] ?></label>
                           <br>
-                        <?php  }?>
+                        <?php  } ?>
                         </div>
                       </div>
                     </div>
+                    <div class="col-md-6 ">
+                      <div class="form-group">
+                        <label for="tgl">Berlaku hingga</label>
+                        <input name="tgl" readonly type="date" class="form-control" value="<?php echo $data['expired']; ?>">
+                      </div>
+                    </div>
+                    <div class="mx-auto col-md-8">
+                      <div class="form-group">
+                        <label for="alamat">Deskripsi Lapak</label>
+                        <textarea name="deskripsi" type="text" class="ckeditor" id="ckeditor"><?php echo $data['deskripsi_laundry'];?></textarea>
+                      </div>
+                    </div>
+                    <?php } ?>
                     <div class="col-md-12 text-center">
                       <button type="submit" class="btn btn-primary" data-toggle="modal" data-target=".simpan-modal-sm"><i class="fa fa-save"></i>Simpan Gan</button>
                       
                     </div>
                   </div>
                 </form>
-                <?php } ?>
+                
               </div>
             </div>
           </div>
@@ -243,28 +263,41 @@ if($_SESSION['username'] == null){
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6">
+            <h4 class="mb-3">Pages</h4>
+            <ul class="list-unstyled">
+              <li><a href="text.html">About us</a></li>
+              <li><a href="text.html">Terms and conditions</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+            <hr>
             <h4 class="mb-3">User section</h4>
             <ul class="list-unstyled">
-              <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
               <li><a href="register.html">Regiter</a></li>
             </ul>
           </div>
           <!-- /.col-lg-3-->
           <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Contact Admin</h4>
-            <h5><strong>Franciska W</strong></h5>
+            <h4 class="mb-3">Top categories</h4>
+            <h5>Men</h5>
             <ul class="list-unstyled">
-              <li>Email</li>
+              <li><a href="category.html">T-shirts</a></li>
+              <li><a href="category.html">Shirts</a></li>
+              <li><a href="category.html">Accessories</a></li>
             </ul>
-            <h5><strong>Achmad Wildhan Eka</strong></h5>
+            <h5>Ladies</h5>
             <ul class="list-unstyled">
-              <li><a href="mailto: wildhan.simdig04@gmail.com">wildhan.simdig04@gmail.com</a></li>
+              <li><a href="category.html">T-shirts</a></li>
+              <li><a href="category.html">Skirts</a></li>
+              <li><a href="category.html">Pants</a></li>
+              <li><a href="category.html">Accessories</a></li>
             </ul>
           </div>
           <!-- /.col-lg-3-->
           <div class="col-lg-3 col-md-6">
-            <h4 class="mb-3">Alamat Kantor</h4>
-            <p><strong>Perum Tidar Cluster</strong><br>Blok Sekian<br>Tidar<br>45Y 73J<br>Jember<br><strong>Great Britain</strong></p>
+            <h4 class="mb-3">Where to find us</h4>
+            <p><strong>Obaju Ltd.</strong><br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p><a href="contact.html">Go to contact page</a>
             <hr class="d-block d-md-none">
           </div>
           <!-- /.col-lg-3-->
@@ -291,10 +324,6 @@ if($_SESSION['username'] == null){
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
     
-      
-    <!-- /#footer-->
-    <!-- *** FOOTER END ***-->
-    
     
     <!--
     *** COPYRIGHT ***
@@ -304,9 +333,10 @@ if($_SESSION['username'] == null){
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-2 mb-lg-0">
-            <p class="text-center text-lg-left">©2019 Click in Click.</p>
+            <p class="text-center text-lg-left">©2019 Your name goes here.</p>
           </div>
           <div class="col-lg-6">
+            <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">Bootstrapious</a>
               <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
             </p>
           </div>
@@ -315,6 +345,21 @@ if($_SESSION['username'] == null){
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
+    <script>
+      String.prototype.replaceAt=function(index, char) {
+    var a = this.split("");
+    a[index] = char;
+    return a.join("");
+    }
 
+    $('#noTelpChange').on('change', function(){
+      if(this.value[0] === '0'){
+        this.value = this.value.replaceAt(0, "+62");
+      }else{
+        swal("Nomor telpon tidak valid!");
+        this.value = "";
+      }
+    }); 
+    </script>
   </body>
 </html>

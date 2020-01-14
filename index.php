@@ -75,9 +75,8 @@ if($msg == "berhasil"){
     <script src="js/front.js"></script>
     <style>
       .customImages{
-        /*height: 250px;
-        width: 100%;*/
-        object-fit: cover;
+        height: 250px;
+        width: 100%;
         overflow: hidden;
       }
     </style>

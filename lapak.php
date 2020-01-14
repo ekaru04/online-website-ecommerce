@@ -162,7 +162,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
 
                   <?php 
 
-                  $dt = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_foto_laundry ON tb_foto_laundry.id_foto_laundry = tb_laundry.id_foto_laundry WHERE username='$_GET[id]'");
+                  $dt = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_foto_laundry ON tb_foto_laundry.id_foto_laundry = tb_laundry.id_foto_laundry WHERE username ='$_GET[id]'");
                   while($d = mysqli_fetch_array($dt)){
                     // echo "<pre>";
                     // print_r($d['foto']);
@@ -178,8 +178,8 @@ $o = mysqli_query($conn, "SELECT * FROM tb_iklan");
                   <div class="box">
                   <?php
 
-                $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE username='$_GET[id]'");
-                $query_kate = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE username='$_GET[id]'");
+                $query_mysql = mysqli_query($conn,"SELECT * FROM tb_laundry WHERE id_laundry='$_GET[id]'");
+                $query_kate = mysqli_query($conn, "SELECT * FROM tb_laundry INNER JOIN tb_detail_kategori ON tb_detail_kategori.id_laundry = tb_laundry.id_detail_kategori INNER JOIN tb_kategori ON tb_kategori.id_kategori = tb_detail_kategori.id_kategori WHERE tb_laundry.username='$_GET[id]'");
 
 		            $nomor = 1;
 		            $data = mysqli_fetch_array($query_mysql)

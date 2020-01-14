@@ -43,7 +43,7 @@ if($msg == "berhasil"){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clean in Click</title>
-	<link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
+  <link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -75,8 +75,9 @@ if($msg == "berhasil"){
     <script src="js/front.js"></script>
     <style>
       .customImages{
-        height: 250px;
-        width: 100%;
+        /*height: 250px;
+        width: 100%;*/
+        object-fit: cover;
         overflow: hidden;
       }
     </style>
@@ -200,14 +201,14 @@ if($msg == "berhasil"){
 
             <?php 
 
-          		// $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY RAND() LIMIT 6")or die(mysql_error());
+              // $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY RAND() LIMIT 6")or die(mysql_error());
               $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry")or die(mysql_error());
 
               $qs = mysqli_query($conn, "SELECT DISTINCT id_foto_laundry, foto FROM tb_foto_laundry GROUP BY id_foto_laundry ORDER BY id_foto_laundry");
-          		$nomor = 1;
-          		while($data = mysqli_fetch_array($query_mysql)){
+              $nomor = 1;
+              while($data = mysqli_fetch_array($query_mysql)){
 
-          	?>
+            ?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
               <a href="lapak.php?id=<?php echo $data['username']; ?>">
               <div class="item col-md-4">

@@ -144,6 +144,8 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                         $queryKategori .= " OR ";
                     }
                   }
+
+                  print_r($queryKategori);
                   // echo $queryKategori;
                   @$search = $_GET["search"];
                   @$listing = $_GET["listing"];

@@ -23,7 +23,7 @@ $email = $_POST['email'];
 $telp = $_POST['no_telp'];
 $deskripsi = $_POST['deskripsi_laundry'];
 $kategori = $_POST['id_detail_kategori'];
-
+$allowedExt = array("jpg","png","jpeg");
 // echo "<pre>";
 // $id = $getInt['id_laundry'] + 1;
 // print_r($_POST); 
@@ -33,13 +33,32 @@ $kategori = $_POST['id_detail_kategori'];
 
 
 $indexFoto = 0 ;
+$statusGambar = 0;
 
 foreach($_FILES['foto']['name'] as $p){
-    if($indexFoto < 6){ 
-    $sql1 = "INSERT INTO tb_foto_laundry VALUES('$getInt','$p')";
-    move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/img/".$p);
-    mysqli_query($conn, $sql1);
-    $indexFoto++;
+    
+    $tipeData = explode('.',$p);
+    $tipeData = strtolower(end($tipeData));
+
+    if($indexFoto <= 5){ 
+        if(in_array($tipeData, $allowedExt))
+        {
+            $sql1 = "INSERT INTO tb_foto_laundry VALUES('$getInt','$p')";
+            
+
+            move_uploaded_file($_FILES['foto']['tmp_name'][$indexFoto], $_SERVER['DOCUMENT_ROOT']."/Rebellion/img/".$p); 
+
+            mysqli_query($conn,$sql1);
+
+            $indexFoto++;
+            $statusGambar = 1;
+
+        }else
+        {
+            echo '<script type="text/javascript">
+            alert("Terjadi sebuah kesalahan");
+            </script>';
+        }
     }else{
         echo '<script type="text/javascript">
         alert("foto tidak boleh melebihi 5");
@@ -50,12 +69,17 @@ foreach($_FILES['foto']['name'] as $p){
 }
 
 // $a = "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')";
+if($statusGambar == 1){
 mysqli_query($conn, "INSERT INTO tb_laundry VALUES ('', '$username', '$nama_laundry', '$alamat', '$password', '$email', '$telp', '$deskripsi', '$b', '$getInt', '$fDay', 'Aktif')")or die(mysqli_error($conn));
 
 foreach ($kategori as $key) {
     mysqli_query($conn, "INSERT INTO tb_detail_kategori VALUES('$b', '$key')")or die(mysqli_error($conn));
     }
-
+}else{
+    echo '<script type="text/javascript">
+        alert("Maaf bos, regis lagi");
+        </script>';
+}
 
 
 // foreach($_FILES['foto']['name'] as $p){

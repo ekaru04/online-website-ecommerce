@@ -198,6 +198,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
             
             <div class="col-md-6" >
                   <p>Upload foto Laundry : <br> <b>Klik Foto</b> untuk Menghapus foto yang sudah di upload</p>
+                  <p>Pilih foto yang diupload secara <b>bersamaan</b></p>
                   <label for="foto">Upload Foto</label>
                   <input type="file" multiple name="foto[]" id="file">   
                   <div class="gallery"></div>

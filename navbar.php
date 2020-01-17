@@ -57,7 +57,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
                   </li>
                 </ul>
               </li>
-              <li class="nav-item"><a href="index.php" class="nav-link" data-hover>Home</a></li>
+              <li class="nav-item"><a href="index.php" class="nav-link" data-hover>Katalog</a></li>
               <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Kategori Berdasarkan<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>

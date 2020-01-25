@@ -7,7 +7,7 @@ if(@$_GET['id_laundry'] != null){
 }
 
 if(@$_GET['id_laundry'] == null){
-  header("location:index.php");
+  header("location:/Rebellion/index.php");
 }
 
 ?>

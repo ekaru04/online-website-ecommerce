@@ -112,7 +112,8 @@ if($_SESSION['username'] == null){
         
         
       </div>
-      <?php include "navbar.php"; ?>
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/navbar.php';?>
+x
     </header>
     <div id="all">
       <div id="content">
@@ -122,7 +123,7 @@ if($_SESSION['username'] == null){
               <!-- breadcrumb-->
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                  <li class="breadcrumb-item"><a href="/Rebellion/index.php">Katalog</a></li>
                   <li aria-current="page" class="breadcrumb-item active">Lapakku</li>
                 </ol>
               </nav>
@@ -139,9 +140,9 @@ if($_SESSION['username'] == null){
                 <div class="card-body">
                   <ul class="nav nav-pills flex-column">
                     <a href="customer-account.php" class="nav-link active"><i class="fa fa-list"></i>Edit Lapak</a>
-                    <a href="akun.php" class="nav-link"><i class="fa fa-user"></i>Tampilan Lapak</a>
-                    <a href="pembayaran2.php" class="nav-link"><i class="fa fa-money"></i>Pembayaran</a>
-                    <a href="reset-pass-akun.php" class="nav-link"><i class="fa fa-question"></i>Lupa Password</a>
+                    <a href="/Rebellion/akun.php" class="nav-link"><i class="fa fa-user"></i>Tampilan Lapak</a>
+                    <a href="/Rebellion/pembayaran/pembayaran2.php" class="nav-link"><i class="fa fa-money"></i>Pembayaran</a>
+                    <a href="/Rebellion/reset-pass/reset-pass-akun.php" class="nav-link"><i class="fa fa-question"></i>Lupa Password</a>
                   </ul>
                 </div>
               </div>

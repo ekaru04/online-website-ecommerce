@@ -61,9 +61,9 @@ if($sess == null){
             <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm" disabled><?php echo date("Y-m-d");?></a></div>
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
-                <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
-                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
+                <li class="list-inline-item"><a href="/Rebellion/edit/customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="/Rebellion/pembayaran/pembayaran2.php">Pembayaran</a></li>
+                <li class="list-inline-item"><a href="/Rebellion/keluar_aksi.php">Keluar</a></li>
               </ul>
             </div>
           </div>
@@ -72,7 +72,8 @@ if($sess == null){
         <!-- *** TOP BAR END ***-->
 
       </div>
-      <?php include "navbar.php"; ?>
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/navbar.php';?>
+
       <div id="search" class="collapse">
         <div class="container">
           <form role="search" class="ml-auto">
@@ -137,7 +138,8 @@ if($msg == "berhasil"){
     *** COPYRIGHT ***
     _________________________________________________________
     -->
-    <?php include "footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/footer.php';?>
+
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
   </body>

@@ -57,9 +57,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
                 <?php }else{ ?>
-                <li class="list-inline-item"><a href="index.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="/Rebellion/index.php"><?php echo @$_SESSION['username']; ?></a></li>
                 <?php } ?>
-                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
+                <li class="list-inline-item"><a href="/Rebellion/keluar_aksi.php">Keluar</a></li>
               </ul>
             </div>
           </div>
@@ -194,7 +194,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     *** FOOTER ***
     _________________________________________________________
     -->
-    <?php include "footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/footer.php';?>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>

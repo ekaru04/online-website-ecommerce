@@ -97,10 +97,10 @@ if($msg == "berhasil"){
               <ul class="menu list-inline mb-0">
               <?php if(@$sess == null){ ?>
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
-                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
+                <li class="list-inline-item"><a href="register/register.php">Daftar</a></li>
               <?php }else{ ?>
-                <li class="list-inline-item"><a href="customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
-                <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
+                <li class="list-inline-item"><a href="edit/customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="pembayaran/pembayaran2.php">Pembayaran</a></li>
                 <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
               <?php } ?>
               </ul>
@@ -122,7 +122,7 @@ if($msg == "berhasil"){
                   <div class="form-group">
                     <input id="password-modal" type="password" placeholder="password" name="password" class="form-control">
                   </div>
-                  <a href="verif-email.php">Lupa password?</a>
+                  <a href="reset-pass/verif-email.php">Lupa password?</a>
                   <p class="text-center">
                     <button class="btn btn-primary" type="submit" name="login"><i class="fa fa-sign-in"></i> Log in</button>
                   </p>
@@ -138,7 +138,7 @@ if($msg == "berhasil"){
         
       </div>
       
-      <?php include "navbar.php" ?>
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/navbar.php';?>
 
     </header>
     <div id="all">
@@ -277,7 +277,7 @@ if($msg == "berhasil"){
     *** FOOTER ***
     _________________________________________________________
     -->
-    <?php include "footer.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/footer.php';?>
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
     

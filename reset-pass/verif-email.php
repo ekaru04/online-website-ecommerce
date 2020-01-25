@@ -74,7 +74,7 @@ if($msg == "sukses"){
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="cek_login.php" method="post">
+                <form action="/Rebellion/cek_login.php" method="post">
                   <div class="form-group">
                     <input id="email-modal" type="text" name="username" placeholder="username" class="form-control">
                   </div>
@@ -143,7 +143,8 @@ if($msg == "sukses"){
   </div>
 
     <!-- *** COPYRIGHT ** -->
-    <?php include "footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/footer.php';?>
+
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>

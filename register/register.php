@@ -89,7 +89,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
         
         
       </div>
-      <?php include "navbar.php"; ?>
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/navbar.php';?>
       <div id="search" class="collapse">
         <div class="container">
           <form role="search" class="ml-auto">

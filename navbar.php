@@ -57,7 +57,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
                   </li>
                 </ul>
               </li>
-              <li class="nav-item"><a href="index.php" class="nav-link" data-hover>Katalog</a></li>
+              <li class="nav-item"><a href="/Rebellion/index.php" class="nav-link" data-hover>Katalog</a></li>
               <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Kategori Berdasarkan<b class="caret"></b></a>
                 <ul class="dropdown-menu megamenu">
                   <li>
@@ -89,8 +89,8 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
                     <div class="row">
                       <div class="col-md-6 col-lg-3">                        
                         <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="cari.php?listing=baru" class="nav-link">Laundry Terbaru</a></li>
-                          <li class="nav-item"><a href="cari.php?listing=lama" class="nav-link">Laundry Terlama</a></li>
+                          <li class="nav-item"><a href="/Rebellion/filtersort/cari.php?listing=baru" class="nav-link">Laundry Terbaru</a></li>
+                          <li class="nav-item"><a href="/Rebellion/filtersort/cari.php?listing=lama" class="nav-link">Laundry Terlama</a></li>
                         </ul>
                       </div>
                     </div>
@@ -129,7 +129,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
                   filter.push(this.value);  // filter menambahkan array sesuai class cariSesuatu yang dicentang
                 }
             });
-            document.location = "http://localhost/Rebellion/cari.php?id="+filter.toString(); 
+            document.location = "http://localhost/Rebellion/filtersort/cari.php?id="+filter.toString(); 
             // mengarahkan lokasi document ke cari.php
         });
 

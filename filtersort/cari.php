@@ -110,7 +110,8 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
         
         
       </div>
-      <?php include "navbar.php" ?>
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/navbar.php';?>
+
     </header>
     <div id="all">
       <div id="content">
@@ -181,15 +182,15 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                        $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn));
                        
                        while($dat = mysqli_fetch_array($query_foto)){ ?>
-                      <div class="front"><a href="lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
+                      <div class="front"><a href="/Rebellion/lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
                       </div>
-                      <div class="back"><a href="lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
+                      <div class="back"><a href="/Rebellion/lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
                       </div>
                     <?php } ?>
                     </div>
-                  </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="/Rebellion/lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">
-                    <h3><a href="lapak.php?id=<?php echo $data['username']?>"><?= $data['nama_laundry']; ?></a></h3>
+                    <h3><a href="/Rebellion/lapak.php?id=<?php echo $data['username']?>"><?= $data['nama_laundry']; ?></a></h3>
                     <p class="price"> 
                       <del></del> <?php echo $data['alamat'];?>
                     </p>
@@ -239,7 +240,8 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     *** FOOTER ***
     _________________________________________________________
     -->
-    <?php include "footer.php" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/footer.php';?>
+
     <!-- /#footer-->
     <!-- *** FOOTER END ***-->
     

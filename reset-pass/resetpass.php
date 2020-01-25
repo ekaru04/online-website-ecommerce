@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
       $id = $data['id_laundry'];
       $nama = $data['nama_laundry'];
       $emailData = $data['email'];
-      $url = 'http://'.$_SERVER['SERVER_NAME'].'/Rebellion/reset-pass.php?id_laundry='.$id.'&email='.$emailData;
+      $url = 'http://'.$_SERVER['SERVER_NAME'].'/Rebellion/reset-pass/reset-pass.php?id_laundry='.$id.'&email='.$emailData;
       $message = 'Link Reset.<br>'.$url;
       if ($email == $emailData){
                   $mail = new PHPMailer(true); // the true param means it will throw exceptions on errors, which we need to catch

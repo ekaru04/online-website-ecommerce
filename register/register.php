@@ -70,7 +70,7 @@ $w= mysqli_query($conn, "SELECT * FROM tb_kategori");
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="cek_login.php" method="post">
+                <form action="/Rebellion/cek_login.php" method="post">
                   <div class="form-group">
                     <input id="email-modal" type="text" placeholder="username" class="form-control" name="username">
                   </div>

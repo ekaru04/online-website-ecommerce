@@ -52,7 +52,7 @@ if(@$_GET['id_laundry'] == null){
             <div class="col-lg-6 text-center text-lg-right">
               <ul class="menu list-inline mb-0">
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
-                <li class="list-inline-item"><a href="register.php">Daftar</a></li>
+                <li class="list-inline-item"><a href="/Rebellion/register/register.php">Daftar</a></li>
               </ul>
             </div>
           </div>
@@ -65,7 +65,7 @@ if(@$_GET['id_laundry'] == null){
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="cek_login.php" method="post">
+                <form action="/Rebellion/cek_login.php" method="post">
                   <div class="form-group">
                     <input id="email-modal" type="text" placeholder="username" name="username" class="form-control">
                   </div>
@@ -87,7 +87,7 @@ if(@$_GET['id_laundry'] == null){
         <!-- *** TOP BAR END ***-->
 
       </div>
-      <?php include "navbar.php"; ?>
+      <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/navbar.php'; ?>
       <div id="search" class="collapse">
         <div class="container">
           <form role="search" class="ml-auto">
@@ -108,9 +108,9 @@ if(@$_GET['id_laundry'] == null){
               <!-- breadcrumb-->
             </div>
             <?php
-$msg = @$_GET['msg'];
+$msg = @$_GET['mg'];
 if($msg == "berhasil"){
-  echo "<h4>password telah diganti</h4>";
+  echo "<h4>password telah diganti, silahkan login</h4>";
 }else if($msg == "sama"){
   echo "<h4>password tidak sama</h4>";
 }else if($msg == "sama2"){
@@ -124,8 +124,8 @@ if($msg == "berhasil"){
             <h1 class="text-center">Reset Password Anda</h1>
 
             <hr>
-            <input type="text" name="id_laundry" readonly hidden value="<?php echo $_SESSION['id_laundry']; ?>">
-            <input type="text" name="email" readonly hidden value="<?php echo $_SESSION['email']; ?>">
+            <input type="text" name="id_laundry" readonly  value="<?php echo $_SESSION['id_laundry']; ?>">
+            <input type="text" name="email" readonly  value="<?php echo $_SESSION['email']; ?>">
     <div class="form-group">
 				<label>Password lama</label>
         <input class="form-control" type="Password" name="oldPass" placeholder="Password Lama">
@@ -139,8 +139,7 @@ if($msg == "berhasil"){
         <input class="form-control" type="Password" name="rePass" placeholder="Ulangi Password Baru">	
 		</div>
         <div class="modal-footer">
-        <button type="submit" name="reset" class="btn btn-primary">simpan</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+        <button type="submit" name="resetpass" class="btn btn-primary">simpan</button>
       </div>
         </div>
       </div>
@@ -152,7 +151,7 @@ if($msg == "berhasil"){
     *** COPYRIGHT ***
     _________________________________________________________
     -->
-    <?php include "footer.php"; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/footer.php'; ?>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
     <script src="vendor/jquery/jquery.min.js"></script>

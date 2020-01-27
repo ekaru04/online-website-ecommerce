@@ -106,7 +106,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
       </nav>
       <div id="search" class="collapse">
         <div class="container">
-          <form role="search" class="ml-auto" action="cari.php" method="get">
+          <form role="search" class="ml-auto" action="filtersort/cari.php" method="get">
             <div class="input-group">
               <input type="text" placeholder="Cari nama laundry" name="search" class="form-control" >
               <div class="input-group-append">

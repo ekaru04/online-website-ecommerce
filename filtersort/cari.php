@@ -72,9 +72,9 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Masuk</a></li>
                 <li class="list-inline-item"><a href="register.php">Daftar</a></li>
               <?php }else{ ?>
-                <li class="list-inline-item"><a href="customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
-                <li class="list-inline-item"><a href="pembayaran2.php">Pembayaran</a></li>
-                <li class="list-inline-item"><a href="keluar_aksi.php">Keluar</a></li>
+                <li class="list-inline-item"><a href="/Rebellion/edit/customer-account.php"><?php echo @$_SESSION['username']; ?></a></li>
+                <li class="list-inline-item"><a href="/Rebellion/pembayaran/pembayaran2.php">Pembayaran</a></li>
+                <li class="list-inline-item"><a href="/Rebellion/keluar_aksi.php">Keluar</a></li>
               <?php } ?>
               </ul>
             </div>
@@ -88,7 +88,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                 <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
               </div>
               <div class="modal-body">
-                <form action="cek_login.php" method="post">
+                <form action="/Rebellion/cek_login.php" method="post">
                   <div class="form-group">
                     <input id="email-modal" type="text" placeholder="email" name="username" class="form-control">
                   </div>

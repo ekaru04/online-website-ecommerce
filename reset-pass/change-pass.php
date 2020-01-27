@@ -1,7 +1,7 @@
 <?php
 
 include $_SERVER['DOCUMENT_ROOT'].'/Rebellion/connect.php';
-if(isset($_POST['reset'])){
+if(isset($_POST['resetpass'])){
 	$id = $_POST['id_laundry'];
 	$email = $_POST['email'];
 	$oldPass = $_POST['oldPass'];
@@ -16,14 +16,16 @@ if(isset($_POST['reset'])){
 			$update = "UPDATE tb_laundry SET password='$newPass' WHERE email='$email' AND id_laundry='$id'";
 			$result2 = mysqli_query($conn, $update);
 			if($result2){
-				header("location:reset-pass.php?msg=berhasil");
-
+				header("location:reset-pass.php?id_laundry=$id&email=$email&mg=berhasil");
+				echo "Eww bisa";
 			}
 		}else{
-			header("location:reset-pass.php?msg=sama");
+			header("location:reset-pass.php?id_laundry=$id&email=$email&mg=sama");
+			echo "ga cocok bos";
 		}
 	}else{
-		header("location:reset-pass.php?msg=sama2");
+		header("location:reset-pass.php?id_laundry=$id&email=$email&mg=sama2");
+		echo "Ga ada di DB";
 	}
 }
 

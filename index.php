@@ -200,8 +200,8 @@ if($msg == "berhasil"){
 
             <?php 
 
-              // $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY RAND() LIMIT 6")or die(mysql_error());
-              $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry")or die(mysql_error());
+              $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry ORDER BY RAND()")or die(mysql_error());
+              // $query_mysql = mysqli_query($conn, "SELECT * FROM tb_laundry")or die(mysql_error());
 
               $qs = mysqli_query($conn, "SELECT DISTINCT id_foto_laundry, foto FROM tb_foto_laundry GROUP BY id_foto_laundry ORDER BY id_foto_laundry");
               $nomor = 1;

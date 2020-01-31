@@ -16,6 +16,8 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Clean in Click</title>
+  <link rel="icon" href="images/icon.jpg" type="images/icon.jpg">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
@@ -32,12 +34,14 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
     <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-            <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
     <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
@@ -130,7 +134,6 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
               </div>
             </div>
           </div>
-          <div class="p-5">
           <div class="container">
             <div class="row">
             <?php 
@@ -173,7 +176,7 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
 
 		        ?>
     <!-- berfungsi untuk menginclude dengan menggunakan koneksi agar katalog sama dengan tampilan -->
-              <div class="item col-md-4">
+             <div class="item col-md-4">
                 <div class="product">
                   <div class="flip-container">
                     <div class="flipper">
@@ -181,18 +184,25 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
                       $usernameF = $data['username'];
                        $query_foto = mysqli_query($conn, "SELECT * FROM tb_foto_laundry INNER JOIN tb_laundry ON tb_laundry.id_foto_laundry = tb_foto_laundry.id_foto_laundry WHERE tb_laundry.username = '$usernameF' GROUP BY tb_foto_laundry.id_foto_laundry")or die(mysqli_error($conn));
                        
-                       while($dat = mysqli_fetch_array($query_foto)){ ?>
-                      <div class="front"><a href="/Rebellion/lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
+                            while($dat = mysqli_fetch_array($query_foto)){ ?>
+
+                      <div class="front">
+                        <a href="lapak.php?id=<?php echo $dat['username']; ?>">
+                          <img src="/Rebellion/img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages">
+                        </a>
                       </div>
-                      <div class="back"><a href="/Rebellion/lapak.php?id=<?php echo $dat['username']?>"><img src="img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages"></a>
+                      <div class="back">
+                        <a href="lapak.php?id=<?php echo $dat['username']; ?>">
+                          <img src="/Rebellion/img/<?= $dat['foto'] ?>" alt="" class="img-fluid customImages">
+                        </a>
                       </div>
-                    <?php } ?>
+                      <?php } ?>
                     </div>
-                  </div><a href="/Rebellion/lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="img/laundry.jpg" alt="" class="img-fluid"></a>
+                  </div><a href="lapak.php?id=<?php echo $data['username']?>" class="invisible"><img src="/Rebellion/img/laundry.jpg" alt="" class="img-fluid"></a>
                   <div class="text">
-                    <h3><a href="/Rebellion/lapak.php?id=<?php echo $data['username']?>"><?= $data['nama_laundry']; ?></a></h3>
+                    <h3><a href="lapak.php?id=<?php echo $data['username']?>"><?= $data['nama_laundry'] ?></a></h3>
                     <p class="price"> 
-                      <del></del> <?php echo $data['alamat'];?>
+                      <del></del> <?php echo $data['alamat']; ?>
                     </p>
                   </div>
                   <!-- /.text-->
@@ -213,7 +223,6 @@ $tu = mysqli_query($conn, "SELECT * FROM tb_laundry WHERE username='$sess'");
           </div>
           <!-- /#hot-->
           <!-- *** HOT END ***-->
-        </div>
         <!--
         *** GET INSPIRED ***
         _________________________________________________________

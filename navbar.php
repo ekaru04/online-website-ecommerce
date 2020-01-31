@@ -8,7 +8,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 ?>
 
 <nav class="navbar navbar-expand-lg">
-        <div class="container"><a href="index.php" class="navbar-brand home"><img src="img/mesin_cuci.png" width="80px"hight="80px"  class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
+        <div class="container"><a href="index.php" class="navbar-brand home"><img src="img/mesin_cuci.png" width="100px"hight="100px"  class="d-inline-block "><span class="sr-only"></span></a>
           <div class="navbar-buttons">
             <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
             <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button>
@@ -69,7 +69,7 @@ $o = mysqli_query($conn, "SELECT * FROM tb_kategori");
 
                         ?>
                         <div class="col-lg-4">
-                          <input class="cariSesuatu" type="checkbox" name="kategori[]" <?php echo "value=".$r['id_kategori'].">".$r['jenis_kategori'].""; ?> >
+                          <input class="cariSesuatu" type="checkbox" name="kategori[]" <?php echo "value=".$r['id_kategori'].">".$r['jenis_kategori'].""; ?> <span class="sr-only"></span>
 
                             
                         </div>
